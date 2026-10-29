@@ -19,12 +19,25 @@ Disclose any identity/history exposure the reviewers report.
    fix and acceptance/verification criterion.
 4. Respond accept/partially accept/disagree with evidence. A rebuttal is not a fix.
 5. Version the protocol and code, run the relevant checks and link evidence.
-6. Send the revised anonymous packet to a fresh review context for a second
-   round. Specify whether it receives the first report (re-review) or not (fresh
-   independent review). Do not claim both kinds of blindness simultaneously.
+6. Send the revised packet for re-review or to a fresh independent context.
+   Specify whether it retains its own prior context/report (re-review) or not
+   (fresh independent review). Do not claim both kinds of blindness simultaneously.
 7. Retain unresolved issues and failed experiments; do not delete unfavorable
    findings or repeat reviews until they become positive.
 
 The author may perform self-audits while waiting; label them as self-audits.
 Scientific issues requiring raw model data remain open until those data exist.
 An issue is resolved only when its verification criterion is met.
+
+Create the next immutable source/test packet with:
+
+```bash
+python scripts/freeze_review.py --kind re-review --output reviews/next_round
+```
+
+Add any anonymous aggregate receipts before computing a new manifest; never
+silently change an already supplied packet. The freezer does not itself start
+a review, provide isolation, remove strings from code or schedule future work.
+Inspect the resulting whitelist and hashes before providing access. Record
+separately whether the reviewer actually had a new context. Targeted code
+verification cannot revise a full scientific-readiness judgement by itself.

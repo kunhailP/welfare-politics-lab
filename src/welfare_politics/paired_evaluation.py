@@ -11,7 +11,12 @@ import numpy as np
 from .contrast_validity import contrast_bounds, error_change_bounds
 
 
-def evaluate(x, human, model_arms, contrast, row_ids):
+def evaluate_arrays(x, human, model_arms, contrast, row_ids):
+    """Low-level numerical API; arrays alone cannot establish response linkage.
+
+    Real logged responses must enter through recorded_responses.evaluate_recorded.
+    Direct callers are restricted to explicitly labelled software controls.
+    """
     x = np.asarray(x, dtype=float)
     human = np.asarray(human, dtype=float)
     ids = [value.item() if isinstance(value, np.generic) else value for value in row_ids]
@@ -27,6 +32,8 @@ def evaluate(x, human, model_arms, contrast, row_ids):
               'row_count': len(ids),
               'ordered_row_ids_sha256': hashlib.sha256(json.dumps(ids, separators=(',', ':')).encode()).hexdigest(),
               'design_sha256': hashlib.sha256(np.asarray(x, dtype='<f8').tobytes()).hexdigest(),
+              'human_outcomes_sha256': hashlib.sha256(np.asarray(human, dtype='<f8').tobytes()).hexdigest(),
+              'contrast_sha256': hashlib.sha256(np.asarray(contrast, dtype='<f8').tobytes()).hexdigest(),
               'human_contrast': gamma_h, 'arms': {}, 'error_changes': {}}
     for name, values in model_arms.items():
         b = contrast_bounds(x, values, contrast)

@@ -27,7 +27,8 @@ def diagnose(x, contrast, row_ids, fractions=(0.005, 0.01, 0.02, 0.05, 0.10), se
         worst = np.argsort(leverage)[-n:]
         rows.append({'planned_invalid_pair_fraction': fraction, 'invalid_pairs': n,
                      'actual_pair_fraction': n/len(blocks),
-                     'random_failure_completion_width_cad': float(4000*leverage[random].sum()),
+                     'one_seeded_random_failure_completion_width_cad': float(4000*leverage[random].sum()),
+                     'uniform_subset_expected_completion_width_cad': float(4000*n/len(blocks)*leverage.sum()),
                      'highest_leverage_failure_completion_width_cad': float(4000*leverage[worst].sum())})
     return {'status': 'design_only_failure_scenarios_not_model_results', 'actual_model_calls': 0,
             'pairs_per_arm': len(blocks), 'total_absolute_contrast_weight': float(np.abs(weights).sum()),

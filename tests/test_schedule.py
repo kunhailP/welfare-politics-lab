@@ -50,6 +50,37 @@ class ScheduleTests(unittest.TestCase):
                 cells = {(r['income_label'], r['focal_income']) for r in rows if r['audit_base'] == base}
                 self.assertEqual(len(cells), 6)
             self.assertTrue(all('human' not in json.dumps(r['messages']).lower() for r in rows))
+            for r in rows:
+                self.assertEqual(r['focal_position'], 'B' if r['audit_base'] % 2 else 'A')
+
+    def test_corrupted_arm_ablations_duplicates_and_missing_agents_rejected(self):
+        mutations = [('no_persona', 'respondent_income', 'Low income'),
+                     ('socioeconomic_persona_without_income', 'respondent_income', 'Low income'),
+                     ('socioeconomic_persona_without_income', 'respondent_children', 'Children'),
+                     ('socioeconomic_persona_without_income', 'respondent_employment', 'At risk/laid off')]
+        for arm, field, value in mutations:
+            with self.subTest(field=field, arm=arm), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp); self.fixture(root)
+                path = root / arm / 'agents.jsonl'
+                rows = [json.loads(line) for line in path.read_text().splitlines()]
+                rows[2]['observed_socioeconomic_facts'][field] = value
+                path.write_text('\n'.join(json.dumps(r) for r in rows))
+                with self.assertRaises(ValueError): plan(root)
+        for duplicate in [True, False]:
+            with tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp); self.fixture(root)
+                path = root / 'no_persona/agents.jsonl'
+                rows = path.read_text().splitlines()
+                rows = rows+[rows[2]] if duplicate else rows[:2]+rows[3:]
+                path.write_text('\n'.join(rows))
+                with self.assertRaises(ValueError): plan(root)
+
+    def test_same_name_profiles_are_explicitly_distinct_people(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); self.fixture(root)
+            rows = plan(root)
+            self.assertTrue(all(r['same_canonical_name'] for r in rows))
+            self.assertTrue(all('distinct hypothetical people' in r['messages'][1]['content'] for r in rows))
 
 
 if __name__ == '__main__':

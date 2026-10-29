@@ -1,4 +1,4 @@
-# Current protocol: version 3, after first independent internal review
+# Current protocol: version 4, after two internal review rounds
 
 This is a prospective plan for model data, developed after viewing the human
 reference data. It is not a preregistered or untouched human replication.
@@ -70,6 +70,12 @@ must be recorded. Health means a pre-existing complication-risk condition in
 Study1; it must not be replaced by generic poor health from Study2. JSON is an
 adaptation of the original slider. Claims concern this operationalization.
 
+Canonical names can repeat within a pair. All prompts now explicitly state A
+and B are distinct hypothetical people even if names match. The frozen primary
+plan has143 such pairs among1112 pair tasks per arm (429 of3336 requests).
+This discloses and mitigates ambiguity; it does not establish harmlessness.
+The presentation audit must test the chosen handling before robustness claims.
+
 ## Estimands and models
 
 Let X include all recorded recipient factor dummies, an indicator for low versus
@@ -132,7 +138,8 @@ need not be sharp for integer actions and are not confidence intervals. Point
 identification uses a documented1e-8CAD numerical tolerance; irrelevant zero-weight
 missing rows do not destroy it. SVD weights replace normal equations.
 
-Design-only failure diagnostics consider random and highest-leverage paired
+Design-only failure diagnostics consider one seeded random-failure scenario,
+the analytic expected width under a uniform subset, and highest-leverage paired
 failures at0.5/1/2/5/10%. A95% validity pilot is only a basic format check, not
 evidence of useful ambiguity. Larger N need not shrink bounds at a fixed rate.
 
@@ -156,6 +163,20 @@ human validation. A small predeclared alternate-pairing/name audit remains
 required for presentation-robust claims; source reconstruction cannot be repaired
 by assuming good average allocations imply exact replication.
 
+Freeze common-task summaries before any responses: for each base b and label
+l, D_bl=Y_bl,30k-Y_bl,120k for the focal recipient. Report equal-base means of
+D_low, D_high, D_omitted, plus mean(D_low-D_high) as the principal common-task
+diagnostic; low-minus-omitted and high-minus-omitted are secondary diagnostics.
+Each base has weight1/16. Zero-based even bases put the focal recipient in A;
+odd bases put it in B, identically across all six cells. Base contexts can
+share a source person and are not independent human observations. Missing cells
+stay explicit unknown actions in0–4000; calculate linear completion bounds
+without deleting incomplete bases. A missing log is an accounting error.
+One recorded rollout is planned for this descriptive diagnostic; expected-model
+or stochastic-stability claims are disabled until a repeat plan is frozen and
+executed. `common_task.py` verifies additive/interaction fixtures and missing
+cells. A live common-task log adapter is still required before execution.
+
 Study2 is a lower-priority context extension with128 people per original frame,
 four single profiles each, no invented respondent persona. Exact minority-name
 and outcome-order assignment is unavailable. It changes institution description
@@ -169,6 +190,20 @@ No paid runner exists in this version. The offline pipeline generates source
 diagnostics, human reanalysis and whitelisted inputs only. A future native
 SocioVerse study must log actual transmitted prompts, responses, returned model
 IDs, failures and costs; saved-output replay must be separated from new calls.
+
+Loaded arm files are now checked for duplicate people, identical populations,
+empty N facts, and F-I exactly equal to F minus income. Frozen requests bind
+arm, respondent, profile-to-A/B mapping, rollout and prompt hash to a request
+ID. The offline `recorded_responses` entry point requires explicit keyed
+attempt logs and rejoins them to frozen row IDs. It rejects contradictory,
+duplicate, missing or unexpected logs and changed returned-model IDs; only
+transport errors may be retried, up to three total attempts. An invalid reply
+ends that request and leaves both actions unknown. Exhaustion requires all
+three transport attempts to be recorded. Human, design and contrast hashes
+are stored. These consistency checks do not authenticate a provider or replace
+generation isolation. The array-only numerical API is a software-control helper,
+not the public path for model logs. End-to-end copied-human replay is explicitly
+software-only evidence, never a model result.
 
 Before generation: resolve or disclose reconstruction assumptions; qualify the
 target population; freeze primary contrasts, failure handling, model, size and

@@ -10,7 +10,7 @@ same facts with explicit household income removed.
 calls, empirical model results, or paid generation have been performed.
 This is an AI-assisted research workspace, not a claim of publication or awards.
 
-The current design is version3 in [docs/CURRENT_PROTOCOL.md](docs/CURRENT_PROTOCOL.md).
+The current design is version4 in [docs/CURRENT_PROTOCOL.md](docs/CURRENT_PROTOCOL.md).
 Archived plans document earlier decisions; they are not the current authority.
 Open scientific issues are in [docs/RESEARCH_QUEUE.md](docs/RESEARCH_QUEUE.md).
 
@@ -63,6 +63,15 @@ Their issues, code fixes and open scientific conditions are recorded in
 re-review, not a fresh context-blind review. The primary matched finite-cohort
 evaluation has556 high/low respondents and36 design columns; it does not attach
 ordinary bootstrap confidence intervals to the known human reference.
+Both round02 reviewers retained that collection gate and identified response
+alignment and arm-integrity gaps. The version4 fixes and remaining scientific
+conditions are recorded in [reviews/round_02/response.md](reviews/round_02/response.md).
+Keyed response replay now rejects contradictory or missing logs and is tested
+under shuffled arrival, transport retries and malformed pairs. No live runner
+or empirical model validation is implied by these checks.
+
+The Korean project brief and next research gates are in
+[docs/START_HERE_KO.md](docs/START_HERE_KO.md).
 
 ## GitHub status
 

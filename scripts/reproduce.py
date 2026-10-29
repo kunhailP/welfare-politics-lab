@@ -59,6 +59,15 @@ def main():
     if result.returncode:
         raise RuntimeError('Failure budget audit failed; see failure_budget.log')
     print('PASS failure_budget', flush=True)
+    result = subprocess.run([sys.executable, 'scripts/replay_software_control.py',
+                             '--design', str(args.output / 'primary_matched_design/human_reference_design.npz'),
+                             '--requests', str(args.output / 'planned_primary_requests/requests.jsonl'),
+                             '--output', str(args.output / 'keyed_software_replay')],
+                            env=env, capture_output=True, text=True)
+    (args.output / 'keyed_software_replay.log').write_text(result.stdout + result.stderr)
+    if result.returncode:
+        raise RuntimeError('Keyed software replay failed; see keyed_software_replay.log')
+    print('PASS keyed_software_replay (not model evidence)', flush=True)
     verification = verify_with_exhaustive_completions()
     (args.output / 'contrast_software_check.json').write_text(json.dumps(verification, indent=2))
     generated = {str(x.relative_to(args.output)): hashlib.sha256(x.read_bytes()).hexdigest()

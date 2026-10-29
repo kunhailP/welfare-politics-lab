@@ -7,7 +7,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from .paired_evaluation import evaluate
+from .paired_evaluation import evaluate_arrays
+from .contrast_validity import contrast_bounds
 from .study1_interest_audit import LEVELS
 
 
@@ -46,6 +47,10 @@ def construct(data, candidate_ids):
     c[names.index(('vignette_income', '$30,000')) + base.shape[1]] = 1
     y = d.vignette_allocation.to_numpy(float)
     row_ids = [f's1:{i}:{j}' for i, j in zip(d.id, d.vignette_num)]
+    weights = contrast_bounds(x, y, c)['contrast_weights']
+    patterns = {group: set(map(tuple, part[list(LEVELS)].to_numpy()))
+                for group, part in d.groupby('respondent_income')}
+    shared = patterns['High income'] & patterns['Low income']
     metadata = {'estimand': 'finite selected high/low cohort fixed-design contrast',
                 'human_uncertainty': 'recorded reference is known; no sampling confidence interval attached',
                 'candidate_people': len(ids), 'primary_people': int(d.id.nunique()),
@@ -56,6 +61,15 @@ def construct(data, candidate_ids):
                 'design_sha256': hashlib.sha256(np.asarray(x, dtype='<f8').tobytes()).hexdigest(),
                 'contrast_sha256': hashlib.sha256(np.asarray(c, dtype='<f8').tobytes()).hexdigest(),
                 'row_ids_sha256': hashlib.sha256(json.dumps(row_ids, separators=(',', ':')).encode()).hexdigest(),
+                'human_outcomes_sha256': hashlib.sha256(np.asarray(y, dtype='<f8').tobytes()).hexdigest(),
+                'contrast_leverage': {'absolute_weight_sum': float(np.abs(weights).sum()),
+                                      'largest_absolute_row_weight': float(np.abs(weights).max()),
+                                      'by_respondent_income': {group: float(np.abs(weights[d.respondent_income.eq(group)]).sum())
+                                                               for group in ['High income', 'Low income']}},
+                'full_profile_support': {'distinct_patterns_by_group': {group: len(values) for group, values in patterns.items()},
+                                         'shared_exact_eight_factor_patterns': len(shared),
+                                         'interpretation': 'Support diagnostic only; additive projection does not require exact matches or imply causal identification.'},
+                'joint_income_employment_support': d.groupby(['respondent_income', 'vignette_income', 'vignette_employment'], observed=True).size().rename('rows').reset_index().to_dict('records'),
                 'factor_references': {key: value[0] for key, value in LEVELS.items()},
                 'point_is_not_a_causal_human_income_effect': True}
     return x, y, c, row_ids, metadata
@@ -75,7 +89,7 @@ def main():
     np.savez(args.output / 'human_reference_design.npz', x=x, y=y, contrast=c, row_ids=np.asarray(rows))
     (args.output / 'design.json').write_text(json.dumps(metadata, indent=2))
     # This is a software integrity check, never empirical model evidence.
-    diagnostic = evaluate(x, y, {'N': y.copy(), 'F': y.copy(), 'F-I': y.copy()}, c, rows)
+    diagnostic = evaluate_arrays(x, y, {'N': y.copy(), 'F': y.copy(), 'F-I': y.copy()}, c, rows)
     diagnostic['status'] = 'copied_human_reference_software_check_only'
     diagnostic['actual_model_calls'] = 0
     for arm in diagnostic['arms'].values():

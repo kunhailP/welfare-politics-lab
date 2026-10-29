@@ -1,0 +1,321 @@
+{
+  "checked_at_utc": "2026-10-29T14:30:55.118373+00:00",
+  "scope": "offline human reanalysis and software controls; no empirical model evidence",
+  "command": "PYTHONPATH=src python scripts/reproduce.py --output runs/<new-directory>",
+  "tests_command": "PYTHONPATH=src python -m unittest discover -s tests",
+  "tests_passed": 42,
+  "actual_respondent_model_calls": 0,
+  "actual_paid_generation_usd": 0,
+  "run_receipt_sha256": "8d9305faa1c521805a51c51693d21f35c03c5b4763a4f23baf9bca31c7334424",
+  "artifact_hashes_verified": 32,
+  "python": "3.12.3",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0"
+  },
+  "primary_design": {
+    "estimand": "finite selected high/low cohort fixed-design contrast",
+    "human_uncertainty": "recorded reference is known; no sampling confidence interval attached",
+    "candidate_people": 768,
+    "primary_people": 556,
+    "primary_rows": 2224,
+    "design_columns": 36,
+    "rank": 36,
+    "respondent_groups": {
+      "High income": 304,
+      "Low income": 252
+    },
+    "design_condition_number": 52.06981928590287,
+    "cohort_sha256": "ac4bb3fc37ec3f8e6abebc052d67ddab50802ef699a7f0e5f8638005d2cfb5ee",
+    "design_sha256": "9e0baa287f9c75e9d4e233cc4850666ae40b719109cbccfd200a6eb733541ebe",
+    "contrast_sha256": "f839b462221933098202bddddc36b4fafb0e3e67f5c0f5b0237ee2b8aed749b6",
+    "row_ids_sha256": "db105cb71cf544ea89438d88d9d7c38b17cb8013554a77f401f27f1ec3920fc5",
+    "human_outcomes_sha256": "c7aedbc6eabc385b2cf25a8e4dd0ef63768ec7e0d3c47bdaffd47d06174c0140",
+    "contrast_leverage": {
+      "absolute_weight_sum": 4.222149833626655,
+      "largest_absolute_row_weight": 0.004925531013544322,
+      "by_respondent_income": {
+        "High income": 2.1111364853557775,
+        "Low income": 2.111013348270877
+      }
+    },
+    "full_profile_support": {
+      "distinct_patterns_by_group": {
+        "High income": 945,
+        "Low income": 843
+      },
+      "shared_exact_eight_factor_patterns": 323,
+      "interpretation": "Support diagnostic only; additive projection does not require exact matches or imply causal identification."
+    },
+    "joint_income_employment_support": [
+      {
+        "respondent_income": "High income",
+        "vignette_income": "$120,000",
+        "vignette_employment": "Employed full-time",
+        "rows": 77
+      },
+      {
+        "respondent_income": "High income",
+        "vignette_income": "$120,000",
+        "vignette_employment": "Employed, reduced income",
+        "rows": 66
+      },
+      {
+        "respondent_income": "High income",
+        "vignette_income": "$120,000",
+        "vignette_employment": "Unemployed",
+        "rows": 77
+      },
+      {
+        "respondent_income": "High income",
+        "vignette_income": "$120,000",
+        "vignette_employment": "Unemployed due to pandemic",
+        "rows": 73
+      },
+      {
+        "respondent_income": "High income",
+        "vignette_income": "$30,000",
+        "vignette_employment": "Employed full-time",
+        "rows": 84
+      },
+      {
+        "respondent_income": "High income",
+        "vignette_income": "$30,000",
+        "vignette_employment": "Employed, reduced income",
+        "rows": 65
+      },
+      {
+        "respondent_income": "High income",
+        "vignette_income": "$30,000",
+        "vignette_employment": "Unemployed",
+        "rows": 83
+      },
+      {
+        "respondent_income": "High income",
+        "vignette_income": "$30,000",
+        "vignette_employment": "Unemployed due to pandemic",
+        "rows": 77
+      },
+      {
+        "respondent_income": "High income",
+        "vignette_income": "$60,000",
+        "vignette_employment": "Employed full-time",
+        "rows": 88
+      },
+      {
+        "respondent_income": "High income",
+        "vignette_income": "$60,000",
+        "vignette_employment": "Employed, reduced income",
+        "rows": 73
+      },
+      {
+        "respondent_income": "High income",
+        "vignette_income": "$60,000",
+        "vignette_employment": "Unemployed",
+        "rows": 86
+      },
+      {
+        "respondent_income": "High income",
+        "vignette_income": "$60,000",
+        "vignette_employment": "Unemployed due to pandemic",
+        "rows": 80
+      },
+      {
+        "respondent_income": "High income",
+        "vignette_income": "$90,000",
+        "vignette_employment": "Employed full-time",
+        "rows": 65
+      },
+      {
+        "respondent_income": "High income",
+        "vignette_income": "$90,000",
+        "vignette_employment": "Employed, reduced income",
+        "rows": 77
+      },
+      {
+        "respondent_income": "High income",
+        "vignette_income": "$90,000",
+        "vignette_employment": "Unemployed",
+        "rows": 62
+      },
+      {
+        "respondent_income": "High income",
+        "vignette_income": "$90,000",
+        "vignette_employment": "Unemployed due to pandemic",
+        "rows": 83
+      },
+      {
+        "respondent_income": "Low income",
+        "vignette_income": "$120,000",
+        "vignette_employment": "Employed full-time",
+        "rows": 56
+      },
+      {
+        "respondent_income": "Low income",
+        "vignette_income": "$120,000",
+        "vignette_employment": "Employed, reduced income",
+        "rows": 61
+      },
+      {
+        "respondent_income": "Low income",
+        "vignette_income": "$120,000",
+        "vignette_employment": "Unemployed",
+        "rows": 61
+      },
+      {
+        "respondent_income": "Low income",
+        "vignette_income": "$120,000",
+        "vignette_employment": "Unemployed due to pandemic",
+        "rows": 74
+      },
+      {
+        "respondent_income": "Low income",
+        "vignette_income": "$30,000",
+        "vignette_employment": "Employed full-time",
+        "rows": 61
+      },
+      {
+        "respondent_income": "Low income",
+        "vignette_income": "$30,000",
+        "vignette_employment": "Employed, reduced income",
+        "rows": 46
+      },
+      {
+        "respondent_income": "Low income",
+        "vignette_income": "$30,000",
+        "vignette_employment": "Unemployed",
+        "rows": 67
+      },
+      {
+        "respondent_income": "Low income",
+        "vignette_income": "$30,000",
+        "vignette_employment": "Unemployed due to pandemic",
+        "rows": 75
+      },
+      {
+        "respondent_income": "Low income",
+        "vignette_income": "$60,000",
+        "vignette_employment": "Employed full-time",
+        "rows": 70
+      },
+      {
+        "respondent_income": "Low income",
+        "vignette_income": "$60,000",
+        "vignette_employment": "Employed, reduced income",
+        "rows": 53
+      },
+      {
+        "respondent_income": "Low income",
+        "vignette_income": "$60,000",
+        "vignette_employment": "Unemployed",
+        "rows": 68
+      },
+      {
+        "respondent_income": "Low income",
+        "vignette_income": "$60,000",
+        "vignette_employment": "Unemployed due to pandemic",
+        "rows": 77
+      },
+      {
+        "respondent_income": "Low income",
+        "vignette_income": "$90,000",
+        "vignette_employment": "Employed full-time",
+        "rows": 60
+      },
+      {
+        "respondent_income": "Low income",
+        "vignette_income": "$90,000",
+        "vignette_employment": "Employed, reduced income",
+        "rows": 60
+      },
+      {
+        "respondent_income": "Low income",
+        "vignette_income": "$90,000",
+        "vignette_employment": "Unemployed",
+        "rows": 61
+      },
+      {
+        "respondent_income": "Low income",
+        "vignette_income": "$90,000",
+        "vignette_employment": "Unemployed due to pandemic",
+        "rows": 58
+      }
+    ],
+    "factor_references": {
+      "vignette_gender": "Female",
+      "vignette_citizen": "Not a citizen",
+      "vignette_health": "Healthy",
+      "vignette_marital": "Single",
+      "vignette_children": "No children",
+      "vignette_employment": "Employed full-time",
+      "vignette_income": "$120,000",
+      "vignette_ethnicity": "White"
+    },
+    "point_is_not_a_causal_human_income_effect": true
+  },
+  "request_plan": {
+    "status": "request_plan_only",
+    "actual_model_calls": 0,
+    "planned_requests": 3336,
+    "unique_transmitted_inputs": 3336,
+    "common_task_model_only_audit_requests": 96,
+    "requests_with_same_canonical_name": 429,
+    "source": "whitelisted input bundle only; no human-reference files read",
+    "response_policy": "invalidate entire pair if JSON or either action is invalid",
+    "native_socioverse_runner_implemented": false
+  },
+  "failure_budget": {
+    "status": "design_only_failure_scenarios_not_model_results",
+    "actual_model_calls": 0,
+    "pairs_per_arm": 1112,
+    "total_absolute_contrast_weight": 4.222149833626655,
+    "rows": [
+      {
+        "planned_invalid_pair_fraction": 0.005,
+        "invalid_pairs": 6,
+        "actual_pair_fraction": 0.00539568345323741,
+        "one_seeded_random_failure_completion_width_cad": 101.47203634939966,
+        "uniform_subset_expected_completion_width_cad": 91.12553597755368,
+        "highest_leverage_failure_completion_width_cad": 214.61858329636982
+      },
+      {
+        "planned_invalid_pair_fraction": 0.01,
+        "invalid_pairs": 12,
+        "actual_pair_fraction": 0.01079136690647482,
+        "one_seeded_random_failure_completion_width_cad": 193.45136881625268,
+        "uniform_subset_expected_completion_width_cad": 182.25107195510736,
+        "highest_leverage_failure_completion_width_cad": 420.05220806678216
+      },
+      {
+        "planned_invalid_pair_fraction": 0.02,
+        "invalid_pairs": 23,
+        "actual_pair_fraction": 0.02068345323741007,
+        "one_seeded_random_failure_completion_width_cad": 361.69206367966444,
+        "uniform_subset_expected_completion_width_cad": 349.3145545806224,
+        "highest_leverage_failure_completion_width_cad": 791.6608586511123
+      },
+      {
+        "planned_invalid_pair_fraction": 0.05,
+        "invalid_pairs": 56,
+        "actual_pair_fraction": 0.050359712230215826,
+        "one_seeded_random_failure_completion_width_cad": 868.3772054617878,
+        "uniform_subset_expected_completion_width_cad": 850.5050024571676,
+        "highest_leverage_failure_completion_width_cad": 1864.2914799354644
+      },
+      {
+        "planned_invalid_pair_fraction": 0.1,
+        "invalid_pairs": 112,
+        "actual_pair_fraction": 0.10071942446043165,
+        "one_seeded_random_failure_completion_width_cad": 1622.7642173394693,
+        "uniform_subset_expected_completion_width_cad": 1701.0100049143352,
+        "highest_leverage_failure_completion_width_cad": 3588.584177846787
+      }
+    ],
+    "interpretation": "Width=(4000-0)*sum(abs(w_missing)); these are identification ranges, not confidence intervals. Larger N need not reduce ambiguity at a fixed invalid fraction."
+  },
+  "keyed_replay": "copied human reference control, shuffled arrival, zero discrepancies; not a model run",
+  "clean_clone_reproduction": "pending",
+  "external_peer_review": false,
+  "remote_repository_created": false
+}

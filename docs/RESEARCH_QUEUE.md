@@ -1,27 +1,37 @@
 # Research queue
 
-## Before new respondent generation
+## Implemented and software-verified
 
-- Define whether the primary target is the finite complete-profile archive or
-  a superpopulation projection. Align the cohort, estimator and uncertainty.
-- Diagnose source assignment/provenance and income-dependent selection. Preserve
-  a fixed-design interpretation unless additional randomization information
-  supports stronger causal language.
-- Separate original one-factor subgroup models from adjusted all-factor models.
-  Explain reference-category changes using fixed explicit contrasts.
-- Freeze fidelity improvement, hypothesis families and precision/interpretation
-  criteria. Do not invent an equivalence threshold after inspecting outcomes.
-- Implement and validate respondent-paired contrast comparisons, including
-  invalid-action bounds and their interaction with sampling uncertainty.
-- Resolve/disclose pair, name, language and response-format reconstruction.
-- Implement native SocioVerse study and isolated model request path; current
-  package is an offline research core, not the final competition submission.
-- Verify model identity, actual export/log path, token pricing and campaign cap.
+- Finite selected cohort / one recorded rollout target; matched36-column design.
+- Continuous J_FN and J_FI with signed discrepancies; no unsupported bootstrap
+  CIs or invented categorical fidelity margins.
+- SVD completion bounds, missing contrast weight, nonlinear loss hulls and
+  group-blind projection counterexample.
+- Checked arm ablations, deterministic hashed plan and keyed offline response
+  replay with whole-pair invalidation and explicit transport attempts.
+- Common-task summary, equal-base weights, alternating focal position and
+  missing-cell bounds. These are software controls, not empirical findings.
+
+## Before any main generation
+
+1. Establish native SocioVerse execution/import/export and generation isolation;
+   the current package is an offline component, not the final submission.
+2. Verify model ID/settings, platform allowance, token/call cost and total cap.
+   Freeze the exact cohort/tier before observing confirmation outputs.
+3. Complete source-to-prompt crosswalk and predeclare presentation sensitivity,
+   repeat allocation and operational continuation rules. Freeze the common-task
+   live log adapter; no counterfactual human outcomes may be invented.
+4. Run the disjoint engineering pilot. Inspect invalidity and missing contrast
+   weight by arm/group, repeat/presentation diagnostics and accounting. Pilot
+   output validity alone does not demonstrate useful fidelity precision.
+5. Preserve inconclusive bounds and unstable scores; do not tune for J_FN<0.
 
 ## After first core result
 
-- Repeat the fixed primary comparison on a second model, if available within
-  budget, before expanding the substantive story.
+- Evaluate whether the result changes an inference missed by aggregate checks.
+  Generic subgroup distortion is already established in nearby literature.
+- Repeat the fixed primary comparison on a second frozen model, if feasible,
+  before expanding the substantive story.
 - Evaluate the separately specified Study2 context extension; do not pretend
   missing respondent traits or a personal longitudinal panel exist.
 - Add a human-trained statistical comparator only with disjoint training people
@@ -34,3 +44,6 @@
 Independent reviews and response ledgers are under `reviews/`. Review scores
 cannot substitute for an empirical result. Open scientific issues must remain
 visible in the README status and evidence register.
+Both full internal AI review rounds retained a main-collection gate. A targeted
+software verification is narrower than a fresh blinded review or an empirical
+readiness decision.

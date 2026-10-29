@@ -4,7 +4,7 @@ import unittest
 import numpy as np
 
 from welfare_politics.contrast_validity import contrast_bounds, error_change_bounds
-from welfare_politics.paired_evaluation import evaluate
+from welfare_politics.paired_evaluation import evaluate_arrays as evaluate
 
 
 class PairedEvaluationTests(unittest.TestCase):

@@ -63,7 +63,8 @@ def messages(facts, pair, white_names='english'):
     intro = ('Consider this Canadian allocation survey in its described 2020 setting. '
              'Choose the monthly government support each person should receive during the pandemic. '
              'Each amount is independent and can be from CAD 0 to CAD 4,000. '
-             'There is no shared budget between the two people.')
+             'There is no shared budget between the two people. '
+             'Person A and Person B are distinct hypothetical people, even if their names match.')
     text = ((persona + '\n\n') if persona else '') + intro
     text += '\n\nPerson A: ' + profile_text(pair[0], white_names)
     text += '\n\nPerson B: ' + profile_text(pair[1], white_names)
@@ -93,10 +94,47 @@ def load_jsonl(path):
     return [json.loads(line) for line in Path(path).read_text().splitlines() if line]
 
 
+def validated_agents(root, phase):
+    """Enforce ablation relationships on loaded files, before rendering."""
+    agents = {}
+    for arm in ARMS:
+        by_id = {}
+        for row in load_jsonl(Path(root) / arm / 'agents.jsonl'):
+            key = row['agent_id']
+            if key in by_id:
+                raise ValueError('Duplicate agent record')
+            if row.get('arm', arm) != arm:
+                raise ValueError('Arm label contradicts its input file')
+            by_id[key] = row
+        agents[arm] = {key: row for key, row in by_id.items() if row['phase'] == phase}
+    ids = set(agents[ARMS[0]])
+    if any(set(agents[arm]) != ids for arm in ARMS):
+        raise ValueError('Arm populations differ')
+    for key in ids:
+        none, full, omitted = [agents[arm][key]['observed_socioeconomic_facts'] for arm in ARMS]
+        if not isinstance(full, dict) or not set(full) <= set(FACT_TEXT):
+            raise ValueError('Unknown respondent fact')
+        if any(value not in FACT_TEXT[field] for field, value in full.items()):
+            raise ValueError('Unknown respondent fact value')
+        if none != {} or omitted != {k: v for k, v in full.items() if k != 'respondent_income'}:
+            raise ValueError('N must be empty; F-I must equal F with only income removed')
+    return agents
+
+
+def message_digest(request):
+    return hashlib.sha256(json.dumps(request, ensure_ascii=False, separators=(',', ':')).encode()).hexdigest()
+
+
+def request_identity(record):
+    fields = ['agent_id', 'arm', 'profile_numbers', 'rollout', 'messages_sha256']
+    return hashlib.sha256(json.dumps({k: record[k] for k in fields}, sort_keys=True,
+                                    separators=(',', ':')).encode()).hexdigest()
+
+
 def plan(input_root, phase='confirmatory', seed=20261029, primary_only=True,
          pairing=((1, 2), (3, 4)), white_names='english'):
     root = Path(input_root)
-    agents = {arm: {a['agent_id']: a for a in load_jsonl(root / arm / 'agents.jsonl') if a['phase'] == phase} for arm in ARMS}
+    agents = validated_agents(root, phase)
     ids = sorted(agents[ARMS[0]])
     if any(set(agents[a]) != set(ids) for a in ARMS): raise ValueError('Arm populations differ')
     if primary_only:
@@ -116,10 +154,13 @@ def plan(input_root, phase='confirmatory', seed=20261029, primary_only=True,
         order = ARMS.copy(); rng.shuffle(order)
         for arm in order:
             request = messages(agents[arm][agent]['observed_socioeconomic_facts'], pair, white_names)
-            digest = hashlib.sha256(json.dumps(request, ensure_ascii=False, separators=(',', ':')).encode()).hexdigest()
-            output.append({'agent_id': agent, 'arm': arm, 'profile_numbers': list(numbers),
+            digest = message_digest(request)
+            record = {'agent_id': agent, 'arm': arm, 'profile_numbers': list(numbers), 'rollout': 0,
                            'messages': request, 'messages_sha256': digest,
-                           'status': 'planned_only_no_model_response'})
+                           'same_canonical_name': profile_text(pair[0], white_names).split(' was ')[0] == profile_text(pair[1], white_names).split(' was ')[0],
+                           'status': 'planned_only_no_model_response'}
+            record['request_id'] = request_identity(record)
+            output.append(record)
     return output
 
 
@@ -130,10 +171,12 @@ def common_task_plan(input_root, bases=16, seed=20261029):
     for these new crossed tasks; this diagnoses model information sensitivity.
     """
     root = Path(input_root)
-    agents = [a for a in load_jsonl(root / 'socioeconomic_persona/agents.jsonl') if a['phase'] == 'pilot']
+    agents = list(validated_agents(root, 'pilot')['socioeconomic_persona'].values())
     profiles = {(r['agent_id'], r['task_number']): r['recipient_attributes'] for r in load_jsonl(root / 'recipient_profiles.jsonl')}
     contexts = [(a, pair) for a in agents for pair in [(1, 2), (3, 4)]]
     rng = random.Random(seed); rng.shuffle(contexts)
+    if bases < 1 or bases > len(contexts):
+        raise ValueError('Requested common-task bases exceed available pilot contexts')
     output = []
     for number, (agent, pair_numbers) in enumerate(contexts[:bases]):
         facts = {k: v for k, v in agent['observed_socioeconomic_facts'].items() if k != 'respondent_income'}
@@ -143,8 +186,12 @@ def common_task_plan(input_root, bases=16, seed=20261029):
             for income in ['$30,000', '$120,000']:
                 pair = [{**profiles[(agent['agent_id'], pair_numbers[0])], 'vignette_income': income},
                         dict(profiles[(agent['agent_id'], pair_numbers[1])])]
+                if number % 2:
+                    pair.reverse()
                 rendered = messages(respondent, pair)
                 output.append({'audit_base': number, 'income_label': label, 'focal_income': income,
+                               'focal_position': 'B' if number % 2 else 'A',
+                               'messages_sha256': message_digest(rendered),
                                'messages': rendered,
                                'interpretation': 'counterfactual model-input audit; no matched human outcome'})
     rng.shuffle(output)
@@ -168,6 +215,7 @@ def main():
     receipt = {'status': 'request_plan_only', 'actual_model_calls': 0,
                'planned_requests': len(rows), 'unique_transmitted_inputs': len({r['messages_sha256'] for r in rows}),
                'common_task_model_only_audit_requests': len(common),
+               'requests_with_same_canonical_name': sum(r['same_canonical_name'] for r in rows),
                'source': 'whitelisted input bundle only; no human-reference files read',
                'response_policy': 'invalidate entire pair if JSON or either action is invalid',
                'native_socioverse_runner_implemented': False}

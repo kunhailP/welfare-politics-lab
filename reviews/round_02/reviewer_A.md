@@ -70,3 +70,11 @@ The revised target makes continuous descriptive scoring coherent without a boots
 Substantive margins are required only if categorical scientific or policy-fidelity claims are restored. Repeated-generation evidence is required for stability/expectation claims, and executed presentation checks for presentation-robust claims. Neither can be replaced by exact finite arithmetic. A finite one-rollout report can instead remain descriptive and explicitly conditional, but its importance is an empirical question.
 
 **Recommended core remains Study1, N/F/F-I, one primary contrast, continuous signed and absolute-error changes, the small common-task diagnostic, and a prespecified presentation audit.** Defer Study2 and additional machinery. The smallest result that would strengthen the methods case is a transparent realized discrepancy or loss change, bounded where necessary, that reveals something aggregate checks miss and whose limits are tested by those targeted diagnostics. A precise finite null/mixed score should also be reported; no desired sign is a condition for proceeding. Broader human mechanisms, national-population fidelity and system-level political simulation remain outside the design.
+
+## Verification supplement — pandas-enabled test rerun
+
+After the report was completed, the coordinator supplied the existing interpreter `/workspace/socioverse_runpod_handoff/.venv/bin/python`. From `round_02/shared`, I ran `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src OPENBLAS_NUM_THREADS=1 /workspace/socioverse_runpod_handoff/.venv/bin/python -m unittest discover -s tests -v`.
+
+**Result: all 31 enclosed tests passed (exit status 0).** This includes the seven primary-design/projection-composition and human-cleaning tests that the initial interpreter could not load. The earlier environment-limitation record is retained as the history of that first attempt; it is now resolved for the enclosed test suite.
+
+This supplement changes the software-test verification status only. It does not independently reproduce raw-data provenance or actual-source receipts, supply model outcomes, resolve A11–A13, or change the distinction between protocol coherence and main-collection readiness. No additional packet prose, other reports, or source raw data were read for this supplement, and no implementation was modified.
