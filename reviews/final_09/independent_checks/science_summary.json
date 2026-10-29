@@ -1,0 +1,87 @@
+{
+  "released_people": 2295,
+  "released_rows": 9180,
+  "complete_four_profile_people": 2003,
+  "complete_fraction_by_income": {
+    "High income": {
+      "sum": 799,
+      "count": 854,
+      "mean": 0.9355971896955504
+    },
+    "Low income": {
+      "sum": 659,
+      "count": 813,
+      "mean": 0.8105781057810578
+    },
+    "Medium income": {
+      "sum": 384,
+      "count": 438,
+      "mean": 0.8767123287671232
+    }
+  },
+  "main": {
+    "people": 556,
+    "rows": 2224,
+    "groups": {
+      "High income": 304,
+      "Low income": 252
+    },
+    "ranks": {
+      "High income": 18,
+      "Low income": 18
+    },
+    "slopes": {
+      "High income": 135.5882368281255,
+      "Low income": 190.7460646364505
+    },
+    "gamma": 55.15782780832501
+  },
+  "remainder": {
+    "people": 877,
+    "rows": 3508,
+    "groups": {
+      "High income": 482,
+      "Low income": 395
+    },
+    "ranks": {
+      "High income": 18,
+      "Low income": 18
+    },
+    "slopes": {
+      "High income": 248.88334177469903,
+      "Low income": 369.5033529766095
+    },
+    "gamma": 120.62001120191047
+  },
+  "complete_pool": {
+    "people": 1458,
+    "rows": 5832,
+    "groups": {
+      "High income": 799,
+      "Low income": 659
+    },
+    "ranks": {
+      "High income": 18,
+      "Low income": 18
+    },
+    "slopes": {
+      "High income": 200.55132527185782,
+      "Low income": 291.4765894273567
+    },
+    "gamma": 90.9252641554989
+  },
+  "recipient_margins": {
+    "vignette_citizen": {
+      "Citizen born in Canada": 7344,
+      "Not a citizen": 1218,
+      "Citizen not born in Canada": 618
+    },
+    "vignette_employment": {
+      "Unemployed due to pandemic": 2746,
+      "Unemployed": 2274,
+      "Employed full-time": 1897,
+      "Employed, reduced income": 1825,
+      "NaN": 438
+    }
+  }
+}

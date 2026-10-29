@@ -1,0 +1,203 @@
+{
+  "manifest_all_match": true,
+  "manifest_files": 49,
+  "source": {
+    "people": 2295,
+    "rows": 9180,
+    "duplicate_keys": 0,
+    "complete_people": 2003,
+    "complete_rows": 8012,
+    "pool_people": 1458,
+    "pool_rows": 5832,
+    "main_candidate_people": 768,
+    "pilot_candidate_people": 32,
+    "candidate_overlap": 0,
+    "pilot_highlow": 25,
+    "training_people": 877,
+    "training_rows": 3508,
+    "main_people": 556,
+    "main_rows": 2224,
+    "training_main_overlap": 0,
+    "income_completion": {
+      "High income": {
+        "released": 854,
+        "complete": 799,
+        "complete_fraction": 0.9355971896955504
+      },
+      "Low income": {
+        "released": 813,
+        "complete": 659,
+        "complete_fraction": 0.8105781057810578
+      },
+      "Medium income": {
+        "released": 438,
+        "complete": 384,
+        "complete_fraction": 0.8767123287671232
+      },
+      "nan": {
+        "released": 190,
+        "complete": 161,
+        "complete_fraction": 0.8473684210526315
+      }
+    },
+    "respondent_missing_rows": {
+      "respondent_gender": 0,
+      "respondent_marital": 0,
+      "respondent_employment": 0,
+      "respondent_children": 0,
+      "respondent_income": 760,
+      "respondent_health": 0,
+      "respondent_health_oth": 0,
+      "respondent_comb_health": 0
+    },
+    "margins": {
+      "vignette_citizen": {
+        "Citizen born in Canada": 7344,
+        "Not a citizen": 1218,
+        "Citizen not born in Canada": 618
+      },
+      "vignette_employment": {
+        "Unemployed due to pandemic": 2746,
+        "Unemployed": 2274,
+        "Employed full-time": 1897,
+        "Employed, reduced income": 1825,
+        "NaN": 438
+      }
+    }
+  },
+  "contrasts": {
+    "main": {
+      "high": 135.58823682812707,
+      "low": 190.74606463645063,
+      "gamma": 55.15782780832356
+    },
+    "train": {
+      "high": 248.88334177469864,
+      "low": 369.503352976609,
+      "gamma": 120.62001120191036
+    },
+    "pool": {
+      "high": 200.55132527185728,
+      "low": 291.47658942735654,
+      "gamma": 90.92526415549926
+    }
+  },
+  "cv": {
+    "B_mean": {
+      "rmse": 1085.0037334323783,
+      "mae": 906.4822028427517
+    },
+    "B_recipient_OLS": {
+      "rmse": 1052.9186765918369,
+      "mae": 854.9265886693439
+    },
+    "B_income_interacted_OLS": {
+      "rmse": 1054.405565610253,
+      "mae": 858.2690207839372
+    }
+  },
+  "models": {
+    "B_mean": {
+      "main": {
+        "rmse": 1089.024711699883,
+        "mae": 891.6913442450145
+      },
+      "contrasts": {
+        "high": -6.604709878205858e-12,
+        "low": -4.022857424785193e-12,
+        "gamma": 2.5818524534206646e-12
+      },
+      "fit": {
+        "min": 1655.152793614595,
+        "max": 1655.152793614595,
+        "clipped": 0,
+        "rank": 1
+      },
+      "max_abs_diff_author_prediction": 4.547473508864641e-13
+    },
+    "B_recipient_OLS": {
+      "main": {
+        "rmse": 1050.182155731654,
+        "mae": 844.2161261891606
+      },
+      "contrasts": {
+        "high": 303.52273353322977,
+        "low": 303.52273353322175,
+        "gamma": -8.01492205937393e-12
+      },
+      "fit": {
+        "min": 867.1028773410185,
+        "max": 2277.003508620241,
+        "clipped": 0,
+        "rank": 18
+      },
+      "max_abs_diff_author_prediction": 1.8189894035458565e-12
+    },
+    "B_income_interacted_OLS": {
+      "main": {
+        "rmse": 1053.4451080683752,
+        "mae": 848.6528220799574
+      },
+      "contrasts": {
+        "high": 248.88334177469943,
+        "low": 369.5033529766108,
+        "gamma": 120.62001120191138
+      },
+      "fit": {
+        "min": 680.608449562655,
+        "max": 2475.561689483159,
+        "clipped": 0,
+        "rank": 36
+      },
+      "max_abs_diff_author_prediction": 1.3642420526593924e-11
+    }
+  },
+  "fold_people": [
+    176,
+    176,
+    175,
+    175,
+    175
+  ],
+  "sensitivity": {
+    "high": {
+      "quantiles": [
+        100.53528651390755,
+        151.51115506702644,
+        208.40130571558103,
+        248.54320857888885,
+        285.74382806724435,
+        342.9006346708164,
+        420.9486989542562
+      ],
+      "negative": 0,
+      "positive": 500
+    },
+    "low": {
+      "quantiles": [
+        186.2944175213969,
+        272.07598524794946,
+        330.85223204918987,
+        374.26503880820786,
+        411.5745453590098,
+        473.25072668086324,
+        578.5891956169662
+      ],
+      "negative": 0,
+      "positive": 500
+    },
+    "gamma": {
+      "quantiles": [
+        -104.10419263515371,
+        -7.967731164022829,
+        63.135319922058585,
+        122.96541974097543,
+        185.12256463011894,
+        265.76959161737284,
+        406.3319365317697
+      ],
+      "negative": 34,
+      "positive": 466
+    }
+  }
+}

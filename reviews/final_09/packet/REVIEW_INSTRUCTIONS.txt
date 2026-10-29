@@ -1,0 +1,32 @@
+FRESH CONTEXT-SEPARATED INTERNAL AI REVIEW
+
+Read only this packet and the separate private source supplement below. Do not
+read parent workspace/repository/README/AGENTS/Git, previous reviews, author chats
+or the other reviewer report. No prior conversation is supplied. Disclose any
+accidental exposure. This procedural blindness is not OS-enforced isolation.
+
+Private supplement (do not copy raw data into the public repository):
+/tmp/welfare_final_blind_09/private/study1.tab
+/tmp/welfare_final_blind_09/private/cohort_linkage.tsv
+The immutable source and linkage hashes are in the manifest. Raw survey source
+is released anonymized material supplied for research; no new participant calls.
+Do not make respondent-model/API calls. Independent source reanalysis is allowed.
+Use scratch directories outside packet/private; never overwrite packet files.
+
+Run unit tests from packet with PYTHONPATH=src OPENBLAS_NUM_THREADS=1
+/workspace/socioverse_runpod_handoff/.venv/bin/python -m unittest discover -s tests
+The existing interpreter is provided only as an execution environment. Do not
+read its neighbouring project files. New dependency installs are not required.
+
+ReviewA: assess scientific question, incremental value against cited primary
+work, politics interpretation, source limitations, and claims support. Name
+concrete necessary fixes; do not infer novelty from code size or desired outcome.
+ReviewB: assess raw reference reconstruction and numbers if feasible, estimands,
+selection, training/evaluation separation, missing bounds, keyed replay and code.
+Use source/synthetic adversarial checks; distinguish independently checked numbers
+from author aggregates. Prioritize actionable errors over another control family.
+
+Deliver one report with major/minor findings, evidence, required revisions and
+remaining empirical limitations. This is internal AI review, not external peer
+review or a venue decision. Do not assign award or acceptance probabilities.
+Save only your own report at the authorized sibling path provided in your task.

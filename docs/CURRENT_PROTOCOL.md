@@ -1,4 +1,13 @@
-# Current protocol: version 6, same-output comparison and permutation controls
+# Current protocol: version 7, reviewed handoff and explicit participant background
+
+Version7 inherits the version6 cohort, estimands and primary/secondary hierarchy.
+Before any respondent generation, the shared system instruction makes F/F-I
+facts explicitly the participant's own background, identically across arms.
+All prompt hashes intentionally change; human design
+and endpoints do not. Version6 is archived in
+`archive/PROTOCOL_V6_PRE_FINAL_REVIEW.md`. The CLI checks design/request files
+against a pre-generation core receipt with an externally recorded digest. This
+binds input files, not a complete live campaign or provider authenticity.
 
 This is a prospective plan for model data, developed after viewing the human
 reference data. It is not a preregistered or untouched human replication.
@@ -15,6 +24,9 @@ aggregate allocations? Distinguish overall generosity, recipient-attribute
 contrasts and differences in those contrasts across respondent groups.
 Income-group moderation is descriptive; it does not identify the causal effect
 of household income, self-interest, solidarity or a psychological mechanism.
+Income groups mean observed household-income bands, not class identity, assets,
+occupational class or actual voting. Report directions, CAD magnitudes and errors
+within observed/completion-possible outcomes; no binary global fidelity label.
 
 ## Reference population and selection
 
@@ -149,9 +161,9 @@ evidence of useful ambiguity. Larger N need not shrink bounds at a fixed rate.
 
 N/F/F-I are the real generation comparisons. A human-mean constant is an oracle
 software diagnostic: it matches the mean by construction and has zero recipient
-effects. A human-trained regression, if added, requires disjoint training people
-and explicit label/computation budgets. Neither comparator is mislabelled a
-zero-information forecaster.
+effects. The three fixed human-trained references use877 disjoint people with explicit
+label access and continuous-mean interpretation. Neither these references nor
+the oracle is a zero-information forecaster.
 
 Verify the chosen model and total cost using the pilot, freeze them before main
 generation, then prioritize a second model on256 of the same main people. Do
@@ -203,7 +215,7 @@ transport errors may be retried, up to three total attempts. An invalid reply
 ends that request and leaves both actions unknown. Exhaustion requires all
 three transport attempts to be recorded. Human, design and contrast hashes
 are stored. These consistency checks do not authenticate a provider or replace
-generation isolation. The array-only numerical API is a software-control helper,
+generation isolation. The array-only numerical API is a labelled evaluation helper,
 not the public path for model logs. End-to-end copied-human replay is explicitly
 software-only evidence, never a model result.
 

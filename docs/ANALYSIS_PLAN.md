@@ -1,4 +1,10 @@
-# Prospective analysis and diagnostic plan — version6
+# Prospective analysis plan — inherited version6, protocol7 wording addendum
+
+Protocol7 retains the estimands and proposed audits below. Its shared system
+instruction explicitly attributes supplied facts to the participant in all arms.
+Prompt hashes change before generation; human design does not. The sealed
+core-receipt check binds scorer files only; complete live campaign binding
+remains unfinished. See `CURRENT_PROTOCOL.md` and `RESPONSE_LOG_FORMAT.md`.
 
 Written after observing the human reference and before any new respondent-model
 output. This is not an untouched preregistration of the human study or permission

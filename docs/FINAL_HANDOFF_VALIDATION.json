@@ -1,0 +1,39 @@
+{
+  "status": "author_root_checks_complete_clean_checkout_pending",
+  "package_version": "0.2.0",
+  "protocol_version": 7,
+  "tests_passed": 71,
+  "respondent_model_calls": 0,
+  "paid_generation_usd": 0,
+  "native_runner_included": false,
+  "remote_repository_created": false,
+  "github_CI_remote_executed": false,
+  "source_archive_sha256": "06e74a2df4c0e9b7382ffcacc6d1844cae0b450c07a165b8046620f52c3b8625",
+  "root_full_reproduction": "runs/final_handoff_01",
+  "root_receipt_sha256": "24c7b989246a896b968d2b712d7624cbc36d2f79753b7d6867692a21d87b1541",
+  "root_artifacts_verified": 52,
+  "locked_primary_arrays_unchanged": true,
+  "request_population_mapping_unchanged": true,
+  "participant_attribution_changed_prompt_hashes": 3336,
+  "reference_predictions_and_scores_unchanged": true,
+  "frozen_packet_files_verified": 47,
+  "private_source_files_verified": 2,
+  "fresh_review_contexts": true,
+  "independent_source_reconstruction": {
+    "A": "human contrasts and source flow",
+    "B": "human contrasts/cohorts, all3 statistical references/CV,500draws,actual-design endpoint bounds"
+  },
+  "review_snapshot_tests": 67,
+  "post_review_revision_independently_re_reviewed": false,
+  "post_review_cli_software_checks": {
+    "status": "software_fixture_validation_only",
+    "actual_model_calls": 0,
+    "valid_frozen_cli_passed": true,
+    "deep_json_cli_invalidated_whole_pair": true,
+    "self_rehashed_prompt_rejected_by_frozen_cli": true,
+    "full_campaign_settings_budget_bound": false
+  },
+  "dependency_installation": "Existing tested virtualenv reused; no fresh dependency installation claimed",
+  "complete_live_campaign_binding": false,
+  "empirical_novelty_established": false
+}

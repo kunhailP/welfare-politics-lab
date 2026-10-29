@@ -1,0 +1,79 @@
+{
+  "linear_source_endpoint_completions": 64,
+  "linear_endpoint_bounds": [
+    38.09596058366149,
+    81.15180548774003
+  ],
+  "reported_linear_bounds": [
+    38.09596058366161,
+    81.15180548774049
+  ],
+  "max_linear_endpoint_error": 4.547473508864641e-13,
+  "component_rectangle_error": 2.1600499167107046e-12,
+  "all_missing_mean": {
+    "lower": 0.0,
+    "upper": 4000.0,
+    "invalid_rows": 4,
+    "completion_width": 4000.0,
+    "missing_weight_l1": 1.0,
+    "design_condition_number": 1.0,
+    "point_identified_in_fixed_design": false,
+    "identification_tolerance_cad": 1e-08,
+    "contrast_weights": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ]
+  },
+  "real_group_profile_cells": {
+    "lower": 0.0,
+    "upper": 0.0,
+    "cells": 1788,
+    "singleton_cells": 1418,
+    "singleton_rows": 1418,
+    "singleton_row_fraction": 0.637589928057554,
+    "cell_size_histogram": {
+      "1": 1418,
+      "2": 311,
+      "3": 52,
+      "4": 7
+    },
+    "weighted_cell_mean_absolute_error_bounds_cad": [
+      0.0,
+      0.0
+    ],
+    "weighting": "fixed cell row count / total fixed rows",
+    "exact_if_all_actions_observed": true
+  },
+  "pooled_cells": 1465,
+  "source_target_label_id_perturbation_max_diff": {
+    "B_mean": 0.0,
+    "B_recipient_OLS": 0.0,
+    "B_income_interacted_OLS": 0.0
+  },
+  "seeded_pilot_linkage_matches": true,
+  "seeded_main_linkage_matches": true,
+  "parser": {
+    "bool": "invalid",
+    "float": "invalid",
+    "duplicate": "invalid",
+    "nan": "invalid",
+    "fence": "invalid",
+    "nested": "invalid"
+  },
+  "reversed_keyed_mapping_correct": true,
+  "replay_missing_log": "rejected",
+  "replay_post_reply_retry": "rejected",
+  "replay_wrong_model": "rejected",
+  "self_rehashed_changed_prompt": "accepted_without_external_manifest",
+  "author_report_differences_gt_1e7": [],
+  "source_missing_outcomes": 0,
+  "source_out_of_bounds": 0,
+  "source_vignette_numbers": [
+    1,
+    2,
+    3,
+    4
+  ]
+}

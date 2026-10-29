@@ -1,0 +1,1082 @@
+{
+  "status": "human_label_trained_statistical_references_only",
+  "actual_respondent_model_calls": 0,
+  "synthetic_respondent_trajectories_generated": false,
+  "spec_sha256": "dce0484e0a91cc455902d4df1d3a3474138a0503373b23c9f8df2f0bcd024624",
+  "source_sha256": "8c73ea17fd611cc204e4d9b149b0caf3560fb57b18f910ef9487acd3c662dc73",
+  "implementation_sha256": {
+    "statistical_references.py": "22f36c4e207a720eca4dd5c9ef16d91d2775cc91b0bf4de7d7b7927d10c51c30",
+    "primary_design.py": "3ec1cc9a69efafe39d6624d2235536f631f4d2bffe047979ee70265002e5325a",
+    "paired_evaluation.py": "72a0e453ff7112683ce2fadafc7c84771e436d59e3ec9fad4651455aca70372b",
+    "contrast_validity.py": "9ac163746cae4e3ab40ff255d1a26726b3b54776f677c64071038145ceceadd4",
+    "diagnostic_comparison.py": "2e465c520aa3827a23fe0455fb9d56e7be77670512479c3b8528daa71cf64533",
+    "study1_interest_audit.py": "1e7d8e78f6b0110227884c07af1b8a308c3557075c800f0ac5a3ad45c92e1593"
+  },
+  "runtime": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  },
+  "cohort_linkage_sha256": "847a38f9fd285a7664182e7fec2ca6ffe19b9d8a5cc49fb36b3f88d8a096726b",
+  "training_people": 877,
+  "training_labels": 3508,
+  "training_income_groups": {
+    "High income": 482,
+    "Low income": 395
+  },
+  "training_cohort_sha256": "25541c2351b235a2299c5a38daedefe0c70a353769acafbcf2fdd0d3d07cd599",
+  "target_people": 556,
+  "target_rows": 2224,
+  "training_target_person_overlap": 0,
+  "target_cohort_sha256": "84c85922a26c36de798ad1195ef4b1178709306d0d63f30df1759c2533d4539d",
+  "locked_design_sha256": "9e0baa287f9c75e9d4e233cc4850666ae40b719109cbccfd200a6eb733541ebe",
+  "cross_validation": {
+    "purpose": "Report out-of-fold RMSE and MAE for all references; never select a reference or tune settings",
+    "folds": [
+      {
+        "fold": 0,
+        "validation_people": 176,
+        "validation_ids_sha256": "750b96b125e6d0cf7d5b112ad559d1baab6aded2ac01642a23c30610f24caba2",
+        "fits": {
+          "B_mean": {
+            "columns": 1,
+            "rank": 1,
+            "training_people": 701,
+            "training_labels": 2804,
+            "coefficients": [
+              1636.218972895864
+            ],
+            "raw_prediction_min": 1636.218972895864,
+            "raw_prediction_max": 1636.218972895864,
+            "clipped_prediction_rows": 0
+          },
+          "B_recipient_OLS": {
+            "columns": 18,
+            "rank": 18,
+            "training_people": 701,
+            "training_labels": 2804,
+            "coefficients": [
+              816.7340864580686,
+              102.74276004630417,
+              44.08016501613425,
+              273.7146007180774,
+              103.01720908352252,
+              -45.45297449138177,
+              62.14305113614057,
+              108.6294869681479,
+              26.58583362240614,
+              555.40203579785,
+              696.6441478127344,
+              511.76609969721295,
+              170.8101013594356,
+              146.49262664215755,
+              285.43955362605107,
+              48.87376688159534,
+              -19.832992362593117,
+              104.57392394221992
+            ],
+            "raw_prediction_min": 815.3612769828212,
+            "raw_prediction_max": 2249.53163258771,
+            "clipped_prediction_rows": 0
+          },
+          "B_income_interacted_OLS": {
+            "columns": 36,
+            "rank": 36,
+            "training_people": 701,
+            "training_labels": 2804,
+            "coefficients": [
+              958.0200474105695,
+              127.34672478660713,
+              55.52787261259099,
+              -16.20699107681634,
+              125.7513901419421,
+              -34.8892179179327,
+              89.93875081524541,
+              172.4625226704442,
+              2.4076306128926843,
+              484.96085856070766,
+              667.243659932306,
+              472.67348902695636,
+              117.09970613484738,
+              98.94554966730142,
+              206.04993323632436,
+              -28.20410501160111,
+              -114.54393968946462,
+              65.9759433334712,
+              -229.65468103021522,
+              -60.779286747659974,
+              -88.73512246949312,
+              465.1506685829974,
+              -44.806649741093636,
+              0.4978429732769176,
+              -73.54970441092453,
+              -153.45799850318656,
+              50.321854546518466,
+              131.64067213655625,
+              43.436755025975174,
+              68.95809182071781,
+              105.88638331506051,
+              104.2880134335594,
+              179.11867027904964,
+              153.95156822674136,
+              207.26691883665833,
+              44.90505191980719
+            ],
+            "raw_prediction_min": 660.7667415787963,
+            "raw_prediction_max": 2432.4484795463313,
+            "clipped_prediction_rows": 0
+          }
+        }
+      },
+      {
+        "fold": 1,
+        "validation_people": 176,
+        "validation_ids_sha256": "953774bae3906b526d7f686c626bd9b5575debf50713a3611c1e78ece047c8d3",
+        "fits": {
+          "B_mean": {
+            "columns": 1,
+            "rank": 1,
+            "training_people": 701,
+            "training_labels": 2804,
+            "coefficients": [
+              1625.3869472182607
+            ],
+            "raw_prediction_min": 1625.3869472182607,
+            "raw_prediction_max": 1625.3869472182607,
+            "clipped_prediction_rows": 0
+          },
+          "B_recipient_OLS": {
+            "columns": 18,
+            "rank": 18,
+            "training_people": 701,
+            "training_labels": 2804,
+            "coefficients": [
+              678.4914321800621,
+              91.07798905853178,
+              137.76119750415486,
+              200.86527325320696,
+              127.3745648706261,
+              -25.10847800010633,
+              118.9177409218074,
+              102.66071133608067,
+              61.74756838863031,
+              504.43171843006087,
+              680.9521688448934,
+              438.3969028407103,
+              149.16900356594795,
+              169.0915704650189,
+              336.77809075623446,
+              68.43670091100516,
+              27.16405945711966,
+              152.13552495548075
+            ],
+            "raw_prediction_min": 791.1441516841107,
+            "raw_prediction_max": 2266.318536558614,
+            "clipped_prediction_rows": 0
+          },
+          "B_income_interacted_OLS": {
+            "columns": 36,
+            "rank": 36,
+            "training_people": 701,
+            "training_labels": 2804,
+            "coefficients": [
+              746.9124961600407,
+              105.70611287229758,
+              230.92404454085326,
+              51.12899051975313,
+              163.88941918697665,
+              -58.0063737143212,
+              159.8476045789813,
+              157.4456282904582,
+              19.04060351480435,
+              455.9154096937667,
+              667.0475317836122,
+              397.16833784504655,
+              160.33200570980776,
+              133.89841197798472,
+              296.1811475763015,
+              -40.17208150939742,
+              -136.20923872169232,
+              115.86797731060868,
+              -130.6547833815845,
+              -43.85098376446727,
+              -211.42046021545198,
+              256.57619693435134,
+              -79.40066462342067,
+              85.62321526079944,
+              -94.36617755873039,
+              -135.68548275938437,
+              94.06140616766848,
+              72.1737441057758,
+              8.099717259467678,
+              81.94907908455832,
+              -42.83593084654363,
+              72.63586212602848,
+              89.01779480275371,
+              239.45373138633013,
+              368.7229216034885,
+              62.59549917088455
+            ],
+            "raw_prediction_min": 663.3781386503357,
+            "raw_prediction_max": 2370.5083566990634,
+            "clipped_prediction_rows": 0
+          }
+        }
+      },
+      {
+        "fold": 2,
+        "validation_people": 175,
+        "validation_ids_sha256": "bdafecf3ac7b635e99495db6992afe9f99c5a6a4bed16b33c19097b6dc85b76b",
+        "fits": {
+          "B_mean": {
+            "columns": 1,
+            "rank": 1,
+            "training_people": 702,
+            "training_labels": 2808,
+            "coefficients": [
+              1679.0327635327644
+            ],
+            "raw_prediction_min": 1679.0327635327644,
+            "raw_prediction_max": 1679.0327635327644,
+            "clipped_prediction_rows": 0
+          },
+          "B_recipient_OLS": {
+            "columns": 18,
+            "rank": 18,
+            "training_people": 702,
+            "training_labels": 2808,
+            "coefficients": [
+              855.7050551207313,
+              78.66723427860256,
+              144.67906678260204,
+              215.2702748222289,
+              89.12546531754907,
+              -25.89399846461803,
+              56.745579109739225,
+              129.274018259111,
+              32.18491658602164,
+              440.61599099756273,
+              576.7720155030877,
+              438.95432951470895,
+              156.86905547285056,
+              153.44442516931264,
+              286.26406246552426,
+              21.85652271888498,
+              3.187638507646002,
+              101.01878367610558
+            ],
+            "raw_prediction_min": 974.4901234387154,
+            "raw_prediction_max": 2172.3802360857644,
+            "clipped_prediction_rows": 0
+          },
+          "B_income_interacted_OLS": {
+            "columns": 36,
+            "rank": 36,
+            "training_people": 702,
+            "training_labels": 2808,
+            "coefficients": [
+              990.1081053601666,
+              79.29152917789588,
+              241.92934740196927,
+              15.897821416800522,
+              77.56222037837337,
+              11.448488731492125,
+              97.08730140067114,
+              202.0353014123903,
+              31.07801088707009,
+              347.7601650974229,
+              523.2639294627809,
+              338.6501533546418,
+              97.59613343070812,
+              102.8981672819373,
+              218.04364093129303,
+              -75.57589974098438,
+              -109.07327478216676,
+              58.756854829685224,
+              -229.98981839625404,
+              -4.2540968546565106,
+              -241.27907005006298,
+              308.78824044033314,
+              20.561891372934916,
+              -63.11210452315396,
+              -90.01140384592209,
+              -161.1277701700287,
+              10.25717703419769,
+              148.82422828918533,
+              78.95254652350606,
+              195.795769857066,
+              86.51583235224795,
+              81.29732231028575,
+              136.46038834453674,
+              214.69786286017526,
+              244.97914232566004,
+              65.2149707381447
+            ],
+            "raw_prediction_min": 750.0124797665187,
+            "raw_prediction_max": 2313.428708576181,
+            "clipped_prediction_rows": 0
+          }
+        }
+      },
+      {
+        "fold": 3,
+        "validation_people": 175,
+        "validation_ids_sha256": "158804c48ab9d4a725fda3377c89600169a3282e59e94f8df4b3b506dec36a3f",
+        "fits": {
+          "B_mean": {
+            "columns": 1,
+            "rank": 1,
+            "training_people": 702,
+            "training_labels": 2808,
+            "coefficients": [
+              1660.2945156695168
+            ],
+            "raw_prediction_min": 1660.2945156695168,
+            "raw_prediction_max": 1660.2945156695168,
+            "clipped_prediction_rows": 0
+          },
+          "B_recipient_OLS": {
+            "columns": 18,
+            "rank": 18,
+            "training_people": 702,
+            "training_labels": 2808,
+            "coefficients": [
+              735.8361446519889,
+              74.26170081333464,
+              137.612613095531,
+              230.09112524690372,
+              101.52297368713005,
+              -23.162613715443307,
+              95.61844621949888,
+              116.04810840810318,
+              64.4418851476584,
+              527.3995529446331,
+              691.3767449182868,
+              500.6402583056815,
+              222.4373779939511,
+              137.42649642194,
+              302.473587060154,
+              50.77176439551806,
+              -9.862615710603011,
+              109.69164640870872
+            ],
+            "raw_prediction_min": 850.2861440320767,
+            "raw_prediction_max": 2248.3938568546328,
+            "clipped_prediction_rows": 0
+          },
+          "B_income_interacted_OLS": {
+            "columns": 36,
+            "rank": 36,
+            "training_people": 702,
+            "training_labels": 2808,
+            "coefficients": [
+              906.4274690100913,
+              70.2238748210143,
+              207.94064589985695,
+              24.799535295966812,
+              102.98667648730574,
+              -35.29971849726067,
+              53.56434852067265,
+              84.15620751449408,
+              -16.41754509576901,
+              479.34179652910234,
+              622.7365116851503,
+              456.0586662722727,
+              224.9123172534875,
+              129.88564059838407,
+              249.28587679936973,
+              -25.47522293197208,
+              -94.31448830234464,
+              115.22206444711034,
+              -301.63785577307067,
+              -6.340576818933055,
+              -198.05071745746125,
+              292.6095330120503,
+              -8.293275592932565,
+              62.321514426736805,
+              84.7627102173488,
+              52.009708944142375,
+              164.82563598737246,
+              56.28659035336168,
+              128.38942785128916,
+              94.9323662340455,
+              -15.47686602925657,
+              9.313823538562401,
+              116.31578109191939,
+              147.01466684339294,
+              169.1341047501328,
+              -76.51133500618636
+            ],
+            "raw_prediction_min": 689.4991581272044,
+            "raw_prediction_max": 2328.3874676705714,
+            "clipped_prediction_rows": 0
+          }
+        }
+      },
+      {
+        "fold": 4,
+        "validation_people": 175,
+        "validation_ids_sha256": "84cfc551c2e965f71fd019e3892eff7dbd2de0fa41cf1af7c183d30bafb292e3",
+        "fits": {
+          "B_mean": {
+            "columns": 1,
+            "rank": 1,
+            "training_people": 702,
+            "training_labels": 2808,
+            "coefficients": [
+              1674.7613960113965
+            ],
+            "raw_prediction_min": 1674.7613960113965,
+            "raw_prediction_max": 1674.7613960113965,
+            "clipped_prediction_rows": 0
+          },
+          "B_recipient_OLS": {
+            "columns": 18,
+            "rank": 18,
+            "training_people": 702,
+            "training_labels": 2808,
+            "coefficients": [
+              850.3446354408513,
+              95.02675361355466,
+              88.10068831221085,
+              202.39004818891297,
+              95.23350960428816,
+              -30.60507719021795,
+              52.143180592905686,
+              98.14578277470035,
+              32.882786599350325,
+              496.0617747756751,
+              653.1051013365392,
+              417.76817627561934,
+              187.72272709034232,
+              144.1816612785745,
+              305.26579636891023,
+              67.80137247304361,
+              10.870476405343354,
+              103.52931988935313
+            ],
+            "raw_prediction_min": 907.8402465628443,
+            "raw_prediction_max": 2367.3129998008003,
+            "clipped_prediction_rows": 0
+          },
+          "B_income_interacted_OLS": {
+            "columns": 36,
+            "rank": 36,
+            "training_people": 702,
+            "training_labels": 2808,
+            "coefficients": [
+              889.1218354542264,
+              122.69182385263514,
+              197.09036414856217,
+              118.28529183350308,
+              71.39353221713263,
+              -8.904610561697297,
+              41.556259540325996,
+              133.96195906777493,
+              47.20120145071879,
+              470.4685586041356,
+              606.768923032825,
+              367.18206186060337,
+              195.86313736321628,
+              121.23022271242228,
+              269.3608351283139,
+              -1.9933050113526696,
+              -91.23983177488421,
+              81.74565002679958,
+              -93.04612067579413,
+              -60.485863625953684,
+              -222.07807772629255,
+              138.79129279396966,
+              47.723097970603575,
+              -31.797857090075887,
+              18.15633679739295,
+              -95.78541132884475,
+              -28.636188812957922,
+              3.7029889108372216,
+              80.41726404324679,
+              99.00630680632031,
+              -25.843528387570597,
+              46.87324413437129,
+              85.92917346061164,
+              156.44148435703758,
+              231.04971791488956,
+              14.750248196724039
+            ],
+            "raw_prediction_min": 730.3855335489286,
+            "raw_prediction_max": 2281.484662339773,
+            "clipped_prediction_rows": 0
+          }
+        }
+      }
+    ],
+    "out_of_fold_errors": {
+      "B_mean": {
+        "rmse_cad": 1085.0037334323783,
+        "mae_cad": 906.4822028427517
+      },
+      "B_recipient_OLS": {
+        "rmse_cad": 1052.9186765918369,
+        "mae_cad": 854.9265886693435
+      },
+      "B_income_interacted_OLS": {
+        "rmse_cad": 1054.4055656102532,
+        "mae_cad": 858.2690207839383
+      }
+    }
+  },
+  "full_training_fits": {
+    "B_mean": {
+      "columns": 1,
+      "rank": 1,
+      "training_people": 877,
+      "training_labels": 3508,
+      "coefficients": [
+        1655.1527936145956
+      ],
+      "raw_prediction_min": 1655.1527936145956,
+      "raw_prediction_max": 1655.1527936145956,
+      "clipped_prediction_rows": 0
+    },
+    "B_recipient_OLS": {
+      "columns": 18,
+      "rank": 18,
+      "training_people": 877,
+      "training_labels": 3508,
+      "coefficients": [
+        787.7600601312346,
+        88.73143213149194,
+        109.17178131275479,
+        225.89844905804785,
+        103.36677061451036,
+        -29.828964102970005,
+        76.75959144433374,
+        110.28702562203098,
+        44.40515932344451,
+        505.2015940993454,
+        659.9143935877419,
+        461.62607125893146,
+        177.7432699166428,
+        150.425172425736,
+        303.52273353322516,
+        51.57812027834183,
+        2.4380359083624192,
+        114.24931168725179
+      ],
+      "raw_prediction_min": 867.1028773410194,
+      "raw_prediction_max": 2277.0035086202415,
+      "clipped_prediction_rows": 0
+    },
+    "B_income_interacted_OLS": {
+      "columns": 36,
+      "rank": 36,
+      "training_people": 877,
+      "training_labels": 3508,
+      "coefficients": [
+        898.3383613275738,
+        102.18246340602741,
+        182.5472611883153,
+        34.74965654501328,
+        109.15105627696948,
+        -25.06842444009107,
+        86.45609338520723,
+        147.92682445449486,
+        16.82143738409382,
+        450.55409105747106,
+        619.7024500114536,
+        408.69293975411983,
+        161.0399369065973,
+        117.84382465632682,
+        248.88334177469815,
+        -33.200232289420704,
+        -106.84624952236457,
+        88.32603942557068,
+        -195.78635939960026,
+        -35.26767058262868,
+        -189.74259673812412,
+        298.87097854400645,
+        -13.699680825516273,
+        10.32020762457479,
+        -29.03782336411293,
+        -97.2793605465912,
+        59.11526205639759,
+        79.87136010055346,
+        64.41021562970366,
+        104.74590913216784,
+        20.190639417802142,
+        63.67569919200996,
+        120.62001120191046,
+        180.6703984224692,
+        240.82599668335143,
+        21.774140739210512
+      ],
+      "raw_prediction_min": 680.6084495626485,
+      "raw_prediction_max": 2475.561689483151,
+      "clipped_prediction_rows": 0
+    }
+  },
+  "evaluation": {
+    "target": "finite matched cohort, fixed design, statistical conditional-mean predictions",
+    "outcome_provenance": "human-label-trained statistical references; no respondent-model outputs",
+    "sampling_confidence_intervals": false,
+    "decoding_expectation_estimated": false,
+    "row_count": 2224,
+    "ordered_row_ids_sha256": "db105cb71cf544ea89438d88d9d7c38b17cb8013554a77f401f27f1ec3920fc5",
+    "design_sha256": "9e0baa287f9c75e9d4e233cc4850666ae40b719109cbccfd200a6eb733541ebe",
+    "human_outcomes_sha256": "c7aedbc6eabc385b2cf25a8e4dd0ef63768ec7e0d3c47bdaffd47d06174c0140",
+    "contrast_sha256": "f839b462221933098202bddddc36b4fafb0e3e67f5c0f5b0237ee2b8aed749b6",
+    "human_contrast": 55.157827808322594,
+    "arms": {
+      "B_mean": {
+        "lower": -3.410605131648481e-13,
+        "upper": -3.410605131648481e-13,
+        "invalid_rows": 0,
+        "completion_width": 0.0,
+        "missing_weight_l1": 0.0,
+        "design_condition_number": 52.069819285902824,
+        "point_identified_in_fixed_design": true,
+        "identification_tolerance_cad": 1e-08,
+        "signed_error_bounds": [
+          -55.157827808322935,
+          -55.157827808322935
+        ],
+        "group_components": {
+          "status": "available",
+          "high_income": {
+            "lower": -2.8421709430404007e-13,
+            "upper": -2.8421709430404007e-13,
+            "invalid_rows": 0,
+            "completion_width": 0.0,
+            "missing_weight_l1": 0.0,
+            "design_condition_number": 52.069819285902824,
+            "point_identified_in_fixed_design": true,
+            "identification_tolerance_cad": 1e-08,
+            "signed_error_bounds": [
+              -135.58823682812613,
+              -135.58823682812613
+            ]
+          },
+          "low_income": {
+            "lower": -3.694822225952521e-13,
+            "upper": -3.694822225952521e-13,
+            "invalid_rows": 0,
+            "completion_width": 0.0,
+            "missing_weight_l1": 0.0,
+            "design_condition_number": 52.069819285902824,
+            "point_identified_in_fixed_design": true,
+            "identification_tolerance_cad": 1e-08,
+            "signed_error_bounds": [
+              -190.7460646364488,
+              -190.7460646364488
+            ]
+          }
+        },
+        "same_output_diagnostics": {
+          "target": "finite same-row diagnostic comparison; not population inference",
+          "full_row_count": 2224,
+          "invalid_rows": 0,
+          "global_allocation_w1_cad": {
+            "lower": 891.6913442450144,
+            "upper": 891.6913442450144,
+            "invalid_rows": 0,
+            "sharp_bounds_certified": true,
+            "method": "exact equal-weight W1 if complete; conservative midpoint-anchor triangle bounds otherwise"
+          },
+          "respondent_group_weighted_w1_cad": {
+            "lower": 891.6913442450144,
+            "upper": 891.6913442450144,
+            "cells": 2,
+            "singleton_cells": 0,
+            "singleton_rows": 0,
+            "singleton_row_fraction": 0.0,
+            "cell_size_histogram": {
+              "1008": 1,
+              "1216": 1
+            },
+            "weighted_cell_mean_absolute_error_bounds_cad": [
+              15.593173978490716,
+              15.593173978490716
+            ],
+            "weighting": "fixed cell row count / total fixed rows",
+            "exact_if_all_actions_observed": true
+          },
+          "pooled_complete_profile_weighted_w1_cad": {
+            "lower": 891.6913442450153,
+            "upper": 891.6913442450153,
+            "cells": 1465,
+            "singleton_cells": 922,
+            "singleton_rows": 922,
+            "singleton_row_fraction": 0.414568345323741,
+            "cell_size_histogram": {
+              "1": 922,
+              "2": 383,
+              "3": 114,
+              "4": 36,
+              "5": 10
+            },
+            "weighted_cell_mean_absolute_error_bounds_cad": [
+              711.3031308704483,
+              711.3031308704483
+            ],
+            "weighting": "fixed cell row count / total fixed rows",
+            "exact_if_all_actions_observed": true
+          },
+          "group_by_profile_weighted_w1_cad": {
+            "lower": 891.6913442450167,
+            "upper": 891.6913442450167,
+            "cells": 1788,
+            "singleton_cells": 1418,
+            "singleton_rows": 1418,
+            "singleton_row_fraction": 0.637589928057554,
+            "cell_size_histogram": {
+              "1": 1418,
+              "2": 311,
+              "3": 52,
+              "4": 7
+            },
+            "weighted_cell_mean_absolute_error_bounds_cad": [
+              792.2714684011081,
+              792.2714684011081
+            ],
+            "weighting": "fixed cell row count / total fixed rows",
+            "exact_if_all_actions_observed": true
+          },
+          "pass_or_equivalence_threshold_applied": false,
+          "exact_reproduction_of_an_external_benchmark": false,
+          "additive_projection": {
+            "status": "complete_fixed_rows",
+            "columns": 19,
+            "full_column_rank": true,
+            "human_r2": 0.08753752736561338,
+            "actions_r2": null,
+            "max_absolute_coefficient_difference": 809.7737294403923,
+            "fitted_value_difference_rmse": 322.38341383071867,
+            "r2_not_a_coefficient_direction_or_interaction_fidelity_test": true
+          }
+        },
+        "mean_allocation_bounds": [
+          1655.1527936145958,
+          1655.1527936145958
+        ],
+        "mean_signed_error_bounds": [
+          11.165833182941014,
+          11.165833182941014
+        ],
+        "prediction_errors": {
+          "rmse_cad": 1089.024711699883,
+          "mae_cad": 891.6913442450144
+        }
+      },
+      "B_recipient_OLS": {
+        "lower": -1.0516032489249483e-12,
+        "upper": -1.0516032489249483e-12,
+        "invalid_rows": 0,
+        "completion_width": 0.0,
+        "missing_weight_l1": 0.0,
+        "design_condition_number": 52.069819285902824,
+        "point_identified_in_fixed_design": true,
+        "identification_tolerance_cad": 1e-08,
+        "signed_error_bounds": [
+          -55.157827808323646,
+          -55.157827808323646
+        ],
+        "group_components": {
+          "status": "available",
+          "high_income": {
+            "lower": 303.52273353322437,
+            "upper": 303.52273353322437,
+            "invalid_rows": 0,
+            "completion_width": 0.0,
+            "missing_weight_l1": 0.0,
+            "design_condition_number": 52.069819285902824,
+            "point_identified_in_fixed_design": true,
+            "identification_tolerance_cad": 1e-08,
+            "signed_error_bounds": [
+              167.93449670509852,
+              167.93449670509852
+            ]
+          },
+          "low_income": {
+            "lower": 303.52273353322323,
+            "upper": 303.52273353322323,
+            "invalid_rows": 0,
+            "completion_width": 0.0,
+            "missing_weight_l1": 0.0,
+            "design_condition_number": 52.069819285902824,
+            "point_identified_in_fixed_design": true,
+            "identification_tolerance_cad": 1e-08,
+            "signed_error_bounds": [
+              112.7766688967748,
+              112.7766688967748
+            ]
+          }
+        },
+        "same_output_diagnostics": {
+          "target": "finite same-row diagnostic comparison; not population inference",
+          "full_row_count": 2224,
+          "invalid_rows": 0,
+          "global_allocation_w1_cad": {
+            "lower": 659.5921885269037,
+            "upper": 659.5921885269037,
+            "invalid_rows": 0,
+            "sharp_bounds_certified": true,
+            "method": "exact equal-weight W1 if complete; conservative midpoint-anchor triangle bounds otherwise"
+          },
+          "respondent_group_weighted_w1_cad": {
+            "lower": 659.6023434552772,
+            "upper": 659.6023434552772,
+            "cells": 2,
+            "singleton_cells": 0,
+            "singleton_rows": 0,
+            "singleton_row_fraction": 0.0,
+            "cell_size_histogram": {
+              "1008": 1,
+              "1216": 1
+            },
+            "weighted_cell_mean_absolute_error_bounds_cad": [
+              14.54819717832397,
+              14.54819717832397
+            ],
+            "weighting": "fixed cell row count / total fixed rows",
+            "exact_if_all_actions_observed": true
+          },
+          "pooled_complete_profile_weighted_w1_cad": {
+            "lower": 844.2161261891615,
+            "upper": 844.2161261891615,
+            "cells": 1465,
+            "singleton_cells": 922,
+            "singleton_rows": 922,
+            "singleton_row_fraction": 0.414568345323741,
+            "cell_size_histogram": {
+              "1": 922,
+              "2": 383,
+              "3": 114,
+              "4": 36,
+              "5": 10
+            },
+            "weighted_cell_mean_absolute_error_bounds_cad": [
+              656.0806680368198,
+              656.0806680368198
+            ],
+            "weighting": "fixed cell row count / total fixed rows",
+            "exact_if_all_actions_observed": true
+          },
+          "group_by_profile_weighted_w1_cad": {
+            "lower": 844.2161261891611,
+            "upper": 844.2161261891611,
+            "cells": 1788,
+            "singleton_cells": 1418,
+            "singleton_rows": 1418,
+            "singleton_row_fraction": 0.637589928057554,
+            "cell_size_histogram": {
+              "1": 1418,
+              "2": 311,
+              "3": 52,
+              "4": 7
+            },
+            "weighted_cell_mean_absolute_error_bounds_cad": [
+              736.8302553462244,
+              736.8302553462244
+            ],
+            "weighting": "fixed cell row count / total fixed rows",
+            "exact_if_all_actions_observed": true
+          },
+          "pass_or_equivalence_threshold_applied": false,
+          "exact_reproduction_of_an_external_benchmark": false,
+          "additive_projection": {
+            "status": "complete_fixed_rows",
+            "columns": 19,
+            "full_column_rank": true,
+            "human_r2": 0.08753752736561338,
+            "actions_r2": 1.0,
+            "max_absolute_coefficient_difference": 235.07110644510226,
+            "fitted_value_difference_rmse": 144.35651366432566,
+            "r2_not_a_coefficient_direction_or_interaction_fidelity_test": true
+          }
+        },
+        "mean_allocation_bounds": [
+          1638.0597423366112,
+          1638.0597423366112
+        ],
+        "mean_signed_error_bounds": [
+          -5.9272180950435995,
+          -5.9272180950435995
+        ],
+        "prediction_errors": {
+          "rmse_cad": 1050.182155731654,
+          "mae_cad": 844.2161261891605
+        }
+      },
+      "B_income_interacted_OLS": {
+        "lower": 120.62001120190934,
+        "upper": 120.62001120190934,
+        "invalid_rows": 0,
+        "completion_width": 0.0,
+        "missing_weight_l1": 0.0,
+        "design_condition_number": 52.069819285902824,
+        "point_identified_in_fixed_design": true,
+        "identification_tolerance_cad": 1e-08,
+        "signed_error_bounds": [
+          65.46218339358674,
+          65.46218339358674
+        ],
+        "group_components": {
+          "status": "available",
+          "high_income": {
+            "lower": 248.88334177469687,
+            "upper": 248.88334177469687,
+            "invalid_rows": 0,
+            "completion_width": 0.0,
+            "missing_weight_l1": 0.0,
+            "design_condition_number": 52.069819285902824,
+            "point_identified_in_fixed_design": true,
+            "identification_tolerance_cad": 1e-08,
+            "signed_error_bounds": [
+              113.29510494657103,
+              113.29510494657103
+            ]
+          },
+          "low_income": {
+            "lower": 369.5033529766064,
+            "upper": 369.5033529766064,
+            "invalid_rows": 0,
+            "completion_width": 0.0,
+            "missing_weight_l1": 0.0,
+            "design_condition_number": 52.069819285902824,
+            "point_identified_in_fixed_design": true,
+            "identification_tolerance_cad": 1e-08,
+            "signed_error_bounds": [
+              178.75728834015794,
+              178.75728834015794
+            ]
+          }
+        },
+        "same_output_diagnostics": {
+          "target": "finite same-row diagnostic comparison; not population inference",
+          "full_row_count": 2224,
+          "invalid_rows": 0,
+          "global_allocation_w1_cad": {
+            "lower": 650.7145984076017,
+            "upper": 650.7145984076017,
+            "invalid_rows": 0,
+            "sharp_bounds_certified": true,
+            "method": "exact equal-weight W1 if complete; conservative midpoint-anchor triangle bounds otherwise"
+          },
+          "respondent_group_weighted_w1_cad": {
+            "lower": 659.21135409956,
+            "upper": 659.21135409956,
+            "cells": 2,
+            "singleton_cells": 0,
+            "singleton_rows": 0,
+            "singleton_row_fraction": 0.0,
+            "cell_size_histogram": {
+              "1008": 1,
+              "1216": 1
+            },
+            "weighted_cell_mean_absolute_error_bounds_cad": [
+              68.77905702021913,
+              68.77905702021913
+            ],
+            "weighting": "fixed cell row count / total fixed rows",
+            "exact_if_all_actions_observed": true
+          },
+          "pooled_complete_profile_weighted_w1_cad": {
+            "lower": 831.4025585344707,
+            "upper": 831.4025585344707,
+            "cells": 1465,
+            "singleton_cells": 922,
+            "singleton_rows": 922,
+            "singleton_row_fraction": 0.414568345323741,
+            "cell_size_histogram": {
+              "1": 922,
+              "2": 383,
+              "3": 114,
+              "4": 36,
+              "5": 10
+            },
+            "weighted_cell_mean_absolute_error_bounds_cad": [
+              660.4694476655577,
+              660.4694476655577
+            ],
+            "weighting": "fixed cell row count / total fixed rows",
+            "exact_if_all_actions_observed": true
+          },
+          "group_by_profile_weighted_w1_cad": {
+            "lower": 848.6528220799587,
+            "upper": 848.6528220799587,
+            "cells": 1788,
+            "singleton_cells": 1418,
+            "singleton_rows": 1418,
+            "singleton_row_fraction": 0.637589928057554,
+            "cell_size_histogram": {
+              "1": 1418,
+              "2": 311,
+              "3": 52,
+              "4": 7
+            },
+            "weighted_cell_mean_absolute_error_bounds_cad": [
+              741.7476659377542,
+              741.7476659377542
+            ],
+            "weighting": "fixed cell row count / total fixed rows",
+            "exact_if_all_actions_observed": true
+          },
+          "pass_or_equivalence_threshold_applied": false,
+          "exact_reproduction_of_an_external_benchmark": false,
+          "additive_projection": {
+            "status": "complete_fixed_rows",
+            "columns": 19,
+            "full_column_rank": true,
+            "human_r2": 0.08753752736561338,
+            "actions_r2": 0.9347438754059211,
+            "max_absolute_coefficient_difference": 208.62335590922498,
+            "fitted_value_difference_rmse": 159.53673413383652,
+            "r2_not_a_coefficient_direction_or_interaction_fidelity_test": true
+          }
+        },
+        "mean_allocation_bounds": [
+          1636.260401491977,
+          1636.260401491977
+        ],
+        "mean_signed_error_bounds": [
+          -7.726558939677716,
+          -7.726558939677716
+        ],
+        "prediction_errors": {
+          "rmse_cad": 1053.4451080683752,
+          "mae_cad": 848.6528220799586
+        }
+      }
+    },
+    "error_changes": {},
+    "human_group_components": {
+      "status": "available",
+      "high_income": {
+        "lower": 135.58823682812584,
+        "upper": 135.58823682812584,
+        "invalid_rows": 0,
+        "completion_width": 0.0,
+        "missing_weight_l1": 0.0,
+        "design_condition_number": 52.069819285902824,
+        "point_identified_in_fixed_design": true,
+        "identification_tolerance_cad": 1e-08
+      },
+      "low_income": {
+        "lower": 190.74606463644844,
+        "upper": 190.74606463644844,
+        "invalid_rows": 0,
+        "completion_width": 0.0,
+        "missing_weight_l1": 0.0,
+        "design_condition_number": 52.069819285902824,
+        "point_identified_in_fixed_design": true,
+        "identification_tolerance_cad": 1e-08
+      }
+    }
+  },
+  "limitations": [
+    "Source and main outcomes were already inspected during research development.",
+    "These references use disjoint human labels; LLM arms have different information access.",
+    "Conditional-mean predictions are not individual or stochastic respondent trajectories.",
+    "Same source selection and stimulus reconstruction limitations persist.",
+    "No reference, feature, setting or primary endpoint is selected by main results.",
+    "No claim about actual LLM fidelity, inequality, superiority, or human causal mechanisms."
+  ]
+}

@@ -1,119 +1,80 @@
 # Welfare Politics Lab
 
-Human-grounded tests of whether synthetic citizens reproduce the structure of
-welfare support. The central experiment separates overall generosity, recipient
-attribute effects, and differences in those effects between respondent groups.
-It compares an unconditioned role, three observed socioeconomic facts, and the
-same facts with explicit household income removed.
+Human-grounded evaluation of income-group-conditioned welfare allocations.
+How closely do generated responses reproduce both groups' recipient-income
+comparisons, and how does adding socioeconomic facts change their errors?
 
-**Status:** design and offline human-data analysis. No new respondent-model
-calls, empirical model results, or paid generation have been performed.
-This is an AI-assisted research workspace, not a claim of publication or awards.
+**Start here: [한국어 인계 안내](docs/USER_HANDOFF_KO.md).**
 
-**Execution hold:** the user prioritizes a competitive contribution with strong
-workshop-paper rigor, originality and depth. Pilot and main respondent generation
-remain disabled. [Contribution and decision criteria](docs/CONTRIBUTION_AND_DECISION.md)
-map the unresolved evidence to the official competition rubric.
-The prospective [analysis plan](docs/ANALYSIS_PLAN.md) specifies same-output
-diagnostic comparisons and proposed repeat/presentation checks. The
-[source crosswalk](docs/STIMULUS_CROSSWALK.md) records reconstruction limits and
-the pre-generation recipient-income wording correction.
+## Included
 
-The current design is version6 in [docs/CURRENT_PROTOCOL.md](docs/CURRENT_PROTOCOL.md).
-Archived plans document earlier decisions; they are not the current authority.
-Open scientific issues are in [docs/RESEARCH_QUEUE.md](docs/RESEARCH_QUEUE.md).
+- Verified local source ingestion and descriptive human reanalysis.
+- Fixed main design:556 high/low respondents,2224 judgments,3336 primary requests.
+- Separate96-request model-only common-task plan.
+- Keyed response evaluation, both group components, missing-action bounds and
+  same-output mean/distribution diagnostics.
+- Three fixed human-trained references using877 disjoint people.
+- Tests, source sensitivity, fresh blind review records and reproduction receipts.
 
-## Offline reproduction
+**Actual respondent-model calls:0. Paid generation:0.** This is an offline
+research/evaluation repository. Native SocioVerse execution, live audit adapters,
+model/settings and campaign cap remain unfinished. See [remaining work](docs/NEXT_STEPS_KO.md).
+Statistical predictions and software controls are not model responses. A new
+empirical contribution remains to be demonstrated with actual results.
 
-Python 3.11 or newer is required. Install the tested dependencies in an isolated
-environment, then run from the repository root:
+## Reproduce
+
+Python3.12 is the tested environment. Installation requires internet; reproduction
+itself has no network or model-call path. Obtain the original archive separately.
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
 python -m pip install -r requirements-tested.txt
-PYTHONPATH=src python -m welfare_politics.ingest --archive /path/to/dataverse.zip
-PYTHONPATH=src python scripts/reproduce.py --output runs/check_01
+python -m pip install -e . --no-deps
+python scripts/reproduce_handoff.py \
+  --archive /absolute/path/to/dataverse.zip \
+  --output runs/my_first_check
+```
+
+Use a new output directory every time. The wrapper ingests source, reproduces
+core analysis, source sensitivity and statistical references, then runs tests
+and writes `handoff_receipt.json`. Tests also run without original data:
+
+```bash
 PYTHONPATH=src python -m unittest discover -s tests
 ```
 
-Each output directory must be new. Reproduction reads the local archive and
-does not call a model or access a network. Raw files are not distributed here.
-Acquire them from [Harvard Dataverse](https://doi.org/10.7910/DVN/LPHMB7).
-Source provenance and licensing boundaries are in [data/README.md](data/README.md).
+## Research and execution map
 
-The output includes Study 2 human reanalysis, Study 1 adjusted group contrasts,
-source-design and selection diagnostics, outcome-free per-arm generation inputs,
-and a software-only verification of missing-action contrast bounds. Reanalysis
-is not an exact recreation of every R package's standard-error convention.
-The keyed evaluator now compares group/profile means and empirical distributions
-on the same fixed rows, including a stronger joint conditional diagnostic and
-conservative missing-action ranges. A permutation software control preserves
-entire lower-order distributions and additive R2 while changing the interaction.
-Its result and limits are in [docs/DISTRIBUTION_AUDIT_KO.md](docs/DISTRIBUTION_AUDIT_KO.md).
+| Document | Purpose |
+| --- | --- |
+| [Claim/table specification](docs/EMPIRICAL_CLAIM_SPEC_V1.md) | Fixed primary/secondary interpretations |
+| [Current protocol](docs/CURRENT_PROTOCOL.md) | Source, design, estimands and failure policy |
+| [Source scope](docs/SOURCE_SCOPE_KO.md) | Selection flow, income-specific retention and human contrasts |
+| [Stimulus crosswalk](docs/STIMULUS_CROSSWALK.md) | Original instrument and reconstruction limits |
+| [Reference results](docs/STATISTICAL_REFERENCE_RESULTS_KO.md) | Human-trained calculations and limits |
+| [Response log contract](docs/RESPONSE_LOG_FORMAT.md) | Future actual primary logs and frozen-input check |
+| [Final blind review response](reviews/final_09/response.md) | Two fresh-context reviews, revisions and open issues |
+| [Final validation](docs/FINAL_HANDOFF_VALIDATION.json) | Local checks and reproduction evidence |
+| [Delivery/publication](docs/DELIVERY.md) | Source ZIP, Git history bundle and private publication |
 
-## Main scientific boundaries
+The target is a fixed selected cohort and reconstructed tasks, not a national
+population. Household-income bands operationalize the group comparison; they do
+not measure class identity, assets or occupation. Respondent income was not
+randomized. The primary F-versus-N comparison adds income/job-risk/parenthood
+together; explicit-income F-versus-F-I is secondary. No human-income causal,
+psychological-mechanism or actual-voting inference follows from these contrasts.
 
-- The released Study 1 contains 2,295 people and 9,180 profile judgments.
-  Complete four-profile records are available for 2,003 people. Completeness
-  differs by respondent income, so the primary target is explicitly restricted.
-- The main comparison is a fixed-design allocation contrast. A causal AMCE
-  interpretation requires assignment assumptions that the archive does not
-  fully identify. Respondent income itself was not randomized.
-- Original pair IDs, individual name assignments and survey language are absent.
-  Reconstructed prompts are a disclosed operationalization, not exact UI replay.
-- Study 2 contains no equivalent respondent demographic fields. Its general
-  rebate versus crisis-relief comparison changes program descriptions together
-  with context; it is not an isolated crisis treatment.
-- Strictly separate human outcomes from model inputs and use fresh respondent
-  contexts. Folder separation alone does not restrict a filesystem-enabled agent.
+## Data, license and GitHub
 
-## Review workflow
-
-[docs/review/WORKFLOW.md](docs/review/WORKFLOW.md) defines packet creation,
-independent review exposure records, a severity-based issue ledger and revision
-verification. Round one packets are under `reviews/round_01/`.
-Two independent round01 reports judged **revise before main collection**.
-Their issues, code fixes and open scientific conditions are recorded in
-[reviews/round_01/response.md](reviews/round_01/response.md). Round02 is a
-re-review, not a fresh context-blind review. The primary matched finite-cohort
-evaluation has556 high/low respondents and36 design columns; it does not attach
-ordinary bootstrap confidence intervals to the known human reference.
-Both round02 reviewers retained that collection gate and identified response
-alignment and arm-integrity gaps. The version4 fixes and remaining scientific
-conditions are recorded in [reviews/round_02/response.md](reviews/round_02/response.md).
-Keyed response replay now rejects contradictory or missing logs and is tested
-under shuffled arrival, transport retries and malformed pairs. No live runner
-or empirical model validation is implied by these checks.
-Round06 limited re-review verifies the stronger distribution-preserving control
-and public same-output adapter. Its interpretation constraints and unresolved
-empirical/execution gates are retained in
-[reviews/round_06/response.md](reviews/round_06/response.md).
-
-The Korean project brief and next research gates are in
-[docs/START_HERE_KO.md](docs/START_HERE_KO.md).
-The [empirical-value memo](docs/EMPIRICAL_VALUE_PLAN_KO.md) adds an exploratory
-human-source cohort-sensitivity audit. It leaves the locked main score unchanged
-and narrows the interpretation of a human/model contrast sign change.
-Three fixed disjoint-human statistical references are now fitted and separately
-labelled in the [reference results](docs/STATISTICAL_REFERENCE_RESULTS_KO.md).
-The [prospective claim/table specification](docs/EMPIRICAL_CLAIM_SPEC_V1.md)
-narrows the planned inference. Both group component contrasts and completion
-bounds are now exposed by the public keyed evaluator. No respondent-model result
-or equal-information superiority claim follows from these additions.
-
-## GitHub status
-
-This local repository is intended for `kunhailP/welfare-politics-lab`.
-Remote creation and push require an authenticated connection to that account;
-the currently connected GitHub account is different. No remote publication is
-claimed. The publishing script validates the destination account before creating
-or pushing a private repository.
-
-## Source
-
-Bridgman et al., *All in This Together? A Preregistered Report on Deservingness
-of Government Aid During the COVID-19 Pandemic*,
+Source: Bridgman et al., *All in This Together? A Preregistered Report on
+Deservingness of Government Aid During the COVID-19 Pandemic*,
 [article](https://doi.org/10.1017/XPS.2021.10),
 [replication data](https://doi.org/10.7910/DVN/LPHMB7).
+Read [data provenance](data/README.md). Raw data, individual outputs, PDFs,
+credentials and generated runs are excluded from Git and delivery. The MIT
+license covers original software, not third-party data or published text.
 
-The MIT license covers this repository's original software. It does not cover
-third-party data, published texts, or the original replication code.
+Intended remote: `kunhailP/welfare-politics-lab`. No remote was created from
+this environment. The handoff guide explains publication as a new private repo.

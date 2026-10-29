@@ -23,6 +23,19 @@ class RenderTests(unittest.TestCase):
         facts = {k: v for k, v in self.facts.items() if k != 'respondent_income'}
         self.assertEqual(messages(facts, self.pair), messages(dict(facts), self.pair))
 
+    def test_observed_facts_are_explicitly_the_participants_background(self):
+        full = messages(self.facts, self.pair)
+        omitted = messages({k: v for k, v in self.facts.items() if k != 'respondent_income'}, self.pair)
+        neutral = messages({}, self.pair)
+        self.assertIn('background facts before the survey describe you, the participant', full[0]['content'])
+        self.assertEqual(full[0], omitted[0])
+        self.assertEqual(full[0], neutral[0])
+        # Even when income is the only fact, no F-only role instruction appears.
+        income_only = messages({'respondent_income': 'Low income'}, self.pair)
+        self.assertEqual(income_only[0], neutral[0])
+        self.assertEqual(income_only[1]['content'].replace(
+            FACT_TEXT['respondent_income']['Low income']+'\n\n', '', 1), neutral[1]['content'])
+
     def test_human_outcome_cannot_be_rendered_as_fact(self):
         with self.assertRaises(ValueError):
             messages({**self.facts, 'vignette_allocation': 2000}, self.pair)
@@ -51,6 +64,12 @@ class RenderTests(unittest.TestCase):
     def test_separate_valid_amounts_need_not_sum_to_4000(self):
         result = parse_pair('{"A":4000,"B":4000}')
         self.assertEqual(result['status'], 'valid')
+
+    def test_deeply_nested_response_invalidates_pair_without_crashing(self):
+        raw = '{"A":' + '['*20000 + '0' + ']'*20000 + ',"B":0}'
+        result = parse_pair(raw)
+        self.assertEqual(result['status'], 'invalid')
+        self.assertIsNone(result['amounts'])
 
 
 if __name__ == '__main__':

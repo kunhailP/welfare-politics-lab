@@ -19,6 +19,32 @@ ARM_LABEL = dict(zip(ARMS, ['N', 'F', 'F-I']))
 IDENTITY = ['request_id', 'agent_id', 'arm', 'profile_numbers', 'rollout', 'messages_sha256']
 
 
+def verify_frozen_inputs(design_path, requests_path, receipt_path, expected_receipt_sha256):
+    """Bind CLI inputs to a pre-generation receipt whose digest is held outside it.
+
+    This detects file/plan drift, not a provider's authenticity. The core receipt
+    does not freeze the as-yet-unimplemented live campaign settings/budget.
+    """
+    content = Path(receipt_path).read_bytes()
+    actual = hashlib.sha256(content).hexdigest()
+    if actual != expected_receipt_sha256:
+        raise ValueError('Frozen receipt digest differs from the externally recorded digest')
+    receipt = json.loads(content)
+    if receipt.get('status') != 'offline_reproduction_complete':
+        raise ValueError('Expected a completed pre-generation core reproduction receipt')
+    paths = {'primary_matched_design/human_reference_design.npz': design_path,
+             'planned_primary_requests/requests.jsonl': requests_path}
+    verified = {}
+    for key, path in paths.items():
+        digest = hashlib.sha256(Path(path).read_bytes()).hexdigest()
+        if receipt.get('artifacts_sha256', {}).get(key) != digest:
+            raise ValueError(f'Input differs from frozen pre-generation receipt: {key}')
+        verified[key] = digest
+    return {'receipt_sha256': actual, 'verified_file_sha256': verified,
+            'model_settings_budget_bound_by_this_receipt': False,
+            'provider_authenticity_verified': False}
+
+
 def assemble(requests, attempts, row_ids, expected_model):
     if not isinstance(expected_model, str) or not expected_model:
         raise ValueError('An exact frozen returned-model ID is required')
@@ -114,12 +140,19 @@ def main():
     p.add_argument('--requests', type=Path, required=True)
     p.add_argument('--attempts', type=Path, required=True)
     p.add_argument('--expected-model', required=True)
+    p.add_argument('--frozen-receipt', type=Path, required=True,
+                   help='Core receipt recorded before generation, binding design and request files')
+    p.add_argument('--expected-receipt-sha256', required=True,
+                   help='Receipt digest recorded separately before generation')
     p.add_argument('--output', type=Path, required=True)
     args = p.parse_args()
+    frozen = verify_frozen_inputs(args.design, args.requests, args.frozen_receipt,
+                                   args.expected_receipt_sha256)
     d = np.load(args.design, allow_pickle=False)
     report = evaluate_recorded(d['x'], d['y'], d['contrast'], d['row_ids'].tolist(),
                                load_jsonl(args.requests), load_jsonl(args.attempts), args.expected_model)
     report['attempt_log_sha256'] = hashlib.sha256(args.attempts.read_bytes()).hexdigest()
+    report['frozen_input_verification'] = frozen
     # Exclusive creation preserves previously scored runs.
     with args.output.open('x') as f:
         json.dump(report, f, indent=2)

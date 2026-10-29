@@ -8,10 +8,15 @@ composite, importance threshold or preferred human subset is introduced.
 
 ## One question
 
-**Which class-conditioned recipient-income allocation comparisons are supported
-by the generated responses, and does adding the observed socioeconomic fact
-bundle improve the fixed human-reference moderation score without that
-description hiding errors in the two group-specific comparisons?**
+**How closely do generated responses reproduce the direction, CAD magnitude
+and errors of both household-income groups' recipient-income comparisons,
+and how does adding the observed socioeconomic fact bundle change the fixed
+moderation score alongside its two group-specific components?**
+
+Income groups operationalize observed household-income bands, not broader class
+identity or actual political coalitions. No binary overall fidelity judgement is
+specified. The version7 participant-background clarification changes wording
+before generation while retaining the locked estimands and reporting table.
 
 The explicit-income question remains secondary F versus F-I. This audits a
 component used in welfare-opinion research. It does not measure actual votes,

@@ -68,7 +68,7 @@ def messages(facts, pair, white_names='english'):
     text = ((persona + '\n\n') if persona else '') + intro
     text += '\n\nPerson A: ' + profile_text(pair[0], white_names)
     text += '\n\nPerson B: ' + profile_text(pair[1], white_names)
-    return [{'role': 'system', 'content': 'Respond as a survey participant. Return only a JSON object with keys A and B, each an integer from 0 through 4000. Do not add explanations.'},
+    return [{'role': 'system', 'content': 'Respond as a survey participant. Any background facts before the survey describe you, the participant. Return only a JSON object with keys A and B, each an integer from 0 through 4000. Do not add explanations.'},
             {'role': 'user', 'content': text}]
 
 
@@ -86,7 +86,7 @@ def parse_pair(raw):
         if any(type(v) is not int or not 0 <= v <= 4000 for v in value.values()):
             raise ValueError('Integer actions 0 through 4000 required')
         return {'status': 'valid', 'amounts': value, 'error': None}
-    except (ValueError, TypeError) as exc:
+    except (ValueError, TypeError, RecursionError) as exc:
         return {'status': 'invalid', 'amounts': None, 'error': str(exc)}
 
 
