@@ -8,6 +8,10 @@ and endpoints do not. Version6 is archived in
 `archive/PROTOCOL_V6_PRE_FINAL_REVIEW.md`. The CLI checks design/request files
 against a pre-generation core receipt with an externally recorded digest. This
 binds input files, not a complete live campaign or provider authenticity.
+The final09 review used two fresh contexts and a separate private source
+supplement for independent numerical checks. Post-review fixes and their author
+verification are in `../reviews/final_09/response.md`; actual model generation
+and the unresolved empirical/execution conditions remain unchanged.
 
 This is a prospective plan for model data, developed after viewing the human
 reference data. It is not a preregistered or untouched human replication.

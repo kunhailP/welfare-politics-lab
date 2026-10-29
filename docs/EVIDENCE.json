@@ -19,12 +19,14 @@
   "offline_tests_passed": 71,
   "remote_repository_created": false,
   "data_redistribution_verified": false,
-  "clean_clone_offline_reproduction": "v6 complete;58 tests; reference/plan/diagnostic reports identical; existing tested dependencies reused",
+  "clean_clone_offline_reproduction": "Final09 protocol7/source ddbe15d complete;71data-free tests/full reproduction; existing dependencies reused",
   "respondent_generation": "research_development_hold",
   "new_integer_controls": "oracle software controls only, not empirical model results",
   "new_permutation_control": "outcome-informed software validation only; no real model outputs",
-  "primary_target_and_generation_messages_unchanged_from_v5": true,
+  "primary_target_and_generation_messages_unchanged_from_v5": false,
   "source_reference_numbers_independently_checked": true,
   "latest_validation": "docs/FINAL_HANDOFF_VALIDATION.json",
-  "full_campaign_manifest_binding": "not implemented; core design/request files externally sealed in CLI"
+  "full_campaign_manifest_binding": "not implemented; core design/request files externally sealed in CLI",
+  "primary_target_unchanged_from_v5": true,
+  "generation_messages_changed_in_v7_for_participant_attribution": true
 }
