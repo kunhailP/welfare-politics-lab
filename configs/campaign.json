@@ -32,5 +32,12 @@
   "selected_execution_route": "socioverse_hosted_web",
   "funding_source": "provided_platform_credits_only",
   "additional_external_api_budget_usd": 0,
-  "platform_credit_balance_verified": false
+  "platform_credit_balance_verified": false,
+  "owner_managed_settings": [
+    "model",
+    "decoding",
+    "available_platform_balance",
+    "credit_cap",
+    "live_execution"
+  ]
 }

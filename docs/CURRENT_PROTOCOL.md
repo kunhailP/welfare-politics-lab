@@ -193,7 +193,10 @@ without deleting incomplete bases. A missing log is an accounting error.
 One recorded rollout is planned for this descriptive diagnostic; expected-model
 or stochastic-stability claims are disabled until a repeat plan is frozen and
 executed. `common_task.py` verifies additive/interaction fixtures and missing
-cells. A live common-task log adapter is still required before execution.
+cells. Version0.3's `common_task_responses.py` verifies keyed offline attempt
+logs against the sealed original plan before summarizing. Actual web-platform
+call/export integration is still required before execution. Its stable audit
+IDs and explicit currency/credit accounting do not change these estimands.
 
 Study2 is a lower-priority context extension with128 people per original frame,
 four single profiles each, no invented respondent persona. Exact minority-name

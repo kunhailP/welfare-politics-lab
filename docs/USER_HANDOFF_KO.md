@@ -40,6 +40,10 @@ python -m pip install -e . --no-deps
 
 ## 3. 원자료를 지정하고 전체 재현
 
+웹 플랫폼에 가져갈 입력까지 준비하려면
+[플랫폼 준비 안내](PLATFORM_PREPARATION_KO.md)의 `scripts/prepare_platform.py`를 사용한다.
+모델 선택 전에도 로컬 데이터 검증과 정답이 제외된 입력 ZIP을 만들 수 있다.
+
 기존에 보낸 `dataverse.zip`을 별도로 준비한다. 원자료는 저장소에 포함하지 않았다.
 [원자료 출처](https://doi.org/10.7910/DVN/LPHMB7)와 파일별 해시는
 [자료 안내](../data/README.md)에 있다. 다시 다운로드한 ZIP의 포장 방식 때문에

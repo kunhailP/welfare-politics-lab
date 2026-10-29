@@ -14,6 +14,7 @@ import numpy as np
 from .paired_evaluation import evaluate_arrays
 from .diagnostic_comparison import layout
 from .render import ARMS, load_jsonl, message_digest, parse_pair, request_identity
+from .response_accounting import cost_entry, cost_summary
 
 ARM_LABEL = dict(zip(ARMS, ['N', 'F', 'F-I']))
 IDENTITY = ['request_id', 'agent_id', 'arm', 'profile_numbers', 'rollout', 'messages_sha256']
@@ -80,9 +81,7 @@ def assemble(requests, attempts, row_ids, expected_model):
         number = attempt['attempt']
         if type(number) is not int or number not in [1, 2, 3] or number in grouped[key]:
             raise ValueError('Duplicate or invalid attempt number')
-        cost = attempt['cost_usd']
-        if type(cost) not in [int, float] or not np.isfinite(cost) or cost < 0:
-            raise ValueError('Nonnegative finite per-attempt cost must be logged')
+        cost_entry(attempt)
         if attempt['status'] not in ['reply', 'transport_error']:
             raise ValueError('Unknown attempt status')
         if attempt['status'] == 'reply':
@@ -116,7 +115,7 @@ def assemble(requests, attempts, row_ids, expected_model):
               for arm, values in aligned.items()}
     receipt = {'alignment': 'request-keyed; explicit A/B-to-profile mapping; frozen design reindex',
                'planned_requests': len(planned), 'logged_attempts': len(attempts),
-               'failed_pairs': failures, 'logged_cost_usd': sum(a['cost_usd'] for a in attempts),
+               'failed_pairs': failures, **cost_summary(attempts),
                'expected_returned_model_id': expected_model,
                'provider_authenticity_verified': False}
     return arrays, receipt

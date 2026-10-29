@@ -16,7 +16,7 @@
   "primary_rows": 2224,
   "primary_design_columns": 36,
   "primary_planned_requests": 3336,
-  "offline_tests_passed": 71,
+  "offline_tests_passed": 83,
   "remote_repository_created": true,
   "data_redistribution_verified": false,
   "clean_clone_offline_reproduction": "Final09 protocol7/source ddbe15d complete;71data-free tests/full reproduction; existing dependencies reused",
@@ -31,5 +31,9 @@
   "generation_messages_changed_in_v7_for_participant_attribution": true,
   "remote_repository_url": "https://github.com/kunhailP/welfare-politics-lab",
   "remote_repository_visibility": "public",
-  "publication_provenance": "docs/PUBLICATION_PROVENANCE.json"
+  "publication_provenance": "docs/PUBLICATION_PROVENANCE.json",
+  "generation_only_exporter": "implemented; no native web import or model execution",
+  "common_task_keyed_replay": "implemented; actual platform log export integration not verified",
+  "cost_accounting": "USD or explicit SocioVerse_Agent/Sim units; no inferred conversion",
+  "latest_internal_AI_review_covers_v0_3_code": false
 }

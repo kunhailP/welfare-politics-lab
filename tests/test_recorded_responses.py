@@ -106,6 +106,17 @@ class KeyedReplayTests(unittest.TestCase):
         report = self.score(attempts)
         self.assertEqual(report['arms']['N']['invalid_rows'], 2)
 
+    def test_platform_credit_accounting_preserves_amounts_without_faking_usd(self):
+        attempts = copy.deepcopy(self.attempts)
+        for attempt in attempts:
+            del attempt['cost_usd']
+            attempt.update(cost_value=2, cost_unit='SocioVerse_Sim')
+        report = self.score(attempts)
+        self.assertEqual(report['response_linkage']['logged_cost_by_unit'], {'SocioVerse_Sim': 48})
+        self.assertIsNone(report['response_linkage']['logged_cost_usd'])
+        for arm in ('N', 'F', 'F-I'):
+            self.assertEqual(report['arms'][arm], self.score()['arms'][arm])
+
     def test_public_replay_exposes_canonical_component_bounds(self):
         # Reorder the synthetic columns to canonical [base, base*group].
         x = self.x[:, [0, 2, 1, 3]]

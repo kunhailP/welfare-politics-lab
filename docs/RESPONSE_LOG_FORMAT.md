@@ -38,6 +38,19 @@ Illustration only, **not an actual response**:
 Keep provider token/usage/credit records alongside the log. Do not invent costs
 or silently replace unknown cost with0. The scorer requires resolved accounting.
 
+Version0.3 also accepts `cost_value` together with `cost_unit`, instead of
+`cost_usd`. Supported explicit units are `USD`, `SocioVerse_Agent` and
+`SocioVerse_Sim`. The latter names are this repository's log-contract labels,
+not verified platform API field names. Do not supply both accounting forms.
+Reports retain `logged_cost_by_unit`; `logged_cost_usd` is null when non-USD
+units are present. Credits are not treated as zero resource cost or converted
+into dollars. Keep actual usage/billing exports and document their conversion
+into the log contract; unknown costs remain an unresolved collection issue.
+
+The common-task adapter uses a separate identity contract, documented in
+[PLATFORM_PREPARATION_KO.md](PLATFORM_PREPARATION_KO.md). Its records cannot be
+submitted to this primary scorer or relabelled as primary respondent outputs.
+
 Only transport errors retry. A reply ends the request even if invalid/refused;
 that reply leaves both actions unknown. Three transport errors exhaust retries.
 Every planned request needs an explicit final history. No cleaned/substituted

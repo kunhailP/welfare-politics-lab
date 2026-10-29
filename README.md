@@ -18,12 +18,18 @@ comparisons, and how does adding socioeconomic facts change their errors?
   same-output mean/distribution diagnostics.
 - Three fixed human-trained references using877 disjoint people.
 - Tests, source sensitivity, fresh blind review records and reproduction receipts.
+- A sealed generation-only ZIP exporter, primary/common-task keyed log replay,
+  and explicit platform-credit accounting without guessed USD conversion.
 
 **Actual respondent-model calls:0. Paid generation:0.** This is an offline
 research/evaluation repository. Native SocioVerse execution, live audit adapters,
 model/settings and campaign cap remain unfinished. See [remaining work](docs/NEXT_STEPS_KO.md).
 Statistical predictions and software controls are not model responses. A new
 empirical contribution remains to be demonstrated with actual results.
+
+To prepare data and the input-only ZIP for the owner's chosen web-platform
+execution, see [플랫폼 준비 안내](docs/PLATFORM_PREPARATION_KO.md). Model/settings
+selection belongs to the owner. Exporting inputs does not start generation.
 
 ## Reproduce
 

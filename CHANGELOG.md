@@ -1,5 +1,20 @@
 # Changes
 
+## 0.3.0 — hosted-platform input preparation
+
+- One command verifies the owner's source archive, reproduces the human/data
+  analysis and exports a separate, hashed generation-only ZIP. No live calls.
+- Offline common-task log replay binds all 96 cells, model IDs, fresh-input
+  hashes, retry histories and focal A/B mappings to the frozen source plan.
+- Primary/common-task logs accept explicitly observed SocioVerse Agent or Sim
+  credits without inventing USD costs or exchange rates. Legacy USD logs remain
+  supported; unavailable accounting still fails instead of becoming zero.
+- Added adversarial coverage for leakage fields, stale seals, omitted/duplicate
+  tasks, cell swaps, invalid whole pairs, retries and credit accounting.
+- Research protocol7, estimands, cohort, prompts and generation hold unchanged.
+  The native web call/import/export bridge and model/settings remain owner work;
+  these tools do not assert a completed hosted study or empirical contribution.
+
 ## 0.2.0 — reviewed research handoff
 
 - Two fresh-context internal AI reviews, including independent raw-data contrast
