@@ -1,0 +1,96 @@
+{
+  "dataset_doi": "10.7910/DVN/LPHMB7",
+  "metadata_url": "https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi:10.7910/DVN/LPHMB7",
+  "retrieval_date_utc": "2026-10-29",
+  "metadata_response_sha256": "3cce60fff85a288fb58252a4d955e46df4b8d1d0d7fcf4c4b5b5ae2770a0e070",
+  "version_number": 2,
+  "minor_version_number": 0,
+  "version_state": "RELEASED",
+  "license": {
+    "name": "CC0 1.0",
+    "uri": "http://creativecommons.org/publicdomain/zero/1.0",
+    "iconUri": "https://licensebuttons.net/p/zero/1.0/88x31.png",
+    "rightsIdentifier": "CC0-1.0",
+    "rightsIdentifierScheme": "SPDX",
+    "schemeUri": "https://spdx.org/licenses/",
+    "languageCode": "en"
+  },
+  "terms_of_use": null,
+  "files": [
+    {
+      "filename": "deservingness.Rproj",
+      "id": 4459818,
+      "checksum": {
+        "type": "MD5",
+        "value": "c8d3f84a410f46d4d8b03a268e313e35"
+      },
+      "download_url": "https://dataverse.harvard.edu/api/access/datafile/4459818",
+      "local_md5_matches_metadata": true
+    },
+    {
+      "filename": "main.Rmd",
+      "id": 4554132,
+      "checksum": {
+        "type": "MD5",
+        "value": "fd165a2918bdd48b9612499e29a7063b"
+      },
+      "download_url": "https://dataverse.harvard.edu/api/access/datafile/4554132",
+      "local_md5_matches_metadata": true
+    },
+    {
+      "filename": "README.md",
+      "id": 4459819,
+      "checksum": {
+        "type": "MD5",
+        "value": "836ed54eea109ada0d810ff208d47e80"
+      },
+      "download_url": "https://dataverse.harvard.edu/api/access/datafile/4459819",
+      "local_md5_matches_metadata": true
+    },
+    {
+      "filename": "renv.lock",
+      "id": 4459821,
+      "checksum": {
+        "type": "MD5",
+        "value": "3e356ec1a164da8180319b2cc1a342f6"
+      },
+      "download_url": "https://dataverse.harvard.edu/api/access/datafile/4459821",
+      "local_md5_matches_metadata": true
+    },
+    {
+      "filename": "study1.tab",
+      "id": 4459817,
+      "checksum": {
+        "type": "MD5",
+        "value": "b4e63d31926d23966af6e5f51110dc19"
+      },
+      "download_url": "https://dataverse.harvard.edu/api/access/datafile/4459817",
+      "local_md5_matches_metadata": false
+    },
+    {
+      "filename": "study2_alt.tab",
+      "id": 4459815,
+      "checksum": {
+        "type": "MD5",
+        "value": "60ee0de82ffa630c44c8c8c61ac934d5"
+      },
+      "download_url": "https://dataverse.harvard.edu/api/access/datafile/4459815",
+      "local_md5_matches_metadata": false
+    },
+    {
+      "filename": "study2.tab",
+      "id": 4459820,
+      "checksum": {
+        "type": "MD5",
+        "value": "704eecc442f5be1801619775fc173a05"
+      },
+      "download_url": "https://dataverse.harvard.edu/api/access/datafile/4459820",
+      "local_md5_matches_metadata": false
+    }
+  ],
+  "scope": "Dataset metadata license verification; original journal article/PDF not relicensed by this receipt.",
+  "fresh_live_tab_download_verified": false,
+  "fresh_download_attempt_http_error": 403,
+  "local_archive_and_seven_sha256_verified_against_pinned_manifest": true,
+  "checksum_comparison_note": "Four non-tabular files match metadata MD5; three TAB MD5 values differ. Dataverse-normalized tables and original uploads have different representations. Live bytewise re-download comparison was blocked with HTTP403; it was not completed."
+}

@@ -18,14 +18,14 @@
   "primary_planned_requests": 3336,
   "offline_tests_passed": 83,
   "remote_repository_created": true,
-  "data_redistribution_verified": false,
+  "data_redistribution_verified": true,
   "clean_clone_offline_reproduction": "Final09 protocol7/source ddbe15d complete;71data-free tests/full reproduction; existing dependencies reused",
   "respondent_generation": "research_development_hold",
   "new_integer_controls": "oracle software controls only, not empirical model results",
   "new_permutation_control": "outcome-informed software validation only; no real model outputs",
   "primary_target_and_generation_messages_unchanged_from_v5": false,
   "source_reference_numbers_independently_checked": true,
-  "latest_validation": "docs/FINAL_HANDOFF_VALIDATION.json",
+  "latest_validation": "docs/PLATFORM_PREPARATION_VALIDATION.json",
   "full_campaign_manifest_binding": "not implemented; core design/request files externally sealed in CLI",
   "primary_target_unchanged_from_v5": true,
   "generation_messages_changed_in_v7_for_participant_attribution": true,
@@ -35,5 +35,10 @@
   "generation_only_exporter": "implemented; no native web import or model execution",
   "common_task_keyed_replay": "implemented; actual platform log export integration not verified",
   "cost_accounting": "USD or explicit SocioVerse_Agent/Sim units; no inferred conversion",
-  "latest_internal_AI_review_covers_v0_3_code": false
+  "latest_internal_AI_review_covers_v0_3_code": false,
+  "dataset_license_metadata_verified": true,
+  "dataset_license": "CC0-1.0 from official released-version API metadata",
+  "data_redistribution_verification_scope": "dataset metadata license only; journal article/PDF not included",
+  "all_seven_live_source_downloads_independently_reverified": false,
+  "owner_manages_model_and_live_settings": true
 }

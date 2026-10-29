@@ -14,8 +14,20 @@ the publisher article DOI rather than infer a new source from that label.
 is never executed by the offline pipeline. The source hash manifest is tracked
 under `docs/source_manifest.json`; file hashes are verified during ingestion.
 
-The current session has not independently retrieved authoritative dataset
-licensing metadata. Redistribution is therefore unverified, rather than assumed
-to be covered by our code license. Download the original files from the cited
-source. Do not commit the uploaded archive, individual response tables, original
-PDFs, or derived human-level responses to a public repository by default.
+On 2026-10-29 the official dataset API reported CC0 1.0 for the released dataset.
+[The metadata receipt](DATASET_LICENSE_RECEIPT.json) records its version, license,
+seven file IDs/checksums and download links. This is the dataset's license;
+the journal article/PDF and this project's MIT software license have separate scopes.
+
+The four non-tabular source files match the API's MD5 checksums. The three `.tab`
+files do not match those MD5 values. Dataverse normalizes ingested tables and
+retains an original-file checksum; see its [tabular-data guide](https://guides.dataverse.org/en/6.12.1/user/tabulardataingest/ingestprocess.html).
+Fresh source-file requests in this environment returned HTTP403, so a bytewise
+comparison against a new live TAB download was not completed. Do not describe
+this as seven new downloads verified against metadata. The supplied archive
+and all seven local source SHA256 values remain verified against the pinned
+source manifest. Later licensing verification does not rewrite earlier receipts.
+
+Original archives, individual response tables, PDFs and derived human-level
+responses remain excluded from public Git. Keep the evaluation workspace separate
+from the generation-only export and retain source attribution in downstream use.

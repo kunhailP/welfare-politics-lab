@@ -66,6 +66,8 @@ PYTHONPATH=src python -m unittest discover -s tests
 | [Response log contract](docs/RESPONSE_LOG_FORMAT.md) | Future actual primary logs and frozen-input check |
 | [Final blind review response](reviews/final_09/response.md) | Two fresh-context reviews, revisions and open issues |
 | [Final validation](docs/FINAL_HANDOFF_VALIDATION.json) | Local checks and reproduction evidence |
+| [Platform preparation](docs/PLATFORM_PREPARATION_KO.md) | One-command data preparation and input-only ZIP |
+| [Platform validation](docs/PLATFORM_PREPARATION_VALIDATION.json) | 83 tests, clean-checkout preparation and software log replay |
 | [Delivery/publication](docs/DELIVERY.md) | Public repository and original handoff archives |
 
 The target is a fixed selected cohort and reconstructed tasks, not a national
