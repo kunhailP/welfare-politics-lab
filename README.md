@@ -10,7 +10,16 @@ same facts with explicit household income removed.
 calls, empirical model results, or paid generation have been performed.
 This is an AI-assisted research workspace, not a claim of publication or awards.
 
-The current design is version4 in [docs/CURRENT_PROTOCOL.md](docs/CURRENT_PROTOCOL.md).
+**Execution hold:** the user prioritizes a competitive contribution with strong
+workshop-paper rigor, originality and depth. Pilot and main respondent generation
+remain disabled. [Contribution and decision criteria](docs/CONTRIBUTION_AND_DECISION.md)
+map the unresolved evidence to the official competition rubric.
+The prospective [analysis plan](docs/ANALYSIS_PLAN.md) specifies same-output
+diagnostic comparisons and proposed repeat/presentation checks. The
+[source crosswalk](docs/STIMULUS_CROSSWALK.md) records reconstruction limits and
+the pre-generation recipient-income wording correction.
+
+The current design is version5 in [docs/CURRENT_PROTOCOL.md](docs/CURRENT_PROTOCOL.md).
 Archived plans document earlier decisions; they are not the current authority.
 Open scientific issues are in [docs/RESEARCH_QUEUE.md](docs/RESEARCH_QUEUE.md).
 

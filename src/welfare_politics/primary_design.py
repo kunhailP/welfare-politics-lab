@@ -12,6 +12,38 @@ from .contrast_validity import contrast_bounds
 from .study1_interest_audit import LEVELS
 
 
+def matrix_and_contrast(d):
+    """Canonical coding, also available for preflight of rank-deficient pilots."""
+    arrays, names = [np.ones(len(d))], [('intercept', 'intercept')]
+    for feature, levels in LEVELS.items():
+        if not set(d[feature]) <= set(levels):
+            raise ValueError(f'Unexpected factor level: {feature}')
+        for level in levels[1:]:
+            arrays.append(d[feature].eq(level).to_numpy(float))
+            names.append((feature, level))
+    base = np.column_stack(arrays)
+    group = d.respondent_income.eq('Low income').to_numpy(float)
+    x = np.column_stack([base, base*group[:, None]])
+    c = np.zeros(x.shape[1])
+    c[names.index(('vignette_income', '$30,000')) + base.shape[1]] = 1
+    return x, c
+
+
+def estimability_diagnostic(x, contrast):
+    """Distinguish full coefficient identification from one estimable contrast."""
+    x, c = np.asarray(x, float), np.asarray(contrast, float)
+    if x.ndim != 2 or c.shape != (x.shape[1],) or not np.isfinite(x).all() or not np.isfinite(c).all():
+        raise ValueError('Finite conformable matrix and contrast required')
+    _, _, vt = np.linalg.svd(x, full_matrices=False)
+    rank = int(np.linalg.matrix_rank(x))
+    residual = float(np.linalg.norm(c-vt[:rank].T@(vt[:rank]@c)))
+    tolerance = 1e-10*max(1., float(np.linalg.norm(c)))
+    return {'rows': len(x), 'columns': x.shape[1], 'rank': rank,
+            'all_coefficients_identified_full_rank': rank == x.shape[1],
+            'contrast_rowspace_residual_l2': residual, 'contrast_estimability_tolerance': tolerance,
+            'contrast_estimable_in_design': residual <= tolerance}
+
+
 def construct(data, candidate_ids):
     ids = list(candidate_ids)
     if len(set(ids)) != len(ids):
@@ -31,20 +63,9 @@ def construct(data, candidate_ids):
         if selected.groupby('id')[column].nunique(dropna=False).gt(1).any():
             raise ValueError('Respondent trait changes inside a source trajectory')
     d = selected[selected.respondent_income.isin(['High income', 'Low income'])].sort_values(['id', 'vignette_num'])
-    arrays, names = [np.ones(len(d))], [('intercept', 'intercept')]
-    for feature, levels in LEVELS.items():
-        if not set(d[feature]) <= set(levels):
-            raise ValueError(f'Unexpected factor level: {feature}')
-        for level in levels[1:]:
-            arrays.append(d[feature].eq(level).to_numpy(float))
-            names.append((feature, level))
-    base = np.column_stack(arrays)
-    group = d.respondent_income.eq('Low income').to_numpy(float)
-    x = np.column_stack([base, base*group[:, None]])
+    x, c = matrix_and_contrast(d)
     if np.linalg.matrix_rank(x) != x.shape[1]:
         raise ValueError('Primary design is rank deficient')
-    c = np.zeros(x.shape[1])
-    c[names.index(('vignette_income', '$30,000')) + base.shape[1]] = 1
     y = d.vignette_allocation.to_numpy(float)
     row_ids = [f's1:{i}:{j}' for i, j in zip(d.id, d.vignette_num)]
     weights = contrast_bounds(x, y, c)['contrast_weights']

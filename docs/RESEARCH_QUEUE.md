@@ -11,6 +11,10 @@
   replay with whole-pair invalidation and explicit transport attempts.
 - Common-task summary, equal-base weights, alternating focal position and
   missing-cell bounds. These are software controls, not empirical findings.
+- Integer controls preserving group and pooled complete-profile means, with
+  explicit limits on conditional effects/distributions and optimization claims.
+- Source wording crosswalk and removal of unsupported recipient-income units.
+- Full-coefficient rank versus individual-contrast estimability diagnostic.
 
 ## Before any main generation
 
@@ -18,9 +22,10 @@
    the current package is an offline component, not the final submission.
 2. Verify model ID/settings, platform allowance, token/call cost and total cap.
    Freeze the exact cohort/tier before observing confirmation outputs.
-3. Complete source-to-prompt crosswalk and predeclare presentation sensitivity,
-   repeat allocation and operational continuation rules. Freeze the common-task
-   live log adapter; no counterfactual human outcomes may be invented.
+3. Source wording crosswalk is documented; missing procedural reconstruction
+   remains a limitation. Finalize the proposed repeat/presentation campaign in
+   `ANALYSIS_PLAN.md` with settings/budget and live adapters. No counterfactual
+   human outcomes may be invented.
 4. Run the disjoint engineering pilot. Inspect invalidity and missing contrast
    weight by arm/group, repeat/presentation diagnostics and accounting. Pilot
    output validity alone does not demonstrate useful fidelity precision.
@@ -47,3 +52,6 @@ visible in the README status and evidence register.
 Both full internal AI review rounds retained a main-collection gate. A targeted
 software verification is narrower than a fresh blinded review or an empirical
 readiness decision.
+Round04 further judged the oracle useful but the scientific increment weak and
+unproved. Keep that judgement visible; additional controls cannot manufacture
+an empirical contribution.

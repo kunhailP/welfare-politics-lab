@@ -1,4 +1,4 @@
-# Current protocol: version 4, after two internal review rounds
+# Current protocol: version 5, contribution and stimulus audit
 
 This is a prospective plan for model data, developed after viewing the human
 reference data. It is not a preregistered or untouched human replication.
@@ -52,7 +52,9 @@ Use identical respondent IDs and recipient tasks in three fresh-context arms:
 
 No ideology, age, personality, human outcomes, hypothesized result, paper title
 or authoring chat is supplied. Missing income is omitted consistently. Household
-income is different from recipient individual income. F-I can still allow
+income is a respondent field, separate from recipient pre-pandemic income. The
+printed recipient instrument does not explicitly state its time unit; the
+renderer does not add an annual-unit assertion. F-I can still allow
 inference about income through correlated facts; it removes explicit income
 information only. Request order is randomized inside respondent blocks.
 
@@ -213,6 +215,25 @@ report null or mixed evidence, not tune the prompt until a desirable result.
 The proposed method is an applied validation procedure. Its substantive value,
 increment beyond existing benchmarks, and transferability require actual results
 and independent critical review; packaging alone does not establish novelty.
+
+## Evaluation-only development addendum: marginal-preserving controls
+
+The primary N/F/F-I estimands and cohort are inherited from version4; version5
+removes the unsupported annual/individual expansion in recipient income wording
+and records its source crosswalk. A new evaluation
+diagnostic constructs integer outcome-informed tables with identical means for
+each income group and each complete recipient profile but changed group-by-
+recipient contrasts. `marginal_control.py` verifies exact conservation and action
+bounds. These are oracle software checks, not predictions or empirical model
+findings. They preserve neither individual trajectories nor conditional
+group-by-profile outcomes. A correctly targeted interaction audit detects them.
+The construction is not sharp optimization or a new theorem; its role is to
+make the insufficiency of the specified marginal checks concrete. It may read
+human outcomes in evaluation only. Do not expose its outputs to generation.
+
+Generation, including the engineering pilot, is on a research-development hold.
+Source reconstruction, repeat/presentation design and native execution remain
+pre-collection requirements. A new evaluation control does not resolve them.
 
 ## Unresolved collection gates
 

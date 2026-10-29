@@ -35,6 +35,8 @@ class RenderTests(unittest.TestCase):
         self.assertNotIn('socioeconomic_persona', text)
         self.assertEqual([m['role'] for m in rendered], ['system', 'user'])
         self.assertIn('pre-existing condition', text)
+        self.assertNotIn('annual individual income', text)
+        self.assertIn('income before the pandemic', text)
 
     def test_strict_pair_parser_rejects_malformed_or_partial_answers(self):
         for raw in ['{"A":1,"B":2.0}', '{"A":true,"B":2}', '{"A":1}',

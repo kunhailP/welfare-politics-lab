@@ -52,7 +52,7 @@ def profile_text(attributes, white_names='english'):
     return (f"{name} {CITIZENSHIP[attributes['vignette_citizen']]}. They live in a large Canadian city. "
             f"They {marital} and {CHILDREN[attributes['vignette_children']]}. "
             f"They {EMPLOYMENT[attributes['vignette_employment']]}. They {health}. "
-            f"Their annual individual income before the pandemic was CAD {attributes['vignette_income'].lstrip('$')}.")
+            f"Their income before the pandemic was CAD {attributes['vignette_income'].lstrip('$')}.")
 
 
 def messages(facts, pair, white_names='english'):

@@ -1,13 +1,12 @@
 {
-  "checked_at_utc": "2026-10-29T14:30:55.118373+00:00",
-  "scope": "offline human reanalysis and software controls; no empirical model evidence",
-  "command": "PYTHONPATH=src python scripts/reproduce.py --output runs/<new-directory>",
-  "tests_command": "PYTHONPATH=src python -m unittest discover -s tests",
-  "tests_passed": 43,
+  "checked_at_utc": "2026-10-29T14:54:42.648179+00:00",
+  "protocol_version": 5,
+  "tests_passed": 49,
+  "respondent_generation": "research_development_hold",
   "actual_respondent_model_calls": 0,
   "actual_paid_generation_usd": 0,
-  "run_receipt_sha256": "8d9305faa1c521805a51c51693d21f35c03c5b4763a4f23baf9bca31c7334424",
-  "artifact_hashes_verified": 32,
+  "run_receipt_sha256": "64a75191dc372cc9da0a7c81920454ca5288c7ace53f1de67266a9fe44776793",
+  "artifact_hashes_verified": 37,
   "python": "3.12.3",
   "packages": {
     "numpy": "2.3.5",
@@ -265,65 +264,135 @@
     "response_policy": "invalidate entire pair if JSON or either action is invalid",
     "native_socioverse_runner_implemented": false
   },
-  "failure_budget": {
-    "status": "design_only_failure_scenarios_not_model_results",
+  "integer_control": {
+    "status": "outcome_informed_integer_SOFTWARE_CONTROL_ONLY",
     "actual_model_calls": 0,
-    "pairs_per_arm": 1112,
-    "total_absolute_contrast_weight": 4.222149833626655,
-    "rows": [
+    "empirical_model_results": false,
+    "human_contrast": 55.157827808322594,
+    "full_recipient_profile_patterns": 1465,
+    "shared_profile_patterns": 323,
+    "preserved_exactly": [
+      "each respondent-group sum and mean",
+      "each complete-recipient-profile sum and mean",
+      "pooled recipient means and additive-regression sufficient statistics",
+      "grand mean"
+    ],
+    "not_preserved": [
+      "respondent-by-recipient interactions",
+      "individual response trajectories",
+      "allocation distributions or variances"
+    ],
+    "has_changed_contrast_control": true,
+    "sharp_extremum_certified": false,
+    "interpretation": "A changed-contrast control is a feasible integer counterexample to identifying interaction fidelity from the listed summaries. Unchanged controls are not such evidence. No real LLM output or sharp optimization is claimed.",
+    "controls": {
+      "increase": {
+        "contrast": 1900.2599928843265,
+        "cycles": 321,
+        "changed_rows": 652
+      },
+      "decrease": {
+        "contrast": -1752.2160945092687,
+        "cycles": 317,
+        "changed_rows": 657
+      }
+    }
+  },
+  "design_readiness": {
+    "status": "human_design_only_no_generation",
+    "actual_model_calls": 0,
+    "tiers": [
       {
-        "planned_invalid_pair_fraction": 0.005,
-        "invalid_pairs": 6,
-        "actual_pair_fraction": 0.00539568345323741,
-        "one_seeded_random_failure_completion_width_cad": 101.47203634939966,
-        "uniform_subset_expected_completion_width_cad": 91.12553597755368,
-        "highest_leverage_failure_completion_width_cad": 214.61858329636982
+        "phase": "pilot",
+        "candidate_people": 32,
+        "primary_high_low_people": 25,
+        "primary_rows": 100,
+        "primary_pair_requests_per_rollout": 150,
+        "three_full_rollouts_pair_requests": 450,
+        "size_does_not_establish_power_or_importance": true,
+        "estimability": {
+          "rows": 100,
+          "columns": 36,
+          "rank": 34,
+          "all_coefficients_identified_full_rank": false,
+          "contrast_rowspace_residual_l2": 9.502251953319836e-16,
+          "contrast_estimability_tolerance": 1e-10,
+          "contrast_estimable_in_design": true
+        },
+        "current_full_rank_evaluator_accepts": false,
+        "reason": "Primary design is rank deficient"
       },
       {
-        "planned_invalid_pair_fraction": 0.01,
-        "invalid_pairs": 12,
-        "actual_pair_fraction": 0.01079136690647482,
-        "one_seeded_random_failure_completion_width_cad": 193.45136881625268,
-        "uniform_subset_expected_completion_width_cad": 182.25107195510736,
-        "highest_leverage_failure_completion_width_cad": 420.05220806678216
+        "phase": "confirmatory",
+        "candidate_people": 256,
+        "primary_high_low_people": 186,
+        "primary_rows": 744,
+        "primary_pair_requests_per_rollout": 1116,
+        "three_full_rollouts_pair_requests": 3348,
+        "size_does_not_establish_power_or_importance": true,
+        "estimability": {
+          "rows": 744,
+          "columns": 36,
+          "rank": 36,
+          "all_coefficients_identified_full_rank": true,
+          "contrast_rowspace_residual_l2": 1.0818160366996748e-15,
+          "contrast_estimability_tolerance": 1e-10,
+          "contrast_estimable_in_design": true
+        },
+        "current_full_rank_evaluator_accepts": true,
+        "design_columns": 36,
+        "rank": 36,
+        "condition": 68.01449929240474
       },
       {
-        "planned_invalid_pair_fraction": 0.02,
-        "invalid_pairs": 23,
-        "actual_pair_fraction": 0.02068345323741007,
-        "one_seeded_random_failure_completion_width_cad": 361.69206367966444,
-        "uniform_subset_expected_completion_width_cad": 349.3145545806224,
-        "highest_leverage_failure_completion_width_cad": 791.6608586511123
+        "phase": "confirmatory",
+        "candidate_people": 512,
+        "primary_high_low_people": 372,
+        "primary_rows": 1488,
+        "primary_pair_requests_per_rollout": 2232,
+        "three_full_rollouts_pair_requests": 6696,
+        "size_does_not_establish_power_or_importance": true,
+        "estimability": {
+          "rows": 1488,
+          "columns": 36,
+          "rank": 36,
+          "all_coefficients_identified_full_rank": true,
+          "contrast_rowspace_residual_l2": 1.2584940594521916e-15,
+          "contrast_estimability_tolerance": 1e-10,
+          "contrast_estimable_in_design": true
+        },
+        "current_full_rank_evaluator_accepts": true,
+        "design_columns": 36,
+        "rank": 36,
+        "condition": 60.38181198266105
       },
       {
-        "planned_invalid_pair_fraction": 0.05,
-        "invalid_pairs": 56,
-        "actual_pair_fraction": 0.050359712230215826,
-        "one_seeded_random_failure_completion_width_cad": 868.3772054617878,
-        "uniform_subset_expected_completion_width_cad": 850.5050024571676,
-        "highest_leverage_failure_completion_width_cad": 1864.2914799354644
-      },
-      {
-        "planned_invalid_pair_fraction": 0.1,
-        "invalid_pairs": 112,
-        "actual_pair_fraction": 0.10071942446043165,
-        "one_seeded_random_failure_completion_width_cad": 1622.7642173394693,
-        "uniform_subset_expected_completion_width_cad": 1701.0100049143352,
-        "highest_leverage_failure_completion_width_cad": 3588.584177846787
+        "phase": "confirmatory",
+        "candidate_people": 768,
+        "primary_high_low_people": 556,
+        "primary_rows": 2224,
+        "primary_pair_requests_per_rollout": 3336,
+        "three_full_rollouts_pair_requests": 10008,
+        "size_does_not_establish_power_or_importance": true,
+        "estimability": {
+          "rows": 2224,
+          "columns": 36,
+          "rank": 36,
+          "all_coefficients_identified_full_rank": true,
+          "contrast_rowspace_residual_l2": 1.216202306989549e-15,
+          "contrast_estimability_tolerance": 1e-10,
+          "contrast_estimable_in_design": true
+        },
+        "current_full_rank_evaluator_accepts": true,
+        "design_columns": 36,
+        "rank": 36,
+        "condition": 52.06981928590287
       }
     ],
-    "interpretation": "Width=(4000-0)*sum(abs(w_missing)); these are identification ranges, not confidence intervals. Larger N need not reduce ambiguity at a fixed invalid fraction."
+    "interpretation": "Full-rank evaluator rejection is not proof that the particular contrast is unidentifiable: inspect its row-space residual. Pilot format success does not certify main-score stability. Resource prefixes change the exact finite target."
   },
-  "keyed_replay": "copied human reference control, shuffled arrival, zero discrepancies; not a model run",
-  "clean_clone_reproduction": {
-    "status": "complete",
-    "tested_commit": "71c0759",
-    "new_model_calls": 0,
-    "all_run_artifact_hashes_verified": 32,
-    "primary_design_request_plan_failure_and_keyed_control_identical": true,
-    "dependencies": "existing tested virtualenv reused; no network install claimed"
-  },
-  "external_peer_review": false,
-  "remote_repository_created": false,
-  "targeted_review_snapshot_tests_passed_by_each_reviewer": 42
+  "latest_full_review_snapshot_tests": 45,
+  "review_contribution_judgement": "increment weak/unproved; oracle useful software illustration only",
+  "clean_clone_reproduction_v5": "pending",
+  "remote_repository_created": false
 }

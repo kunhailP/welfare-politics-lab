@@ -1,0 +1,32 @@
+{
+  "status": "outcome_informed_integer_SOFTWARE_CONTROL_ONLY",
+  "actual_model_calls": 0,
+  "empirical_model_results": false,
+  "human_contrast": 55.157827808322594,
+  "full_recipient_profile_patterns": 1465,
+  "shared_profile_patterns": 323,
+  "preserved_exactly": [
+    "each respondent-group sum and mean",
+    "each complete-recipient-profile sum and mean",
+    "all recipient main-effect summaries",
+    "grand mean"
+  ],
+  "not_preserved": [
+    "respondent-by-recipient interactions",
+    "individual response trajectories"
+  ],
+  "is_sharp_extremum": false,
+  "interpretation": "Feasible integer counterexamples to identifying interaction fidelity from these marginal checks; not a claim that any LLM produces such tables.",
+  "controls": {
+    "increase": {
+      "contrast": 1900.2599928843265,
+      "cycles": 321,
+      "changed_rows": 652
+    },
+    "decrease": {
+      "contrast": -1752.2160945092687,
+      "cycles": 317,
+      "changed_rows": 657
+    }
+  }
+}

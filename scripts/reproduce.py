@@ -43,6 +43,14 @@ def main():
     if result.returncode:
         raise RuntimeError('Primary design failed; see primary_matched_design.log')
     print('PASS primary_matched_design', flush=True)
+    result = subprocess.run([sys.executable, 'scripts/design_readiness.py',
+                             '--source', str(args.source), '--cohort', str(cohort),
+                             '--output', str(args.output / 'design_readiness.json')],
+                            env=env, capture_output=True, text=True)
+    (args.output / 'design_readiness.log').write_text(result.stdout + result.stderr)
+    if result.returncode:
+        raise RuntimeError('Design readiness failed; see design_readiness.log')
+    print('PASS design_readiness (rank and contrast estimability separated)', flush=True)
     result = subprocess.run([sys.executable, '-m', 'welfare_politics.render',
                              '--inputs', str(args.output / 'prepared_inputs/generation_inputs'),
                              '--output', str(args.output / 'planned_primary_requests')],
@@ -68,6 +76,14 @@ def main():
     if result.returncode:
         raise RuntimeError('Keyed software replay failed; see keyed_software_replay.log')
     print('PASS keyed_software_replay (not model evidence)', flush=True)
+    result = subprocess.run([sys.executable, '-m', 'welfare_politics.marginal_control',
+                             '--design', str(args.output / 'primary_matched_design/human_reference_design.npz'),
+                             '--output', str(args.output / 'marginal_preserving_control')],
+                            env=env, capture_output=True, text=True)
+    (args.output / 'marginal_preserving_control.log').write_text(result.stdout + result.stderr)
+    if result.returncode:
+        raise RuntimeError('Marginal-preserving software control failed; see its log')
+    print('PASS marginal_preserving_control (not model evidence)', flush=True)
     verification = verify_with_exhaustive_completions()
     (args.output / 'contrast_software_check.json').write_text(json.dumps(verification, indent=2))
     generated = {str(x.relative_to(args.output)): hashlib.sha256(x.read_bytes()).hexdigest()

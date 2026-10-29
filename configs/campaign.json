@@ -1,5 +1,6 @@
 {
-  "status": "planning_only",
+  "status": "research_development_hold",
+  "execution_policy": "Pilot and main generation remain disabled while contribution and collection-readiness gates are incomplete. Workshop-paper rigor, originality and depth are the quality standard; competition remains the objective.",
   "generation_enabled": false,
   "actual_model_calls": 0,
   "actual_paid_spend": 0,

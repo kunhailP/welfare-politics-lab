@@ -24,3 +24,12 @@
 - Do not overwrite run directories. Use fresh output paths and report failures.
 - Run meaningful numerical, data-isolation and archive-integrity checks after
   relevant changes. Use `PYTHONPATH=src python -m unittest discover -s tests`.
+- Competition remains the objective; strong workshop-paper rigor, originality
+  and depth are the user's quality standard. Do not reinterpret this as waiting
+  for a journal decision or abandoning the current competition.
+- Generation, including the engineering pilot, stays on development hold while
+  contribution and collection gates are incomplete. Positive AI reviews or more
+  tests alone do not satisfy those gates; model/settings and cost cap are needed.
+- Distinguish rank of the full coefficient design from estimability of one
+  contrast. A full-rank-only evaluator's rejection does not prove that every
+  contrast is unidentified. Preserve numerical diagnostics and their tolerance.

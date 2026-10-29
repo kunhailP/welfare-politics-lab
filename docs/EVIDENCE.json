@@ -9,15 +9,17 @@
   "actual_respondent_model_results": false,
   "software_controls_are_empirical_results": false,
   "external_peer_review": false,
-  "independent_internal_AI_review": "round01: two independent context-separated reviews; round02: own-context re-reviews; verification03: both verified requested offline fixes and42 tests; neither full review cleared main collection",
-  "current_protocol_version": 4,
+  "independent_internal_AI_review": "round04 critical own-context re-review: both45 tests pass; scientific increment remains weak/unproved; author revised47 then49 tests; targeted verification05 pending",
+  "current_protocol_version": 5,
   "primary_target": "finite selected high/low cohort, fixed design, one recorded rollout",
   "primary_people": 556,
   "primary_rows": 2224,
   "primary_design_columns": 36,
   "primary_planned_requests": 3336,
-  "offline_tests_passed": 43,
+  "offline_tests_passed": 49,
   "remote_repository_created": false,
   "data_redistribution_verified": false,
-  "clean_clone_offline_reproduction": "complete; identical primary design and request plans; existing tested dependencies reused"
+  "clean_clone_offline_reproduction": "v4 complete; v5 pending",
+  "respondent_generation": "research_development_hold",
+  "new_integer_controls": "oracle software controls only, not empirical model results"
 }
