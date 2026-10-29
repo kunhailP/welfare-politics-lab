@@ -7,9 +7,30 @@
   "model": null,
   "campaign_budget_usd": null,
   "planned_seed": 20261029,
-  "planned_arms": ["no_persona", "socioeconomic_persona", "socioeconomic_persona_without_income"],
+  "planned_arms": [
+    "no_persona",
+    "socioeconomic_persona",
+    "socioeconomic_persona_without_income"
+  ],
   "pilot_people": 32,
   "main_candidates": 768,
-  "resource_only_main_options": [256, 512, 768],
-  "freeze_before_generation": ["source hashes", "target population", "stimulus reconstruction", "model and decoding", "sample size", "estimands", "failure handling", "cost cap"]
+  "resource_only_main_options": [
+    256,
+    512,
+    768
+  ],
+  "freeze_before_generation": [
+    "source hashes",
+    "target population",
+    "stimulus reconstruction",
+    "model and decoding",
+    "sample size",
+    "estimands",
+    "failure handling",
+    "cost cap"
+  ],
+  "selected_execution_route": "socioverse_hosted_web",
+  "funding_source": "provided_platform_credits_only",
+  "additional_external_api_budget_usd": 0,
+  "platform_credit_balance_verified": false
 }

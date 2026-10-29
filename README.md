@@ -6,6 +6,9 @@ comparisons, and how does adding socioeconomic facts change their errors?
 
 **Start here: [한국어 인계 안내](docs/USER_HANDOFF_KO.md).**
 
+[공개 내용 점검](docs/REPOSITORY_AUDIT_KO.md) ·
+[대회 실행 순서: 웹 플랫폼 제공 크레딧](docs/COMPETITION_EXECUTION_KO.md)
+
 ## Included
 
 - Verified local source ingestion and descriptive human reanalysis.

@@ -1,0 +1,33 @@
+{
+  "public_commit": "d309628dc5a1930bf8ed5e9e8920915546066079",
+  "original_tracked_files": 372,
+  "public_tracked_files": 374,
+  "missing_original_files": [],
+  "original_files_changed_for_publication_only": [
+    "README.md",
+    "docs/DELIVERY.md",
+    "docs/EVIDENCE.json",
+    "docs/USER_HANDOFF_KO.md"
+  ],
+  "public_checkout_matches_all_remote_files": true,
+  "final_review_packet_files_verified": 47,
+  "review_directories": [
+    "final_09",
+    "human_qualification_07",
+    "reference_08",
+    "round_01",
+    "round_02",
+    "round_04",
+    "round_06",
+    "verification_03",
+    "verification_05"
+  ],
+  "challenge_script_url": "https://socioverse.fudan-disc.com/challenge/challenge.js",
+  "challenge_script_sha256": "dce3d93a9ceab1377cf27a5d93d6b5f3fdebaaa70ee6154606339c2fc09bee53",
+  "official_live_script_equals_preserved_script": true,
+  "official_final_deadline": "2026-10-31T23:59:59+08:00",
+  "selected_execution_route": "SocioVerse hosted web platform; provided credits",
+  "external_api_additional_budget": 0,
+  "respondent_calls": 0,
+  "generation_hold_unchanged": true
+}
