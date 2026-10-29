@@ -1,0 +1,107 @@
+{
+  "status": "exploratory_human_source_cohort_sensitivity_only",
+  "actual_model_calls": 0,
+  "locked_primary_changed": false,
+  "source_sha256": "8c73ea17fd611cc204e4d9b149b0caf3560fb57b18f910ef9487acd3c662dc73",
+  "cohort_linkage_sha256": "847a38f9fd285a7664182e7fec2ca6ffe19b9d8a5cc49fb36b3f88d8a096726b",
+  "script_sha256": "6f6c93b10736de0fccbd646bd79934a15de6b89e5e335b7f4d7c0a01e8adc24f",
+  "seed": 20261031,
+  "draws": 500,
+  "main": {
+    "people": 556,
+    "rows": 2224,
+    "rank": 36,
+    "groups": {
+      "High income": 304,
+      "Low income": 252
+    },
+    "high_group_recipient_30k_minus_120k_cad": 135.58823682812599,
+    "low_group_recipient_30k_minus_120k_cad": 190.7460646364481,
+    "low_minus_high_moderation_cad": 55.157827808322104,
+    "cohort_sha256": "84c85922a26c36de798ad1195ef4b1178709306d0d63f30df1759c2533d4539d"
+  },
+  "disjoint_remainder": {
+    "people": 877,
+    "rows": 3508,
+    "rank": 36,
+    "groups": {
+      "High income": 482,
+      "Low income": 395
+    },
+    "high_group_recipient_30k_minus_120k_cad": 248.88334177469815,
+    "low_group_recipient_30k_minus_120k_cad": 369.5033529766086,
+    "low_minus_high_moderation_cad": 120.62001120191046,
+    "cohort_sha256": "25541c2351b235a2299c5a38daedefe0c70a353769acafbcf2fdd0d3d07cd599"
+  },
+  "complete_high_low_pool": {
+    "people": 1458,
+    "rows": 5832,
+    "rank": 36,
+    "groups": {
+      "High income": 799,
+      "Low income": 659
+    },
+    "high_group_recipient_30k_minus_120k_cad": 200.55132527185845,
+    "low_group_recipient_30k_minus_120k_cad": 291.47658942735757,
+    "low_minus_high_moderation_cad": 90.9252641554991,
+    "cohort_sha256": "843288566c7ab47954dd93b4086e9509a335063b6559a4e484c4e9fe02e8d823"
+  },
+  "excluded_pilot_high_low_people": 25,
+  "matched_draw_distributions": {
+    "high_group_recipient_30k_minus_120k_cad": {
+      "quantiles": {
+        "min": 100.53528651390764,
+        "q05": 151.51115506702533,
+        "q25": 208.4013057155798,
+        "median": 248.54320857888854,
+        "q75": 285.74382806724316,
+        "q95": 342.900634670816,
+        "max": 420.9486989542562
+      },
+      "positive_draws": 500,
+      "negative_draws": 0,
+      "zero_draws": 0
+    },
+    "low_group_recipient_30k_minus_120k_cad": {
+      "quantiles": {
+        "min": 186.29441752139633,
+        "q05": 272.0759852479481,
+        "q25": 330.852232049189,
+        "median": 374.26503880820746,
+        "q75": 411.5745453590081,
+        "q95": 473.2507266808621,
+        "max": 578.5891956169655
+      },
+      "positive_draws": 500,
+      "negative_draws": 0,
+      "zero_draws": 0
+    },
+    "low_minus_high_moderation_cad": {
+      "quantiles": {
+        "min": -104.10419263515429,
+        "q05": -7.967731164024033,
+        "q25": 63.13531992205749,
+        "median": 122.96541974097437,
+        "q75": 185.12256463011954,
+        "q95": 265.7695916173728,
+        "max": 406.3319365317697
+      },
+      "positive_draws": 466,
+      "negative_draws": 34,
+      "zero_draws": 0
+    }
+  },
+  "limitations": [
+    "Human outcomes were already available and inspected; not an untouched holdout.",
+    "All cohorts share one source survey and its selection/reconstruction limitations.",
+    "Draws overlap with each other but never with the main or pilot people.",
+    "Quantiles and sign counts describe these draws; no population CI, p-value, or sign probability.",
+    "Different cohorts have different recipient tasks; this varies both people and task composition.",
+    "Group differences are descriptive, not causal income or psychological mechanism effects.",
+    "No endpoint, cohort or seed was selected to maximize a desired human or model result."
+  ],
+  "artifact_sha256": {
+    "draw_estimates.json": "b71e211794f30fc2488bab84bd6cbe317f1c9d20860853e32f5380f59af19e7f",
+    "draw_membership.jsonl": "f2a088636398c10f0cb1d59815794215909f0fe2d98cde016e42daf5ad23cc36"
+  }
+}

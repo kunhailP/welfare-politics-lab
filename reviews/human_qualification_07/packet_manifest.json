@@ -1,0 +1,21 @@
+{
+  "aggregate_report.json": "d69615eeffbe230caa674c8aaa209a51d4d84c5e93ca70b51a7e7d04924d74d1",
+  "audit_human_reference_stability.py": "6f6c93b10736de0fccbd646bd79934a15de6b89e5e335b7f4d7c0a01e8adc24f",
+  "question.txt": "a814f931f92ec4b173977db485a3271c69c2a4ba051b954a8ff20e2cc9bda32f",
+  "src/welfare_politics/__init__.py": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed",
+  "src/welfare_politics/common_task.py": "b77d6396f7f3b9ab38829272f3fc9368e822c1e89474ff2e530d9cb02645a4a5",
+  "src/welfare_politics/contrast_validity.py": "9ac163746cae4e3ab40ff255d1a26726b3b54776f677c64071038145ceceadd4",
+  "src/welfare_politics/design_diagnostics.py": "a1c6add3509b2b699c7706be6a34a2459094272c529c0a34ce0719e8b9643521",
+  "src/welfare_politics/diagnostic_comparison.py": "a42a94732a5a4bb644b5757a6ac7f4f6291003d7c4da75f5dba89b6431e49812",
+  "src/welfare_politics/distribution_control.py": "2ac0bfe0e5bac16ac51bf941c0a54a6a4036a65a0032332167f7cda00a383b59",
+  "src/welfare_politics/failure_budget.py": "d6882a26a5a6f4be5c252805a7c81aaef9b30b9c09f452a7c1e179fd14bb8eb0",
+  "src/welfare_politics/human_audit.py": "e546328e334c9c137c96776fa21a337958bf29b286ea860788160fee116b0377",
+  "src/welfare_politics/ingest.py": "a42031a0c4a2ca2b186513103e207f861645e5cb656fc2f9bb47cc1544effc4a",
+  "src/welfare_politics/marginal_control.py": "73f7019383361e069c51ca6cd9433adb008bb75591cbb1b2790eaaf9eb77c61a",
+  "src/welfare_politics/paired_evaluation.py": "ebca45bf6b218c868b77f341b9fbdb27b14ae4d2ffb2fe333741fe71630c5f26",
+  "src/welfare_politics/prepare_design.py": "834c49be052cb14f6e17055c2332aad560b9dce3ed7badfcd2f491d084226e0c",
+  "src/welfare_politics/primary_design.py": "3ec1cc9a69efafe39d6624d2235536f631f4d2bffe047979ee70265002e5325a",
+  "src/welfare_politics/recorded_responses.py": "48628200cce3255aa33bcfe98eaa24706971386359ebee7be80ce532fc7d3f4d",
+  "src/welfare_politics/render.py": "759a86eddbdd7522754165e2a6a8ea6687b58884d4b099027642d80a9991af96",
+  "src/welfare_politics/study1_interest_audit.py": "1e7d8e78f6b0110227884c07af1b8a308c3557075c800f0ac5a3ad45c92e1593"
+}

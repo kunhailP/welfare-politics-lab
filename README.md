@@ -90,6 +90,9 @@ empirical/execution gates are retained in
 
 The Korean project brief and next research gates are in
 [docs/START_HERE_KO.md](docs/START_HERE_KO.md).
+The [empirical-value memo](docs/EMPIRICAL_VALUE_PLAN_KO.md) adds an exploratory
+human-source cohort-sensitivity audit. It leaves the locked main score unchanged
+and narrows the interpretation of a human/model contrast sign change.
 
 ## GitHub status
 

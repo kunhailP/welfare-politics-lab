@@ -1,0 +1,55 @@
+ANONYMOUS TARGETED RE-REVIEW: HUMAN-REFERENCE QUALIFICATION
+
+Review scope: this frozen packet only, plus your own earlier reports. This is a
+limited re-review with prior context, not a fresh blind review. Do not read parent
+README, AGENTS, author discussions, other reviewer reports, or raw source files.
+No real respondent-model outputs or generation have occurred. Source aggregates
+are author-calculated; original raw data are not supplied for independent checking.
+
+Question: does explicit own-household-income conditioning move a synthetic
+welfare-allocation contrast closer to a matched human reference? N has no own
+facts, F has income/job risk/parenthood, F-I omits explicit income only. Same
+recipient tasks, finite locked high/low main cohort. The primary gamma is the
+low-minus-high respondent difference in recipient 30k-vs120k income contrast;
+all recipient factors and group interactions are included (36 columns).
+J_FN=abs(gamma_F-gamma_H)-abs(gamma_N-gamma_H); negative is closer only on the
+fixed benchmark. Existing main 556 people and primary target remain unchanged.
+No population inference, psychological mechanism identification, or relevance
+threshold is claimed.
+
+The proposed contribution is to learn which welfare-allocation conclusions a
+synthetic-respondent component supports when explicit-income input changes, not
+a new theorem or general framework. Generic persona/subgroup error is already in
+Taday Morocho et al. (arxiv:2602.18462); SSDataBench (PNAS 2538145123) already
+examines multivariate relationships. Same actual outputs must be subjected to
+strong as well as coarse diagnostics. Common recipient tasks with changed income
+labels distinguish model input response from archive task-composition artifacts;
+there are no counterfactual human biographies. Do not subtract common-task DID
+from archive gamma as a decomposition. Repeated rollouts, presentation checks
+and a second model are proposed, not executed.
+
+New offline qualification: among 1458 complete high/low source people, exclude
+locked main556 and pilot25, leaving877. Descriptive contrast values are in
+aggregate_report.json. Draw500 overlapping sets of556 from that remainder,
+matching main high304/low252, without replacement within a draw, seed20261031.
+This source was previously inspected, so it is not an untouched or external
+holdout. Across draws the people AND their recipient tasks change. Both groups'
+recipient-income contrast is positive in all500; group moderation is positive
+in466 and negative in34. The 5th/95th quantiles are sensitivity quantiles only,
+not CIs or population sign probabilities. This motivates NOT building a political
+claim on reversing the main human contrast's small positive sign. No new endpoint
+or preferred human subset replaces the locked main target.
+
+Proposed additional comparator (not implemented or frozen): train a small human-
+data statistical predictor only on the877 remaining people, use person-level
+internal validation there, and evaluate the fixed main tasks. It has labeled human
+training access unlike zero-shot LLMs; it is a practical reference, not an equal-
+resource superiority claim. Main outcomes must not select model/hyperparameters.
+Public source pretraining contamination cannot be excluded.
+
+Please criticize (1) whether a nontrivial incremental empirical claim remains,
+(2) what result would be insufficient despite being technically correct,
+(3) what the new human audit does and does not license, (4) minimum next change.
+Statistics reviewer: also inspect/independently exercise the script on synthetic
+inputs if useful. Do not present unverified source numbers as independently
+validated. Do not equate review quality or test counts with empirical readiness.

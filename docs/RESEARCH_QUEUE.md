@@ -22,6 +22,16 @@
 
 ## Before any main generation
 
+The exploratory source-cohort qualification in `EMPIRICAL_VALUE_PLAN_KO.md`
+does not change the primary cohort or authorize generation. Do not build the
+political claim on reversing one small human-reference sign. The proposed
+disjoint-human statistical comparator still needs a frozen specification.
+Report the two group-specific recipient-income contrasts and their completion
+bounds next to gamma; the public evaluator adapter for these component bounds
+is not yet implemented. Preserve J_FN's bundle-level primary interpretation
+and J_FI's explicit-income secondary status. The additional overlap with
+arXiv:2609.33055v2 is recorded in the memo and qualification07 reviews.
+
 1. Establish native SocioVerse execution/import/export and generation isolation;
    the current package is an offline component, not the final submission.
 2. Verify model ID/settings, platform allowance, token/call cost and total cap.
