@@ -13,7 +13,10 @@ from .study1_interest_audit import LEVELS
 
 
 def matrix_and_contrast(d):
-    """Canonical coding, also available for preflight of rank-deficient pilots."""
+    """Canonical coding for rows already restricted to observed high/low income.
+
+    Also available for preflight of rank-deficient pilot matrices.
+    """
     arrays, names = [np.ones(len(d))], [('intercept', 'intercept')]
     for feature, levels in LEVELS.items():
         if not set(d[feature]) <= set(levels):

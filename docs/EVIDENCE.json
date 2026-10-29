@@ -9,7 +9,7 @@
   "actual_respondent_model_results": false,
   "software_controls_are_empirical_results": false,
   "external_peer_review": false,
-  "independent_internal_AI_review": "round04 critical own-context re-review: both45 tests pass; scientific increment remains weak/unproved; author revised47 then49 tests; targeted verification05 pending",
+  "independent_internal_AI_review": "round04: two own-context critical re-reviews; oracle useful, increment weak/unproved. Verification05: B verified49 tests and rank/estimability distinction; no external peer review.",
   "current_protocol_version": 5,
   "primary_target": "finite selected high/low cohort, fixed design, one recorded rollout",
   "primary_people": 556,
@@ -19,7 +19,7 @@
   "offline_tests_passed": 49,
   "remote_repository_created": false,
   "data_redistribution_verified": false,
-  "clean_clone_offline_reproduction": "v4 complete; v5 pending",
+  "clean_clone_offline_reproduction": "v5 complete;49 tests; primary design/plans/estimability/controls identical; tested dependencies reused",
   "respondent_generation": "research_development_hold",
   "new_integer_controls": "oracle software controls only, not empirical model results"
 }

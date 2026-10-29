@@ -5,7 +5,7 @@ credentials are excluded. The Git bundle preserves the local commit history.
 Clone the bundle to retain that history:
 
 ```bash
-git clone welfare-politics-lab.bundle welfare-politics-lab
+git clone welfare-politics-lab-v5.bundle welfare-politics-lab
 cd welfare-politics-lab
 ```
 

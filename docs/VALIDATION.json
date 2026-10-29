@@ -393,6 +393,20 @@
   },
   "latest_full_review_snapshot_tests": 45,
   "review_contribution_judgement": "increment weak/unproved; oracle useful software illustration only",
-  "clean_clone_reproduction_v5": "pending",
-  "remote_repository_created": false
+  "clean_clone_reproduction_v5": {
+    "status": "complete",
+    "tested_commit": "5f1970b",
+    "tests_passed": 49,
+    "new_model_calls": 0,
+    "verified_artifact_hashes": 37,
+    "primary_design_plans_estimability_controls_identical": true,
+    "dependencies": "existing tested virtualenv reused; no network installation claimed"
+  },
+  "remote_repository_created": false,
+  "targeted_verification05": {
+    "reviewer": "B",
+    "snapshot_tests_passed": 49,
+    "raw_data_independently_reviewed": false,
+    "provider_or_live_execution_verified": false
+  }
 }
