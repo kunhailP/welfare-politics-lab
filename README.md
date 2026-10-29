@@ -57,7 +57,7 @@ PYTHONPATH=src python -m unittest discover -s tests
 | [Response log contract](docs/RESPONSE_LOG_FORMAT.md) | Future actual primary logs and frozen-input check |
 | [Final blind review response](reviews/final_09/response.md) | Two fresh-context reviews, revisions and open issues |
 | [Final validation](docs/FINAL_HANDOFF_VALIDATION.json) | Local checks and reproduction evidence |
-| [Delivery/publication](docs/DELIVERY.md) | Source ZIP, Git history bundle and private publication |
+| [Delivery/publication](docs/DELIVERY.md) | Public repository and original handoff archives |
 
 The target is a fixed selected cohort and reconstructed tasks, not a national
 population. Household-income bands operationalize the group comparison; they do
@@ -76,5 +76,8 @@ Read [data provenance](data/README.md). Raw data, individual outputs, PDFs,
 credentials and generated runs are excluded from Git and delivery. The MIT
 license covers original software, not third-party data or published text.
 
-Intended remote: `kunhailP/welfare-politics-lab`. No remote was created from
-this environment. The handoff guide explains publication as a new private repo.
+Public repository: [kunhailP/welfare-politics-lab](https://github.com/kunhailP/welfare-politics-lab).
+Maintainer: [Kun woo Park (@kunhailP)](https://github.com/kunhailP).
+Research design, implementation and internal reviews used AI assistance.
+[Publication provenance](docs/PUBLICATION.md) preserves the mapping from the
+reviewed local history to the owner-attributed public commits.

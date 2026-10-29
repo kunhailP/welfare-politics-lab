@@ -15,22 +15,23 @@ it. The external handoff manifest records the exact commit, archive sizes and
 SHA256 hashes. [FINAL_HANDOFF_VALIDATION.json](FINAL_HANDOFF_VALIDATION.json)
 records local checks. Historical receipts remain preserved.
 
-No GitHub remote was created. The connector is authenticated as `kunhail`,
-exposes no repository-creation operation, and has no accessible `kunhailP`
-repository. The shell also lacks GitHub CLI/authentication. This is a tool/account
-limitation, not a rejected approval request. No remote publication is claimed.
-
-On the user's machine, with GitHub CLI authenticated as `kunhailP` and a clean
-committed bundle clone, inspect the plan and publish a new private repository:
+The owner subsequently authorized public publication to
+[kunhailP/welfare-politics-lab](https://github.com/kunhailP/welfare-politics-lab).
+Start further work from its public history:
 
 ```bash
-gh auth login
-python scripts/publish_github.py
-python scripts/publish_github.py --execute
+git clone https://github.com/kunhailP/welfare-politics-lab.git
+cd welfare-politics-lab
 ```
 
-The script checks the intended account, clean commit and tracked paths and
-refuses to overwrite an existing destination. It creates the private repository
-`kunhailP/welfare-politics-lab` and pushes the reviewed local source. Never put
-a token in repository files or chat. No continued model calls or scheduled
-research/reviews have been configured after handoff.
+The original ZIP, bundle, manifest and validation receipts remain historical
+artifacts of the pre-publication reviewed history. At the owner's request, the
+public copy associates all commit authors and committers with the owner. Its
+reviewed source trees were preserved exactly before publication documentation
+updates. See [publication provenance](PUBLICATION.md) for the commit mapping,
+checks and AI-assistance disclosure. Do not force-push the old bundle history
+over the public branch.
+
+The existing `scripts/publish_github.py` remains a helper for a different, new
+private destination; it is not needed for this published repository. No
+continued model calls or scheduled research/reviews were configured after handoff.

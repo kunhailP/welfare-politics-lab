@@ -7,7 +7,14 @@
 
 ## 1. 저장소 받기
 
-Git 이력이 포함된 파일을 받았다면 다음처럼 복원한다.
+공개 GitHub 저장소에서 받는다.
+
+```bash
+git clone https://github.com/kunhailP/welfare-politics-lab.git
+cd welfare-politics-lab
+```
+
+기존 인계 bundle은 게시 전 검토 이력의 별도 백업이다. 필요하면 다른 폴더에 복원한다.
 
 ```bash
 git clone /path/to/welfare-politics-lab-handoff.bundle welfare-politics-lab
@@ -96,19 +103,15 @@ python -m welfare_politics.recorded_responses \
 `messages`만 전송하고 인간 기준·평가 파일을 마운트하지 않는다. 저장 폴더를
 나누는 것만으로 격리가 구현되지는 않는다.
 
-## 6. 본인 GitHub에 게시
+## 6. 본인 GitHub에서 이어가기
 
-현재 환경은 `kunhail`로 연결돼 있으며 `kunhailP` 원격 저장소를 만들거나 게시하지
-못했다. 본인 컴퓨터에서 GitHub CLI를 `kunhailP`로 인증한 뒤, bundle로 복원한
-깨끗한 저장소에서 아래 명령을 실행한다.
+공개 저장소는 [kunhailP/welfare-politics-lab](https://github.com/kunhailP/welfare-politics-lab)이다.
+공개 커밋 작성자·커미터는 본인 계정으로 연결했다. AI를 활용한 설계·코드·내부
+리뷰 사실과 원자료 저자 표시는 보존했다. 게시 전후 커밋 대응은
+[게시 기록](PUBLICATION.md)에 있다.
 
-```bash
-gh auth login
-python scripts/publish_github.py
-python scripts/publish_github.py --execute
-```
-
-마지막 명령은 새 비공개 `kunhailP/welfare-politics-lab`을 만들고 커밋을 push한다.
-기존 같은 이름의 저장소가 있으면 중단한다. 토큰을 파일이나 채팅에 적지 않는다.
-GitHub CLI가 없으면 소스 폴더를 GitHub Desktop에서 새 비공개 저장소로 게시할 수 있다.
+본인 계정으로 인증한 GitHub Desktop이나 Git을 사용해 변경을 커밋하고 push하면 된다.
+공개 저장소를 clone해서 이어가며, 게시 전 bundle 이력으로 원격 main을 덮어쓰지 않는다.
+`scripts/publish_github.py`는 별도의 새 비공개 저장소를 만드는 기존 보조 도구이므로
+이미 게시된 이 저장소에 다시 실행할 필요가 없다.
 원자료·실행 결과·개별 응답·API 키는 Git에 넣지 않는다.

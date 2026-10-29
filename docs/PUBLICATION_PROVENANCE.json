@@ -1,0 +1,31 @@
+{
+  "repository": "kunhailP/welfare-politics-lab",
+  "visibility": "public",
+  "original_reviewed_tip": "9e0ba6a0e28535558ad61ea82e3ae319fd1d4738",
+  "published_history_tip_before_publication_docs": "4ddbb1dbcfbe42d6f3b97d3ffb14ae5e1206994a",
+  "author": {
+    "login": "kunhailP",
+    "name": "Kun woo Park",
+    "email": "246969497+kunhailP@users.noreply.github.com"
+  },
+  "source_trees_identical": true,
+  "history_scan": {
+    "commits": 12,
+    "unique_blobs": 227,
+    "credential_or_excluded_path_findings": 0
+  },
+  "commit_map": {
+    "90cd75531b11dfd4f7c0d3cabfb98a1e3bc9b2d8": "f124746226a04708c8c6bd77f2cb98f02f4e134b",
+    "71c0759e47925590d5235c90fdf5db9cb7df50a5": "70f2a22308866745b61e7283bd9a03384984c189",
+    "efd1f7baf0eef107464a3670dce50699dd217c25": "08c893ee9eea2bd0b5c9b41c9e39dbb6afc0697b",
+    "5f1970bc5d73566c6c7ac8054d15736a6651b712": "dad2b2b7406d28445a89a355b6b3739896ef60db",
+    "0869729f80627fce061ae1fd17d1b432a828d5c9": "d8cbbdb3177babf89fb037df5d0a0bd3140c42d3",
+    "4dec747dac0e9f78b71f33c72b0aee09a3119321": "7c9c5cdb34d8114bc0017671ca693ca31cdcecb0",
+    "348b175f79770c46cecbc5bb97aca5a70e9c871f": "d3ca380f77ea1f50bf6e2d61753288bf81ae6850",
+    "fd2f87a2e336f7719c7a1295bbce2998f331b0e4": "4fe53b39a670f316aeb01ad7cbf4e1c1a7511798",
+    "c91c8f3ae76f2cb3c56f89c4b853bf8b185d2b98": "ef99bb8c58b81034c6d4ef3d22108c91830fe12d",
+    "0eee70a48991860aa5c04d6c96876670e190ed19": "2f0f68e16c573cd2be394503c7064152f8f118f1",
+    "ddbe15d37fe32c1c09c675407523bbca162bca79": "9bcecdadc46fe48a450d8a5a4c7e15b26d7ab220",
+    "9e0ba6a0e28535558ad61ea82e3ae319fd1d4738": "4ddbb1dbcfbe42d6f3b97d3ffb14ae5e1206994a"
+  }
+}
