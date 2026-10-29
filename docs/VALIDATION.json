@@ -3,7 +3,7 @@
   "scope": "offline human reanalysis and software controls; no empirical model evidence",
   "command": "PYTHONPATH=src python scripts/reproduce.py --output runs/<new-directory>",
   "tests_command": "PYTHONPATH=src python -m unittest discover -s tests",
-  "tests_passed": 42,
+  "tests_passed": 43,
   "actual_respondent_model_calls": 0,
   "actual_paid_generation_usd": 0,
   "run_receipt_sha256": "8d9305faa1c521805a51c51693d21f35c03c5b4763a4f23baf9bca31c7334424",
@@ -315,7 +315,15 @@
     "interpretation": "Width=(4000-0)*sum(abs(w_missing)); these are identification ranges, not confidence intervals. Larger N need not reduce ambiguity at a fixed invalid fraction."
   },
   "keyed_replay": "copied human reference control, shuffled arrival, zero discrepancies; not a model run",
-  "clean_clone_reproduction": "pending",
+  "clean_clone_reproduction": {
+    "status": "complete",
+    "tested_commit": "71c0759",
+    "new_model_calls": 0,
+    "all_run_artifact_hashes_verified": 32,
+    "primary_design_request_plan_failure_and_keyed_control_identical": true,
+    "dependencies": "existing tested virtualenv reused; no network install claimed"
+  },
   "external_peer_review": false,
-  "remote_repository_created": false
+  "remote_repository_created": false,
+  "targeted_review_snapshot_tests_passed_by_each_reviewer": 42
 }

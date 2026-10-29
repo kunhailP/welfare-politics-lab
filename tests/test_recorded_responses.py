@@ -53,6 +53,18 @@ class KeyedReplayTests(unittest.TestCase):
                 attempts = copy.deepcopy(self.attempts); attempts[0][field] = value
                 with self.assertRaises(ValueError): self.score(attempts)
 
+    def test_distinct_amounts_detect_ab_slot_swaps_under_shuffled_arrival(self):
+        expected = np.arange(16) * 37
+        attempts = copy.deepcopy(self.attempts)
+        for attempt in attempts:
+            answer = {slot: int(expected[self.rows.index(f"{attempt['agent_id']}:{number}")])
+                      for slot, number in zip(['A', 'B'], attempt['profile_numbers'])}
+            attempt['raw_reply'] = json.dumps(answer)
+        np.random.default_rng(11).shuffle(attempts)
+        arrays, _ = assemble(list(reversed(self.requests)), attempts, self.rows, 'fixture-only')
+        for values in arrays.values():
+            np.testing.assert_array_equal(values, expected)
+
     def test_duplicate_extra_missing_and_conflicting_attempts_fail(self):
         extra = {**self.attempts[0], 'request_id': 'unknown'}
         after_reply = {**self.attempts[0], 'attempt': 2}

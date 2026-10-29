@@ -9,14 +9,15 @@
   "actual_respondent_model_results": false,
   "software_controls_are_empirical_results": false,
   "external_peer_review": false,
-  "independent_internal_AI_review": "round01: two independent context-separated reviews; round02: own-context re-reviews completed; both retain main-collection gate; version4 targeted software verification pending",
+  "independent_internal_AI_review": "round01: two independent context-separated reviews; round02: own-context re-reviews; verification03: both verified requested offline fixes and42 tests; neither full review cleared main collection",
   "current_protocol_version": 4,
   "primary_target": "finite selected high/low cohort, fixed design, one recorded rollout",
   "primary_people": 556,
   "primary_rows": 2224,
   "primary_design_columns": 36,
   "primary_planned_requests": 3336,
-  "offline_tests_passed": 42,
+  "offline_tests_passed": 43,
   "remote_repository_created": false,
-  "data_redistribution_verified": false
+  "data_redistribution_verified": false,
+  "clean_clone_offline_reproduction": "complete; identical primary design and request plans; existing tested dependencies reused"
 }
