@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "status": "development_spec_after_human_inspection_before_reference_fitting",
+  "source_sha256": "8c73ea17fd611cc204e4d9b149b0caf3560fb57b18f910ef9487acd3c662dc73",
+  "cohort_linkage_sha256": "847a38f9fd285a7664182e7fec2ca6ffe19b9d8a5cc49fb36b3f88d8a096726b",
+  "training_people": "Complete four-profile high/low people outside ALL existing main and pilot candidates",
+  "target": "Unchanged locked main high/low people and recipient tasks",
+  "comparators": ["B_mean", "B_recipient_OLS", "B_income_interacted_OLS"],
+  "recipient_coding": "Canonical LEVELS reference-coded intercept plus all eight recorded recipient factors",
+  "income_coding": "Canonical recipient basis fully interacted with observed low versus high respondent household income",
+  "other_respondent_facts": "Not used; employment risk and parenthood are outside these fixed simple references",
+  "fit": "Ordinary least squares by SVD; require full column rank; no regularization or hyperparameter search",
+  "predictions": "Continuous conditional-mean predictions clipped to [0,4000]; no integer rounding, sampling or invented trajectories",
+  "cross_validation": {
+    "seed": 20261030,
+    "folds": 5,
+    "split": "Shuffle sorted person IDs separately within high/low strata, array_split into five folds; all four rows stay together",
+    "purpose": "Report out-of-fold RMSE and MAE for all references; never select a reference or tune settings"
+  },
+  "main_reporting": "All three references on identical locked rows; both component contrasts and moderation, same-output diagnostics, RMSE and MAE; no model winner selection",
+  "information_access": "Human allocation labels from training people, unlike the planned sparse-context LLM arms; no equal-information superiority claim",
+  "main_outcome_access": "Only separate evaluation may read target labels; prediction must not depend on them",
+  "actual_respondent_model_calls": 0,
+  "generation_hold_changed": false
+}
