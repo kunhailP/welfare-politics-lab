@@ -89,6 +89,10 @@ def compare(x, human, actions):
         human_beta = np.linalg.lstsq(additive, human, rcond=None)[0]
         action_beta = np.linalg.lstsq(additive, actions, rcond=None)[0]
         def r2(values, beta):
+            # Even an exactly constant decimal array can have nonzero TSS
+            # from rounding its mean. R2 is undefined for that array.
+            if np.equal(values, values[0]).all():
+                return None
             total = float(np.sum((values-values.mean())**2))
             return None if total == 0 else float(1-np.sum((values-additive@beta)**2)/total)
         full_rank = bool(np.linalg.matrix_rank(additive) == additive.shape[1])

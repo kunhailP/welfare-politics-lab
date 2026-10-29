@@ -100,6 +100,8 @@ def evaluate_recorded(x, human, contrast, row_ids, requests, attempts, expected_
     layout(x)  # Public primary analysis requires the declared design roles.
     arrays, receipt = assemble(requests, attempts, row_ids, expected_model)
     report = evaluate_arrays(x, human, arrays, contrast, row_ids)
+    report['target'] = 'finite matched cohort, fixed design, one recorded respondent-model rollout'
+    report['outcome_provenance'] = 'request-keyed respondent responses; provider authenticity not verified'
     report['response_linkage'] = receipt
     report['request_plan_sha256'] = hashlib.sha256(json.dumps(requests, sort_keys=True,
                                                             separators=(',', ':')).encode()).hexdigest()

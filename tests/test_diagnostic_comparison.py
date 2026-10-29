@@ -61,6 +61,13 @@ class DiagnosticTests(unittest.TestCase):
         cells = report['group_by_profile_weighted_w1_cad']
         self.assertEqual(cells['cell_size_histogram'], {'2': 4})
         self.assertEqual(cells['singleton_row_fraction'], 0)
+        # Non-power-of-two row counts can round the mean of an exactly
+        # constant decimal array away from its stored element value.
+        x = np.tile(self.fixture(), (278, 1))
+        decimal = np.full(len(x), 0.1)
+        report = compare(x, decimal, decimal)
+        self.assertIsNone(report['additive_projection']['human_r2'])
+        self.assertIsNone(report['additive_projection']['actions_r2'])
 
     def test_unequal_cells_use_row_weights_and_keep_invalid_singleton(self):
         r = np.array([0]+[1]*3+[0]*2+[1]*5, float)

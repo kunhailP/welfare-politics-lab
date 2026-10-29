@@ -1,0 +1,64 @@
+ANONYMOUS LIMITED RE-REVIEW: FIXED HUMAN-TRAINED REFERENCES AND COMPONENT CONTRASTS
+
+Only this frozen packet and your own earlier reviews are permitted. Do not read
+parent docs/README/AGENTS, author discussions, other reviewer, raw data or runs.
+This is a limited internal re-review with retained own context, not fresh blind
+review or external peer review. Source results are author-computed aggregates;
+raw observations are not supplied for independent source verification.
+
+The locked finite main target, primary F-vs-N bundle loss J_FN and secondary
+F-vs-F-I income-specific J_FI are unchanged. Actual respondent-model calls=0.
+The generation hold is unchanged. N has no own facts; F has own income/job risk/
+parenthood; F-I omits explicit income only. The archive and main human outcomes
+were previously inspected; no untouched or population validation is claimed.
+
+New specification was committed BEFORE fitting any of these references, but
+AFTER prior human inspection. All3 fixed references remain in reporting: training
+grand mean, recipient-only18-column OLS, income-interacted36-column OLS. Training
+uses877 complete high/low people outside all existing main/pilot candidates,
+3508 human labels, predicting2224 main tasks from556 different people. Their
+human-label access differs from planned LLM arms; job risk/parenthood not used.
+No hyperparameter tuning or reference selection. Five person-level folds within
+training only report CV RMSE/MAE for every reference. Continuous conditional means
+are clipped0-4000 by the frozen rule; this is not a permission to clamp invalid
+LLM replies. No fake respondent trajectories or provider logs are generated.
+
+Author results (not independently raw-verified): human components high135.59,
+low190.75, moderation55.16CAD. Training-mean predictions yield components0/0,
+moderation0, mainMAE891.69; recipient-only predicts303.52/303.52, moderation0,
+MAE844.22; interacted predicts248.88/369.50, moderation120.62, MAE848.65. No
+clipping occurred in these main fits. Thus primary moderation discrepancy alone
+would be smaller for the constant predictor than interacted predictor despite
+the constant lacking recipient responsiveness. This illustrates interpretation
+of one finite endpoint, not new mathematics or actual LLM behavior. Do not change
+the primary score, construct an outcome-selected composite or call it a novel
+scientific discovery. The new public evaluator includes both component contrasts
+with separate exact missing-action bounds and signed reference errors.
+
+Current proposed claim: test whether socioeconomic input improves the specific
+class-conditioned recipient-income judgments relative to humans, and whether a
+conclusion based on the moderation score survives inspecting its components,
+task composition, invalidity, repeats and presentation. Income-specific effects
+remain secondary. No self-interest/solidarity mechanism, real votes, policy
+coalitions, or national human population claim is identified. Same-direction
+component slopes are adjusted group comparisons, not unanimity of all people.
+
+Closest overlap to consider: Taday Morocho et al arxiv2602.18462 (persona/subgroups),
+SSDataBench PNAS2538145123 (multivariate relations), FairFund-Bench arxiv2607.28934
+(deservingness and format), and Powdthavee arxiv2609.33055 currentv2 abstract
+(income structure, counterfactual income labels, income omission). Prior review
+recorded full-v2 PDF retrieval mismatch; do not claim full-text verification.
+These links may be read as primary sources if useful; disclose access limits.
+
+ReviewerA: assess what substantive empirical increment remains, whether the
+baseline resolves a practical-value gap, and whether a core-question redesign
+is needed; do not treat more diagnostics as novelty or ask for more oracle toys.
+ReviewerB: inspect leakage boundaries, CV splitting, prediction/clipping rules,
+canonical component construction and missing bounds/public replay. Run synthetic
+adversarial checks if useful. Snapshot tests can run with PYTHONPATH=src in packet
+and the available tested python environment. Source numbers remain author-only.
+
+One limitation of this packet: author_aggregate_report hashes the original fit
+before implementation-hash/runtime metadata was added to the parent script.
+Numeric source results and frozen specification are unchanged. Review snapshot
+code, and do not claim independently verifying the parent final rerun or hashes.

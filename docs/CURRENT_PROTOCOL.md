@@ -275,3 +275,26 @@ to detect it. Other respondent traits, trajectories and conditional joint tables
 need not be preserved. No real model failure, benchmark-wide failure or novel
 empirical discovery is inferred from a constructed table. Additional respondent
 model calls required for these evaluation checks: zero.
+
+## Evaluation addendum: fixed statistical references and group components
+
+The original version6 primary target and primary/secondary loss definitions are
+unchanged. `EMPIRICAL_CLAIM_SPEC_V1.md` specifies the narrowed prospective claim
+and reporting table after human analysis, before any respondent generation.
+The public evaluator now reports both group-specific components of the primary
+interaction contrast, signed reference errors and exact completion bounds.
+Under this fully interacted design the components use disjoint groups; their
+continuous-completion joint feasible set is rectangular. Other restricted or
+partially interacted designs need not share that property. Gamma still uses its
+own direct contrast weights. Components are diagnostics, not selected endpoints
+or a new composite success score.
+
+`HUMAN_STATISTICAL_REFERENCES.md` and its version1 config fix three simple
+conditional-mean references before fitting: training mean, recipient-only OLS
+and income-interacted OLS. They use877 people outside all existing main/pilot
+candidates and person-level5-fold training diagnostics, retaining all models.
+Main labels enter evaluation only. Prior research inspection of those labels is
+disclosed. Their human-label access and continuous-mean predictions differ from
+the LLM arms; they are neither zero-information forecasters nor simulated
+trajectories. Fixed statistical predictions may be clipped under their declared
+rule; invalid LLM replies may not. The remaining generation gates persist.

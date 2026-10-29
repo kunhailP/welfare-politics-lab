@@ -25,10 +25,10 @@
 The exploratory source-cohort qualification in `EMPIRICAL_VALUE_PLAN_KO.md`
 does not change the primary cohort or authorize generation. Do not build the
 political claim on reversing one small human-reference sign. The proposed
-disjoint-human statistical comparator still needs a frozen specification.
-Report the two group-specific recipient-income contrasts and their completion
-bounds next to gamma; the public evaluator adapter for these component bounds
-is not yet implemented. Preserve J_FN's bundle-level primary interpretation
+disjoint-human statistical references are now specified, fitted and reported in
+`HUMAN_STATISTICAL_REFERENCES.md` and `STATISTICAL_REFERENCE_RESULTS_KO.md`.
+The public keyed evaluator now reports both group-specific recipient contrasts
+and their completion bounds next to gamma. Preserve J_FN's bundle-level primary interpretation
 and J_FI's explicit-income secondary status. The additional overlap with
 arXiv:2609.33055v2 is recorded in the memo and qualification07 reviews.
 
@@ -53,8 +53,9 @@ arXiv:2609.33055v2 is recorded in the memo and qualification07 reviews.
   before expanding the substantive story.
 - Evaluate the separately specified Study2 context extension; do not pretend
   missing respondent traits or a personal longitudinal panel exist.
-- Add a human-trained statistical comparator only with disjoint training people
-  and explicit access/cost budgets.
+- Retain all three fixed disjoint-human statistical references and label-access
+  accounting; do not expand or select them for a preferred main ranking. The
+  prospective main reporting table is in `EMPIRICAL_CLAIM_SPEC_V1.md`.
 - Produce the main empirical figures, paper, actual-run demonstration and a
   clean-environment saved-output reproduction receipt.
 

@@ -106,6 +106,18 @@ class KeyedReplayTests(unittest.TestCase):
         report = self.score(attempts)
         self.assertEqual(report['arms']['N']['invalid_rows'], 2)
 
+    def test_public_replay_exposes_canonical_component_bounds(self):
+        # Reorder the synthetic columns to canonical [base, base*group].
+        x = self.x[:, [0, 2, 1, 3]]
+        report = evaluate_recorded(x, self.y, self.c, self.rows,
+                                   self.requests, self.attempts, 'fixture-only')
+        self.assertIn('recorded respondent-model rollout', report['target'])
+        for arm in ['N', 'F', 'F-I']:
+            components = report['arms'][arm]['group_components']
+            self.assertAlmostEqual(components['high_income']['lower'], 400)
+            self.assertAlmostEqual(components['low_income']['lower'], 650)
+            np.testing.assert_allclose(components['low_income']['signed_error_bounds'], [0, 0], atol=1e-8)
+
 
 if __name__ == '__main__':
     unittest.main()

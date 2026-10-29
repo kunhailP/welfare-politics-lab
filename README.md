@@ -93,6 +93,12 @@ The Korean project brief and next research gates are in
 The [empirical-value memo](docs/EMPIRICAL_VALUE_PLAN_KO.md) adds an exploratory
 human-source cohort-sensitivity audit. It leaves the locked main score unchanged
 and narrows the interpretation of a human/model contrast sign change.
+Three fixed disjoint-human statistical references are now fitted and separately
+labelled in the [reference results](docs/STATISTICAL_REFERENCE_RESULTS_KO.md).
+The [prospective claim/table specification](docs/EMPIRICAL_CLAIM_SPEC_V1.md)
+narrows the planned inference. Both group component contrasts and completion
+bounds are now exposed by the public keyed evaluator. No respondent-model result
+or equal-information superiority claim follows from these additions.
 
 ## GitHub status
 
