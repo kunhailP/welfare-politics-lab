@@ -1,0 +1,22 @@
+{
+  "human_source_available": true,
+  "source_archive_sha256": "06e74a2df4c0e9b7382ffcacc6d1844cae0b450c07a165b8046620f52c3b8625",
+  "source_date": "2026-10-29",
+  "human_reanalysis": "implemented; run scripts/reproduce.py for a fresh receipt",
+  "native_socioverse_primary_study": "not implemented",
+  "actual_respondent_model_calls": 0,
+  "actual_respondent_paid_spend": 0,
+  "actual_respondent_model_results": false,
+  "software_controls_are_empirical_results": false,
+  "external_peer_review": false,
+  "independent_internal_AI_review": "round 01 completed: two separate-context reviewers, both REVISE before main collection; round02 re-review pending",
+  "current_protocol_version": 3,
+  "primary_target": "finite selected high/low cohort, fixed design, one recorded rollout",
+  "primary_people": 556,
+  "primary_rows": 2224,
+  "primary_design_columns": 36,
+  "primary_planned_requests": 3336,
+  "offline_tests_passed": 31,
+  "remote_repository_created": false,
+  "data_redistribution_verified": false
+}

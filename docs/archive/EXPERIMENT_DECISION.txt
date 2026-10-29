@@ -1,0 +1,65 @@
+2026-10-29 — Welfare politics: experiment choice after receiving dataverse.zip
+
+DECISION
+Use Bridgman Study 2 as the human anchor, but do not submit a bare replication or a generic LLM deservingness audit. Build a Track C evaluation of whether synthetic citizens recover context-dependent redistribution rules. This is the current strongest feasible option, not a proven winning entry.
+
+Working title
+Matching the Mean, Missing Redistribution? Human-Grounded Tests of Synthetic Welfare Politics
+This is a question. No model result has been generated, and neither failure nor success is predetermined.
+
+Substantive question
+When government assistance changes from an ordinary tax rebate to crisis relief, do synthetic citizens reproduce humans' changes in the weight placed on recipient income, citizenship, employment and other randomized characteristics? Recovering the overall spending level is distinct from recovering the distributional rule.
+
+Evidence now available
+Original uploaded archive: /workspace/dataverse.zip
+SHA256: 06e74a2df4c0e9b7382ffcacc6d1844cae0b450c07a165b8046620f52c3b8625
+7 files: README, main.Rmd, R project, renv.lock, study1.tab, study2.tab, study2_alt.tab.
+Study 2 raw: 2,501 respondents, 10,004 profile-task rows. After translating the Rmd filters: 2,236 respondents, 8,551 rows. Not 8,551 independent people.
+Frame means: COVID CAD 1,144.0646; GST CAD 201.1493.
+OLS with all eight randomized attributes, low-income recipient $30k vs $120k: COVID CAD 433.3520; GST CAD 154.1246. Dividing by each frame mean gives 0.378783 and 0.766220. Difference GST minus COVID = 0.387437, respondent-cluster bootstrap percentile 95% interval [0.184832, 0.594007], 500 draws, seed 20261029, re-estimated means per draw.
+These are OUR RECOMPUTATIONS OF THE ORIGINAL HUMAN STUDY, not new human experimental findings or synthetic results. Published cregg coefficient/SE equivalence has not been established. CR1 SEs and bootstrap are explicitly identified in audit.json.
+Data exclusions matter: duration > 0.33 x median (1961 sec), allocation <9999, then allocation strictly below frame-specific 98th percentile (5000 COVID, 2500 GST). Ties at the cutoff can exclude more than 2%. Rmd does not add a separate straightliner filter in this block; earlier preprocessing cannot be verified. Outcome-based exclusion can change randomized-effect interpretation, so report no-trim/<9999 sensitivity alongside published-code cleaning. Do not call filtered estimates unqualified population effects.
+
+COMPARISON WITH ALTERNATIVES
+1. Human-grounded context-dependent redistribution audit: selected. Directly welfare politics, human validation available, manageable implementation, clear question beyond overall means.
+2. New party competition / universal-versus-targeted welfare / fiscal tradeoff agent society: potentially stronger future political theory project, but now lacks matching human behavioral outcomes. More complex simulations alone do not supply empirical validation. Keep at most one explicitly exploratory extension after the primary result is complete.
+3. Bellani & Bledow inequality communication and one-year persistence: excellent future longitudinal politics question; original individual-level data not obtained, and attrition/instrument verification adds implementation risk before the current deadline. Do not import fake human time dynamics into the available repeated-vignette data.
+4. Fresh human randomized experiment: can support a future original political-science paper, but recruitment, budget and research approvals are not established. Not a credible prerequisite for this deadline.
+5. Generic LLM distributive-bias or prompt-format benchmark: substantial overlap with FairFund-Bench. Do not make this the headline novelty.
+
+NEAREST RELATED WORK AND CLAIM BOUNDARY
+FairFund-Bench, arXiv:2607.28934v2 (11 Sep 2026), already crosses rating/ranking/allocation, single/multiple comparison and transparent/disguised prompts across 14 models. Its limitations explicitly state no human allocation baseline for its exact appeals. We add a human-matched government redistribution task and contextual effect fidelity; do not claim to be the first human-grounded synthetic survey benchmark overall.
+Ashokkumar et al., Nature 2026, doi:10.1038/s41586-026-10742-x already studies LLM treatment-effect prediction across many experiments, including effect-size overestimation. A single additional replication is not sufficient novelty.
+Cummins 2026, doi:10.1177/25152459261461505 already studies analytic flexibility in silicon samples. Prompt sensitivity alone is insufficient novelty.
+Sources:
+https://arxiv.org/html/2607.28934v2
+https://www.nature.com/articles/s41586-026-10742-x
+https://journals.sagepub.com/doi/full/10.1177/25152459261461505
+https://doi.org/10.1017/XPS.2021.10
+https://doi.org/10.7910/DVN/LPHMB7
+https://doi.org/10.1111/obes.70118
+
+MINIMUM COMPLETE EXPERIMENT
+A. Human baseline: reproduce published-code descriptive and attribute effects, including respondent-level dependence; compare core coefficients with published figures. Sensitivity to exclusions, raw CAD vs frame-mean normalization. Do not erase null or inconsistent attribute effects.
+B. Actual synthetic responses: use original single-profile, blank-dollar-input task and all original randomized attributes. Preserve four tasks per respondent agent and policy frame. Use population-level Canadian citizen role unless pre-treatment persona variables are verified. Study 2 does NOT contain the Study 1 respondent demographic columns. Do not construct ideological personas from get_ahead/inequality/living or government support items until their measurement timing is verified.
+C. Comparator: constant-within-frame software control; it can match frame means by construction but has zero attribute effects. Label access to human means as an oracle diagnostic, not a successful out-of-sample predictor. Include a simple train-only attribute regression comparator if a predictive split is used. LLMs must add value beyond trivial baselines.
+D. Core scores: raw allocation distribution and means; normalized attribute-effect errors; primary low-income-by-frame effect difference; citizenship and employment effects as prespecified secondary endpoints; invalid/refused/extreme response rates. Do not convert a non-significant human effect into a hard zero or score models solely by sign agreement.
+E. Controlled extension: compare isolated-task versus preceding-task-history input on the SAME profiles and model; this estimates sensitivity of the synthetic measurement procedure. Existing human data do not randomize the memory mechanism, so differences are not human memory effects. This is optional and follows, rather than replaces, the human anchor.
+F. Source/target calibration if affordable: fit any scale/prompt adjustment only on a declared source-frame development subset, freeze it, then evaluate the other frame. Reciprocal direction is a robustness exercise. No tuning using target outcomes, published target coefficients, or unpublished model results. Because this design was developed after examining human aggregate results, describe it as an analysis plan locked before new model generation, not a preregistered human replication or untouched external validation.
+G. Decision rule: report recovery or failure regardless of direction. If model effects do not outperform baselines within uncertainty, narrow claims and explain the deployment limitation. Do not search variants until a dramatic positive or negative result appears.
+
+SOCIOVERSE ROLE
+Population = stable respondent IDs; environment = randomly assigned policy frame plus original recipient task; behavior = allocation; step = survey task, not a month/year. Store original prompt, response, parsing, model identity, cost and failures, four ABC source artifacts and one-command saved-output reproduction. No unsupported political network, coalition or electoral forecasting claim.
+
+CURRENT EXECUTION LIMITS
+No new API/model calls or paid spend have been made.
+Current hosted model identity and supported export path remain unverified. Historical screenshot is not current model configuration. Existing hosted refusal does not prove a competition-wide topic ban; do not hide original crisis/health attributes to bypass scope restrictions. Local contest-compatible execution and hosted acceptance are distinct questions.
+Original questionnaire wording, individual names and randomized outcome order are not contained in the public table files. Static.cambridge supplement downloads returned HTTP403. Subsequently author_article.pdf and registered_supplement.pdf were obtained from the author website and OSF (969,816 and 1,752,369 bytes). Registered supplement may predate final instruments: reconcile before freezing prompts. Original individual names/order assignments still require explicit verification; otherwise disclose reconstruction and do not call it exact procedural replication.
+The author article Table 1 supplies the frame introductions, profile template, three outcome questions and numeric whole-number validation. Its introduction text says 'pair' despite main-text single-profile design; disclose rather than silently assume a paired task. The 13-page OSF registered_supplement.pdf is a preregistration POWER SIMULATION with simulate_data/rnorm, not additional observed human responses. Never add its simulated values to human data or to evidence of model performance.
+Do not combine Study 1/2/alt as one longitudinal panel. Study2_alt raw 2,536 persons differs from the paper's reported 2,315 retained, requiring its own cleaning/provenance audit. The distributed alt Rmd block repeats exclusions; do not silently apply them twice or choose whichever creates favorable results.
+The available data do not establish effectiveness of actual new welfare policies, normative justice, welfare law accuracy, or PhD admission prospects.
+
+REPRODUCE FREE HUMAN CHECK
+env -u SV_LLM_API_KEY -u OPENAI_API_KEY OPENBLAS_NUM_THREADS=1 /workspace/socioverse_runpod_handoff/.venv/bin/python /workspace/socioverse_strategy_20261029/welfare_politics/human_audit.py --output /workspace/socioverse_strategy_20261029/welfare_politics/<fresh-output> --bootstrap 500
+Initial completed outputs: human_check_01/audit.json and study2_attribute_effects.csv. The second check, human_check_02, includes exclusion_sensitivity.json produced by the updated one-command script.
+Exclusion sensitivity: retaining all amounts below9999 after the duration filter, without the top-2% trim, yields normalized income-effect difference 0.400213 (versus published-code 0.387437). Raw means/effects are highly sensitive to implausibly large responses; do not present the data as clean without documentation.

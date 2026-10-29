@@ -1,0 +1,52 @@
+2026-10-29 — Second strategic review requested by the user
+
+Verdict
+The preceding plan is an empirically tractable starting point. There is not yet evidence that it is a first-prize-caliber result. Keep the human data; strengthen the scientific test rather than merely rename the project, add many models, or add invented social dynamics.
+
+Three material weaknesses in the preceding pitch
+1. Novelty: one more synthetic survey replication overlaps broad treatment-effect prediction, distributive-bias audits, and persona-fidelity research.
+2. Politics: Study 2 lacks the respondent demographic columns needed to examine which citizens favor which recipient groups. A study of aggregate recipient effects alone misses much of the politics of welfare support.
+3. Identification and scale: Study 2 compares two differently described programs, not an isolated randomized 'crisis' fact holding program institution fixed. The 0.766 and 0.379 effects are each divided by a different frame mean. The raw CAD income effects run in the opposite ordering (154 GST, 433 COVID). Do not infer a crisis-caused reduction in class conflict or a unique mechanism of solidarity from this normalization.
+
+Current recommended question
+Can Synthetic Citizens Reproduce Interests and Solidarity in Welfare Politics?
+Plain Korean: 합성 시민은 복지정치의 이해관계와 연대를 재현하는가?
+The question is open. Do not pretitle the result as fabricated class conflict, failed solidarity, or successful social prediction.
+
+Bounded strengthening, using data already obtained
+Study 1 supplies actual respondent income, employment risk and parenthood alongside randomized recipient profiles. Test whether demographic conditioning reproduces human differences in recipient-attribute effects, rather than mechanically inducing stereotyped self-interest. Study 2 remains the separate policy-context validation. Do not pretend the studies are a respondent panel or that a between-study difference identifies a change caused by historical time.
+Three evaluation levels: overall mean/distribution; respondent-group-by-recipient-attribute effect differences; randomized policy-frame differences in recipient effects. Report uncertainty at each level and do not call a human confidence interval containing zero proof that there is no subgroup difference.
+Controlled model-input comparison: matched tasks with observed factual persona versus omitted socioeconomic persona. If affordable, add jointly permuted respondent records while retaining original recipient tasks and human evaluation IDs. A permutation must preserve the joint respondent distribution and must not leak outcomes. This identifies how the prompting procedure changes model output, not causal effects of human income or parenthood.
+Use a small set of theory-motivated endpoints (recipient income by respondent income; pandemic-related employment loss by respondent employment risk; young children by respondent parenthood). Retain all declared endpoints even if human or model differences are unremarkable. Avoid selecting the most dramatic interaction after model generation.
+
+Reusable Track C contribution
+A validation component accepting human task data and SocioVerse trajectories that separately scores aggregate agreement, randomized-recipient effect fidelity, and subgroup interaction fidelity. Include constant/pooled-persona diagnostic controls and simple human-trained statistical comparators. Effectiveness must be demonstrated with real model outputs; a method name and good packaging do not establish novelty or improvement. A calibrated variant is optional: any shrinkage or scale adjustment must fit development people only and be compared with a simple regression using the same human-data budget. Do not claim such calibration is intrinsically new.
+
+Scope priority
+1. Verify human study procedures and source analysis before model prompts.
+2. Complete one actual matched human-model test plus controls, with no target-result prompting.
+3. Add subgroup test and separate context validation as one coherent interests/solidarity question; if resources fail, report the reduced scope explicitly.
+4. Complete native SocioVerse package, empirical figures, paper and actual-run demo.
+Do not make new party competition, taxation, coalition formation, network influence or elections the current primary simulation without matching human evidence. Existing data measure allocation preferences, not voting, legislative coalitions or actual benefit uptake.
+
+Comparative judgement (qualitative, not a numerical score or winning probability)
+Bare Study 2 replication: feasible and verifiable, limited original political contribution.
+Human-grounded interests + policy-context evaluation: best currently supported option; stronger political question and validation component, still needs actual model results and nearest-work distinction.
+New universal-versus-targeted welfare bargaining society: stronger surface narrative but weak empirical validation now; substantial implementation risk before deadline.
+Fresh inequality-information human panel experiment: good longer-term political-science research, data/recruitment/approvals and one-year followup unavailable now.
+Welfare administration/legal eligibility: useful existing engineering, conflicts with user's substantive preference and is not a substitute for welfare politics.
+
+Additional human check completed in this review
+study1_interest_audit.py, output study1_interest_check_02/audit.json.
+Study1 raw 2295 respondents / 9180 tasks. Full-attribute models use complete-case randomized attributes (8742 tasks, or 6357 in low/high income comparison); missingness is explicitly reported. An earlier category check correctly stopped on missing employment values. Failed output directory study1_interest_check_01 contains no successful result.
+This adjusted model fully interacts ALL recipient factors with the respondent subgroup; it is NOT the original one-attribute cregg subgroup model. It finds income and parenthood differences with intervals containing zero, and an employment interaction with a nonzero interval. The latter requires reconciliation with original-model specifications before use as an anchor. Do not promote it as a new political discovery or claim exact paper reproduction. Demographic survey-item timing remains to be verified; this audit does not certify their pretreatment status.
+
+Closest additional work checked
+https://arxiv.org/abs/2602.18462 — persona versus no-persona WVS survey alignment; conditioning can redistribute subgroup errors. We cannot claim the first controlled persona ablation.
+https://arxiv.org/abs/2610.05828 — data-derived personas, domain/population mismatch and survey-history transfer. Richer personas alone are not a sufficient contribution.
+https://www.nature.com/articles/s41562-026-02611-4 — individual/demographic/country preference fidelity; broad multi-level alignment already studied. Search text accessible; full-page browser redirect prevented direct reopening, so do not rely on unverified details beyond accessible text.
+https://arxiv.org/html/2607.28934v2 — distributive-bias formats and deservingness, without matched human allocations for its exact appeals.
+https://socioverse.fudan-disc.com/challenge/ — value/novelty25, rigor25, results/theory20, reproducibility20, presentation10; Track C explicitly allows evaluation frameworks, but needs controlled evidence of effectiveness, costs and applicability. Cached official challenge.js read in this review; no competitor ranking data available.
+
+Human reference data are now visible to us. State acquisition date and avoid describing this as an untouched preregistered test. Freeze new model protocols before collecting outputs. Existing-source memorization remains possible even if the paper title is omitted from prompts; this cannot be ruled out merely by hiding a citation.
+New model calls: 0. New paid spend: 0. Award outcome: unknown. No external messages or GitHub mutations.

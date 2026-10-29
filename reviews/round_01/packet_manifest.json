@@ -1,0 +1,13 @@
+{
+  "packet_type": "internal_independent_AI_review",
+  "author_context_provided": false,
+  "prior_review_provided": false,
+  "real_model_data": false,
+  "files": {
+    "contrast_validity.py": "3f3c52c386453d534eddf2679fe5e4dce06515e360f50b82fded6b1aceab9436",
+    "design_diagnostics.py": "a1c6add3509b2b699c7706be6a34a2459094272c529c0a34ce0719e8b9643521",
+    "packet.md": "2fb191ae0c570e2d78cb782eb85e3012526a9b2d20613cdb3d42f5cc24a72d45",
+    "prepare_design.py": "46e69db6e705d08f640ebb71001306ce0877c3a35998351b0453579293a6499b",
+    "study1_interest_audit.py": "1e7d8e78f6b0110227884c07af1b8a308c3557075c800f0ac5a3ad45c92e1593"
+  }
+}

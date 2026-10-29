@@ -1,0 +1,41 @@
+{
+  "archive": "/workspace/dataverse.zip",
+  "archive_sha256": "06e74a2df4c0e9b7382ffcacc6d1844cae0b450c07a165b8046620f52c3b8625",
+  "files": [
+    {
+      "path": "source/README.md",
+      "bytes": 6574,
+      "sha256": "b4bf31e6c9d78cd83b34b96fe38efde2e1d1b9c94bef8d9b79a0ab96d09abfa1"
+    },
+    {
+      "path": "source/deservingness.Rproj",
+      "bytes": 205,
+      "sha256": "3a81ccc25a62f1a31c7d3404389935ced50831abea5e848408745ad1a1bf6126"
+    },
+    {
+      "path": "source/main.Rmd",
+      "bytes": 65229,
+      "sha256": "f342467e9429943119609a8ab43070b9dfca81c0bef5304cd1d492f2d50152db"
+    },
+    {
+      "path": "source/renv.lock",
+      "bytes": 22787,
+      "sha256": "841921deacda3c3e05969345742230946d8542d101c5ad4ce90717d98cd5bcfe"
+    },
+    {
+      "path": "source/study1.tab",
+      "bytes": 1726779,
+      "sha256": "8c73ea17fd611cc204e4d9b149b0caf3560fb57b18f910ef9487acd3c662dc73"
+    },
+    {
+      "path": "source/study2.tab",
+      "bytes": 1596329,
+      "sha256": "8a4c212b7a112ab156ba2aaebfa41d1c27fba4ee52abab1ef2014870f83e9fd4"
+    },
+    {
+      "path": "source/study2_alt.tab",
+      "bytes": 1419392,
+      "sha256": "e435b34a2a663fcd9dc7b6a28a065f03002537942778bb7450c31b9016649fc3"
+    }
+  ]
+}

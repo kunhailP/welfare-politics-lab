@@ -1,0 +1,31 @@
+{
+  "review_type": "re-review_with_own_prior_context",
+  "author_identity_supplied": false,
+  "other_reviewer_report_supplied": false,
+  "files": {
+    "response_to_A.md": "bb5bfc263dfc4d711fd9cbd5e3680a3cb24e1242523c95c98e9e74100b53dbb3",
+    "response_to_B.md": "39d344b726794534c78e980f181cd141d8cdb097009b03b09b8410474d738a54",
+    "shared/offline_design_receipt.json": "03b5b9642af2ffd724d1167998484bd1ebdadacfbfc26ae31477e9d7be863e7a",
+    "shared/packet.md": "08038bbd421ea602f270e559fdf5576b938c8de8dc13176b7de7290fe4f4158c",
+    "shared/protocol.md": "1d82e7e59d9708b6525a9ded226f5929f60d018dcd280849c17636bff9493fad",
+    "shared/related_work.md": "a23fbabcb8d8d2c88b5af7de55af2a4e7ad0deaab368fc12a99d4b252b941613",
+    "shared/src/welfare_politics/__init__.py": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed",
+    "shared/src/welfare_politics/contrast_validity.py": "9ac163746cae4e3ab40ff255d1a26726b3b54776f677c64071038145ceceadd4",
+    "shared/src/welfare_politics/design_diagnostics.py": "a1c6add3509b2b699c7706be6a34a2459094272c529c0a34ce0719e8b9643521",
+    "shared/src/welfare_politics/failure_budget.py": "1bbc0c47acf0d8667aa3ce6553399e5c1000d33699be73f4f5234a515c01ca5b",
+    "shared/src/welfare_politics/human_audit.py": "e546328e334c9c137c96776fa21a337958bf29b286ea860788160fee116b0377",
+    "shared/src/welfare_politics/ingest.py": "a42031a0c4a2ca2b186513103e207f861645e5cb656fc2f9bb47cc1544effc4a",
+    "shared/src/welfare_politics/paired_evaluation.py": "37537aba05c4823c7504f9ba7a527c87dac1440690451c0a385eb966c4325a8c",
+    "shared/src/welfare_politics/prepare_design.py": "46e69db6e705d08f640ebb71001306ce0877c3a35998351b0453579293a6499b",
+    "shared/src/welfare_politics/primary_design.py": "fb7f2bcd241b812c083bd989f4512046567451f753db52d177317d6f622fab02",
+    "shared/src/welfare_politics/render.py": "5b512cba79d002142b4ebd433fa6172831c07190919bf8c9ebc2e80bf6c99285",
+    "shared/src/welfare_politics/study1_interest_audit.py": "1e7d8e78f6b0110227884c07af1b8a308c3557075c800f0ac5a3ad45c92e1593",
+    "shared/tests/test_contrast_validity.py": "e91f5bc8da958013fdb8c61462e3e6beb97a9060d9c0760682724734f5f70789",
+    "shared/tests/test_human_cleaning.py": "b5267de8b9955f6a1c44d0c69bad21b338ce00ab209a2e8c3d65023580b7713c",
+    "shared/tests/test_ingest.py": "73ed2678455876f5c96d29930ddb3918f9b421975ee781023a0ca51bc900dea7",
+    "shared/tests/test_paired_evaluation.py": "6e5b95aa32da1b72824b6acd330a2ef1cab995c2f6554b48943ae8986ad1ccbf",
+    "shared/tests/test_primary_design.py": "784bb28d537db8cc42660e5bcabda7e4f4af36f3dd530383520cde36b27a5497",
+    "shared/tests/test_render.py": "dc950f457e36730e63cb633d40c0a6b92496606c13cc41043084d75c8c77e2a9",
+    "shared/tests/test_schedule.py": "a3c155895c42a268c8e726bdcfcd9da4a8c033732b6d928aa8ea2b9d6e20347e"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "status": "planning_only",
+  "generation_enabled": false,
+  "actual_model_calls": 0,
+  "actual_paid_spend": 0,
+  "model": null,
+  "campaign_budget_usd": null,
+  "planned_seed": 20261029,
+  "planned_arms": ["no_persona", "socioeconomic_persona", "socioeconomic_persona_without_income"],
+  "pilot_people": 32,
+  "main_candidates": 768,
+  "resource_only_main_options": [256, 512, 768],
+  "freeze_before_generation": ["source hashes", "target population", "stimulus reconstruction", "model and decoding", "sample size", "estimands", "failure handling", "cost cap"]
+}

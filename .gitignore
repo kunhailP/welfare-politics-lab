@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.env
+.env.*
+data/raw/*
+data/source_receipt.json
+runs/*
+*.pdf
+*.zip
+*.bundle
+.DS_Store
