@@ -12,6 +12,7 @@ from pathlib import Path
 import numpy as np
 
 from .paired_evaluation import evaluate_arrays
+from .diagnostic_comparison import layout
 from .render import ARMS, load_jsonl, message_digest, parse_pair, request_identity
 
 ARM_LABEL = dict(zip(ARMS, ['N', 'F', 'F-I']))
@@ -96,6 +97,7 @@ def assemble(requests, attempts, row_ids, expected_model):
 
 
 def evaluate_recorded(x, human, contrast, row_ids, requests, attempts, expected_model):
+    layout(x)  # Public primary analysis requires the declared design roles.
     arrays, receipt = assemble(requests, attempts, row_ids, expected_model)
     report = evaluate_arrays(x, human, arrays, contrast, row_ids)
     report['response_linkage'] = receipt

@@ -1,18 +1,19 @@
 {
-  "checked_at_utc": "2026-10-29T14:54:42.648179+00:00",
-  "protocol_version": 5,
-  "tests_passed": 49,
-  "respondent_generation": "research_development_hold",
+  "checked_at_utc": "2026-10-29T15:13:29.773398+00:00",
+  "protocol_version": 6,
+  "tests_passed": 58,
+  "generation_enabled": false,
   "actual_respondent_model_calls": 0,
   "actual_paid_generation_usd": 0,
-  "run_receipt_sha256": "64a75191dc372cc9da0a7c81920454ca5288c7ace53f1de67266a9fe44776793",
-  "artifact_hashes_verified": 37,
+  "run_receipt_sha256": "5fe69108df52e0cd6707e7a1344ccde09292cfe46e761820bd430080aa4b3d9a",
+  "artifact_hashes_verified": 40,
   "python": "3.12.3",
   "packages": {
     "numpy": "2.3.5",
     "pandas": "2.2.3",
     "scipy": "1.17.0"
   },
+  "primary_reference_and_generation_messages_identical_to_v5": true,
   "primary_design": {
     "estimand": "finite selected high/low cohort fixed-design contrast",
     "human_uncertainty": "recorded reference is known; no sampling confidence interval attached",
@@ -253,160 +254,211 @@
     },
     "point_is_not_a_causal_human_income_effect": true
   },
-  "request_plan": {
-    "status": "request_plan_only",
-    "actual_model_calls": 0,
-    "planned_requests": 3336,
-    "unique_transmitted_inputs": 3336,
-    "common_task_model_only_audit_requests": 96,
-    "requests_with_same_canonical_name": 429,
-    "source": "whitelisted input bundle only; no human-reference files read",
-    "response_policy": "invalidate entire pair if JSON or either action is invalid",
-    "native_socioverse_runner_implemented": false
-  },
-  "integer_control": {
-    "status": "outcome_informed_integer_SOFTWARE_CONTROL_ONLY",
+  "distribution_control": {
+    "status": "outcome_informed_permutation_SOFTWARE_CONTROL_ONLY",
     "actual_model_calls": 0,
     "empirical_model_results": false,
     "human_contrast": 55.157827808322594,
-    "full_recipient_profile_patterns": 1465,
-    "shared_profile_patterns": 323,
+    "candidate_cycles": 38,
+    "sharp_extremum_certified": false,
+    "has_changed_contrast_control": true,
     "preserved_exactly": [
-      "each respondent-group sum and mean",
-      "each complete-recipient-profile sum and mean",
-      "pooled recipient means and additive-regression sufficient statistics",
-      "grand mean"
+      "overall allocation multiset",
+      "each income-group allocation multiset",
+      "each pooled complete-recipient-profile allocation multiset",
+      "fixed additive design X-transpose-y, allocation sum of squares, OLS coefficients and R2 when defined"
     ],
     "not_preserved": [
-      "respondent-by-recipient interactions",
-      "individual response trajectories",
-      "allocation distributions or variances"
+      "group-by-profile outcome tables",
+      "individual trajectories",
+      "relationships to respondent facts outside the primary design"
     ],
-    "has_changed_contrast_control": true,
-    "sharp_extremum_certified": false,
-    "interpretation": "A changed-contrast control is a feasible integer counterexample to identifying interaction fidelity from the listed summaries. Unchanged controls are not such evidence. No real LLM output or sharp optimization is claimed.",
+    "scope": "Specified lower-order checks only; stronger conditional checks can detect the control. No external benchmark-wide failure or real generator error established.",
     "controls": {
       "increase": {
-        "contrast": 1900.2599928843265,
-        "cycles": 321,
-        "changed_rows": 652
+        "contrast": 129.71134686306428,
+        "cycles": 4,
+        "changed_rows": 16,
+        "diagnostic_comparison": {
+          "target": "finite same-row diagnostic comparison; not population inference",
+          "full_row_count": 2224,
+          "invalid_rows": 0,
+          "global_allocation_w1_cad": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "invalid_rows": 0,
+            "sharp_bounds_certified": true,
+            "method": "exact equal-weight W1 if complete; conservative midpoint-anchor triangle bounds otherwise"
+          },
+          "respondent_group_weighted_w1_cad": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "cells": 2,
+            "singleton_cells": 0,
+            "singleton_rows": 0,
+            "singleton_row_fraction": 0.0,
+            "cell_size_histogram": {
+              "1008": 1,
+              "1216": 1
+            },
+            "weighted_cell_mean_absolute_error_bounds_cad": [
+              0.0,
+              0.0
+            ],
+            "weighting": "fixed cell row count / total fixed rows",
+            "exact_if_all_actions_observed": true
+          },
+          "pooled_complete_profile_weighted_w1_cad": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "cells": 1465,
+            "singleton_cells": 922,
+            "singleton_rows": 922,
+            "singleton_row_fraction": 0.414568345323741,
+            "cell_size_histogram": {
+              "1": 922,
+              "2": 383,
+              "3": 114,
+              "4": 36,
+              "5": 10
+            },
+            "weighted_cell_mean_absolute_error_bounds_cad": [
+              0.0,
+              0.0
+            ],
+            "weighting": "fixed cell row count / total fixed rows",
+            "exact_if_all_actions_observed": true
+          },
+          "group_by_profile_weighted_w1_cad": {
+            "lower": 14.451438848920864,
+            "upper": 14.451438848920864,
+            "cells": 1788,
+            "singleton_cells": 1418,
+            "singleton_rows": 1418,
+            "singleton_row_fraction": 0.637589928057554,
+            "cell_size_histogram": {
+              "1": 1418,
+              "2": 311,
+              "3": 52,
+              "4": 7
+            },
+            "weighted_cell_mean_absolute_error_bounds_cad": [
+              14.451438848920864,
+              14.451438848920864
+            ],
+            "weighting": "fixed cell row count / total fixed rows",
+            "exact_if_all_actions_observed": true
+          },
+          "pass_or_equivalence_threshold_applied": false,
+          "exact_reproduction_of_an_external_benchmark": false,
+          "additive_projection": {
+            "status": "complete_fixed_rows",
+            "columns": 19,
+            "full_column_rank": true,
+            "human_r2": 0.08753752736561338,
+            "actions_r2": 0.08753752736561338,
+            "max_absolute_coefficient_difference": 4.547473508864641e-13,
+            "fitted_value_difference_rmse": 3.46604377293616e-13,
+            "r2_not_a_coefficient_direction_or_interaction_fidelity_test": true
+          }
+        }
       },
       "decrease": {
-        "contrast": -1752.2160945092687,
-        "cycles": 317,
-        "changed_rows": 657
+        "contrast": -22.03414363553526,
+        "cycles": 6,
+        "changed_rows": 24,
+        "diagnostic_comparison": {
+          "target": "finite same-row diagnostic comparison; not population inference",
+          "full_row_count": 2224,
+          "invalid_rows": 0,
+          "global_allocation_w1_cad": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "invalid_rows": 0,
+            "sharp_bounds_certified": true,
+            "method": "exact equal-weight W1 if complete; conservative midpoint-anchor triangle bounds otherwise"
+          },
+          "respondent_group_weighted_w1_cad": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "cells": 2,
+            "singleton_cells": 0,
+            "singleton_rows": 0,
+            "singleton_row_fraction": 0.0,
+            "cell_size_histogram": {
+              "1008": 1,
+              "1216": 1
+            },
+            "weighted_cell_mean_absolute_error_bounds_cad": [
+              0.0,
+              0.0
+            ],
+            "weighting": "fixed cell row count / total fixed rows",
+            "exact_if_all_actions_observed": true
+          },
+          "pooled_complete_profile_weighted_w1_cad": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "cells": 1465,
+            "singleton_cells": 922,
+            "singleton_rows": 922,
+            "singleton_row_fraction": 0.414568345323741,
+            "cell_size_histogram": {
+              "1": 922,
+              "2": 383,
+              "3": 114,
+              "4": 36,
+              "5": 10
+            },
+            "weighted_cell_mean_absolute_error_bounds_cad": [
+              0.0,
+              0.0
+            ],
+            "weighting": "fixed cell row count / total fixed rows",
+            "exact_if_all_actions_observed": true
+          },
+          "group_by_profile_weighted_w1_cad": {
+            "lower": 18.147482014388487,
+            "upper": 18.147482014388487,
+            "cells": 1788,
+            "singleton_cells": 1418,
+            "singleton_rows": 1418,
+            "singleton_row_fraction": 0.637589928057554,
+            "cell_size_histogram": {
+              "1": 1418,
+              "2": 311,
+              "3": 52,
+              "4": 7
+            },
+            "weighted_cell_mean_absolute_error_bounds_cad": [
+              18.147482014388487,
+              18.147482014388487
+            ],
+            "weighting": "fixed cell row count / total fixed rows",
+            "exact_if_all_actions_observed": true
+          },
+          "pass_or_equivalence_threshold_applied": false,
+          "exact_reproduction_of_an_external_benchmark": false,
+          "additive_projection": {
+            "status": "complete_fixed_rows",
+            "columns": 19,
+            "full_column_rank": true,
+            "human_r2": 0.08753752736561338,
+            "actions_r2": 0.08753752736561338,
+            "max_absolute_coefficient_difference": 2.5579538487363607e-13,
+            "fitted_value_difference_rmse": 2.5048067960290674e-13,
+            "r2_not_a_coefficient_direction_or_interaction_fidelity_test": true
+          }
+        }
       }
     }
   },
-  "design_readiness": {
-    "status": "human_design_only_no_generation",
-    "actual_model_calls": 0,
-    "tiers": [
-      {
-        "phase": "pilot",
-        "candidate_people": 32,
-        "primary_high_low_people": 25,
-        "primary_rows": 100,
-        "primary_pair_requests_per_rollout": 150,
-        "three_full_rollouts_pair_requests": 450,
-        "size_does_not_establish_power_or_importance": true,
-        "estimability": {
-          "rows": 100,
-          "columns": 36,
-          "rank": 34,
-          "all_coefficients_identified_full_rank": false,
-          "contrast_rowspace_residual_l2": 9.502251953319836e-16,
-          "contrast_estimability_tolerance": 1e-10,
-          "contrast_estimable_in_design": true
-        },
-        "current_full_rank_evaluator_accepts": false,
-        "reason": "Primary design is rank deficient"
-      },
-      {
-        "phase": "confirmatory",
-        "candidate_people": 256,
-        "primary_high_low_people": 186,
-        "primary_rows": 744,
-        "primary_pair_requests_per_rollout": 1116,
-        "three_full_rollouts_pair_requests": 3348,
-        "size_does_not_establish_power_or_importance": true,
-        "estimability": {
-          "rows": 744,
-          "columns": 36,
-          "rank": 36,
-          "all_coefficients_identified_full_rank": true,
-          "contrast_rowspace_residual_l2": 1.0818160366996748e-15,
-          "contrast_estimability_tolerance": 1e-10,
-          "contrast_estimable_in_design": true
-        },
-        "current_full_rank_evaluator_accepts": true,
-        "design_columns": 36,
-        "rank": 36,
-        "condition": 68.01449929240474
-      },
-      {
-        "phase": "confirmatory",
-        "candidate_people": 512,
-        "primary_high_low_people": 372,
-        "primary_rows": 1488,
-        "primary_pair_requests_per_rollout": 2232,
-        "three_full_rollouts_pair_requests": 6696,
-        "size_does_not_establish_power_or_importance": true,
-        "estimability": {
-          "rows": 1488,
-          "columns": 36,
-          "rank": 36,
-          "all_coefficients_identified_full_rank": true,
-          "contrast_rowspace_residual_l2": 1.2584940594521916e-15,
-          "contrast_estimability_tolerance": 1e-10,
-          "contrast_estimable_in_design": true
-        },
-        "current_full_rank_evaluator_accepts": true,
-        "design_columns": 36,
-        "rank": 36,
-        "condition": 60.38181198266105
-      },
-      {
-        "phase": "confirmatory",
-        "candidate_people": 768,
-        "primary_high_low_people": 556,
-        "primary_rows": 2224,
-        "primary_pair_requests_per_rollout": 3336,
-        "three_full_rollouts_pair_requests": 10008,
-        "size_does_not_establish_power_or_importance": true,
-        "estimability": {
-          "rows": 2224,
-          "columns": 36,
-          "rank": 36,
-          "all_coefficients_identified_full_rank": true,
-          "contrast_rowspace_residual_l2": 1.216202306989549e-15,
-          "contrast_estimability_tolerance": 1e-10,
-          "contrast_estimable_in_design": true
-        },
-        "current_full_rank_evaluator_accepts": true,
-        "design_columns": 36,
-        "rank": 36,
-        "condition": 52.06981928590287
-      }
-    ],
-    "interpretation": "Full-rank evaluator rejection is not proof that the particular contrast is unidentifiable: inspect its row-space residual. Pilot format success does not certify main-score stability. Resource prefixes change the exact finite target."
-  },
-  "latest_full_review_snapshot_tests": 45,
-  "review_contribution_judgement": "increment weak/unproved; oracle useful software illustration only",
-  "clean_clone_reproduction_v5": {
-    "status": "complete",
-    "tested_commit": "5f1970b",
-    "tests_passed": 49,
-    "new_model_calls": 0,
-    "verified_artifact_hashes": 37,
-    "primary_design_plans_estimability_controls_identical": true,
-    "dependencies": "existing tested virtualenv reused; no network installation claimed"
-  },
-  "remote_repository_created": false,
-  "targeted_verification05": {
-    "reviewer": "B",
-    "snapshot_tests_passed": 49,
+  "round06_review": {
+    "type": "own-context critical internal AI re-review",
+    "snapshot_tests_passed_by_each": 57,
     "raw_data_independently_reviewed": false,
-    "provider_or_live_execution_verified": false
-  }
+    "empirical_novelty_established": false
+  },
+  "clean_clone_reproduction_v6": "pending",
+  "remote_repository_created": false
 }

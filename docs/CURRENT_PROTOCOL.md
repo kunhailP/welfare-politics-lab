@@ -1,4 +1,4 @@
-# Current protocol: version 5, contribution and stimulus audit
+# Current protocol: version 6, same-output comparison and permutation controls
 
 This is a prospective plan for model data, developed after viewing the human
 reference data. It is not a preregistered or untouched human replication.
@@ -242,3 +242,36 @@ scientific decision/precision criteria, repeated-generation allocation and
 presentation sensitivity remain incomplete. Actual respondent calls are0.
 Software validation resolves implementation issues; empirical importance and
 generalization still require evidence. A revised plan is not a completed study.
+
+## Same-output diagnostics and stronger software control
+
+Version6 retains the primary cohort, prompts, contrast and loss definitions.
+For every arm, the keyed evaluator adds empirical W1 distances for the full
+allocation distribution, income-group distributions, pooled complete-recipient-
+profile distributions and group-by-profile distributions. Conditional distances
+and absolute cell-mean errors use fixed row-count weights. Report cell counts
+and singleton counts: these are finite sample comparisons, not estimates of
+conditional population distributions or individual psychological fidelity.
+No pass/equivalence threshold is introduced. The additive recipient-basis-plus-
+group projection reports coefficients/fitted-value differences and R2 only if
+all actions are observed; constant-outcome R2 is undefined, not perfect.
+
+For missing actions, all cells/denominators remain fixed. A computational
+midpoint anchor gives conservative W1 completion ranges by the triangle
+inequality: radius2000*m/n for m unknown actions in a cell of n fixed rows.
+The midpoint is not an observed/imputed answer. These are not sharp bounds or
+confidence intervals; exact complete-data distances are separately identified.
+No full-cohort R2 is calculated from complete cases or anchor-filled outcomes.
+
+The new outcome-informed permutation control swaps existing amounts in disjoint
+four-row checkerboards. It preserves the overall allocation multiset, each
+income-group multiset and each pooled complete-profile multiset. Therefore the
+corresponding distributions/means/variances and fixed additive projection/R2
+stay equal, while income-by-recipient interactions can change. This is a known
+higher-order association issue made concrete on this design, not a new theorem.
+The stronger group-by-profile check detects the changed control and is included
+in the comparison, rather than presenting the target contrast as uniquely able
+to detect it. Other respondent traits, trajectories and conditional joint tables
+need not be preserved. No real model failure, benchmark-wide failure or novel
+empirical discovery is inferred from a constructed table. Additional respondent
+model calls required for these evaluation checks: zero.

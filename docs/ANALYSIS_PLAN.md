@@ -1,4 +1,4 @@
-# Prospective analysis and diagnostic plan — version5
+# Prospective analysis and diagnostic plan — version6
 
 Written after observing the human reference and before any new respondent-model
 output. This is not an untouched preregistration of the human study or permission
@@ -22,15 +22,19 @@ Apply these checks to the **same actual outputs**:
 | Primary interacted contrast | Same36-column X; gamma discrepancy, J_FN and J_FI |
 | Stronger conditional check | Group-by-profile errors or interactions; can detect the oracle too |
 
-Only the primary contrast/mean/bounds path is implemented as a public keyed
-evaluator. Group/profile reporting requires a validated adapter. This is not an
+The public keyed evaluator now reports group/profile weighted mean-error bounds
+and empirical-distribution W1 ranges on the same fixed rows. A stronger
+group-by-profile check is included. This is not an
 exact reproduction of every SSDataBench metric. Keep invalid actions in fixed
 denominators with completion ranges; selective complete-case summaries cannot
 establish the unconditional claim. No arbitrary “good fidelity” threshold.
 
-The oracle is one software panel. It preserves pooled profile/group means, not
-distributions, variances, trajectories or conditional outcomes. It does not
-demonstrate that real models pass restricted checks while failing stronger ones.
+The software panel now includes a distribution-preserving permutation control:
+it preserves the overall, income-group and pooled complete-profile allocation
+multisets, and the fixed additive projection/R2, but not group-by-profile
+conditional outcomes or individual trajectories. The earlier mean-only control
+is retained as historical/supporting evidence. Neither demonstrates that real
+models pass restricted checks while failing stronger ones.
 The archive gamma and common-task DID have different tasks and weights:
 **do not subtract them as a mechanical decomposition**. Common-task label effects
 are model input sensitivity without observed human counterfactual biographies.

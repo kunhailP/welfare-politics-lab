@@ -19,7 +19,7 @@ diagnostic comparisons and proposed repeat/presentation checks. The
 [source crosswalk](docs/STIMULUS_CROSSWALK.md) records reconstruction limits and
 the pre-generation recipient-income wording correction.
 
-The current design is version5 in [docs/CURRENT_PROTOCOL.md](docs/CURRENT_PROTOCOL.md).
+The current design is version6 in [docs/CURRENT_PROTOCOL.md](docs/CURRENT_PROTOCOL.md).
 Archived plans document earlier decisions; they are not the current authority.
 Open scientific issues are in [docs/RESEARCH_QUEUE.md](docs/RESEARCH_QUEUE.md).
 
@@ -44,6 +44,11 @@ The output includes Study 2 human reanalysis, Study 1 adjusted group contrasts,
 source-design and selection diagnostics, outcome-free per-arm generation inputs,
 and a software-only verification of missing-action contrast bounds. Reanalysis
 is not an exact recreation of every R package's standard-error convention.
+The keyed evaluator now compares group/profile means and empirical distributions
+on the same fixed rows, including a stronger joint conditional diagnostic and
+conservative missing-action ranges. A permutation software control preserves
+entire lower-order distributions and additive R2 while changing the interaction.
+Its result and limits are in [docs/DISTRIBUTION_AUDIT_KO.md](docs/DISTRIBUTION_AUDIT_KO.md).
 
 ## Main scientific boundaries
 
@@ -78,6 +83,10 @@ conditions are recorded in [reviews/round_02/response.md](reviews/round_02/respo
 Keyed response replay now rejects contradictory or missing logs and is tested
 under shuffled arrival, transport retries and malformed pairs. No live runner
 or empirical model validation is implied by these checks.
+Round06 limited re-review verifies the stronger distribution-preserving control
+and public same-output adapter. Its interpretation constraints and unresolved
+empirical/execution gates are retained in
+[reviews/round_06/response.md](reviews/round_06/response.md).
 
 The Korean project brief and next research gates are in
 [docs/START_HERE_KO.md](docs/START_HERE_KO.md).

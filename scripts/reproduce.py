@@ -84,6 +84,14 @@ def main():
     if result.returncode:
         raise RuntimeError('Marginal-preserving software control failed; see its log')
     print('PASS marginal_preserving_control (not model evidence)', flush=True)
+    result = subprocess.run([sys.executable, '-m', 'welfare_politics.distribution_control',
+                             '--design', str(args.output / 'primary_matched_design/human_reference_design.npz'),
+                             '--output', str(args.output / 'distribution_preserving_control')],
+                            env=env, capture_output=True, text=True)
+    (args.output / 'distribution_preserving_control.log').write_text(result.stdout + result.stderr)
+    if result.returncode:
+        raise RuntimeError('Distribution-preserving software control failed; see its log')
+    print('PASS distribution_preserving_control (not model evidence)', flush=True)
     verification = verify_with_exhaustive_completions()
     (args.output / 'contrast_software_check.json').write_text(json.dumps(verification, indent=2))
     generated = {str(x.relative_to(args.output)): hashlib.sha256(x.read_bytes()).hexdigest()

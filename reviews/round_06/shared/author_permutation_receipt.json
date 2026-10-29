@@ -1,0 +1,129 @@
+{
+  "status": "outcome_informed_permutation_SOFTWARE_CONTROL_ONLY",
+  "actual_model_calls": 0,
+  "empirical_model_results": false,
+  "human_contrast": 55.157827808322594,
+  "candidate_cycles": 38,
+  "sharp_extremum_certified": false,
+  "has_changed_contrast_control": true,
+  "preserved_exactly": [
+    "overall allocation multiset",
+    "each income-group allocation multiset",
+    "each pooled complete-recipient-profile allocation multiset",
+    "fixed additive design X-transpose-y, allocation sum of squares, OLS coefficients and R2 when defined"
+  ],
+  "not_preserved": [
+    "group-by-profile outcome tables",
+    "individual trajectories",
+    "relationships to respondent facts outside the primary design"
+  ],
+  "scope": "Specified lower-order checks only; stronger conditional checks can detect the control. No external benchmark-wide failure or real generator error established.",
+  "controls": {
+    "increase": {
+      "contrast": 129.71134686306428,
+      "cycles": 4,
+      "changed_rows": 16,
+      "diagnostic_comparison": {
+        "target": "finite same-row diagnostic comparison; not population inference",
+        "full_row_count": 2224,
+        "invalid_rows": 0,
+        "global_allocation_w1_cad": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "invalid_rows": 0,
+          "sharp_bounds_certified": true,
+          "method": "exact equal-weight W1 if complete; conservative midpoint-anchor triangle bounds otherwise"
+        },
+        "respondent_group_weighted_w1_cad": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "cells": 2,
+          "singleton_cells": 0,
+          "weighting": "fixed cell row count / total fixed rows",
+          "exact_if_all_actions_observed": true
+        },
+        "pooled_complete_profile_weighted_w1_cad": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "cells": 1465,
+          "singleton_cells": 922,
+          "weighting": "fixed cell row count / total fixed rows",
+          "exact_if_all_actions_observed": true
+        },
+        "group_by_profile_weighted_w1_cad": {
+          "lower": 14.451438848920864,
+          "upper": 14.451438848920864,
+          "cells": 1788,
+          "singleton_cells": 1418,
+          "weighting": "fixed cell row count / total fixed rows",
+          "exact_if_all_actions_observed": true
+        },
+        "pass_or_equivalence_threshold_applied": false,
+        "exact_reproduction_of_an_external_benchmark": false,
+        "additive_projection": {
+          "status": "complete_fixed_rows",
+          "columns": 19,
+          "full_column_rank": true,
+          "human_r2": 0.08753752736561338,
+          "actions_r2": 0.08753752736561338,
+          "max_absolute_coefficient_difference": 4.547473508864641e-13,
+          "fitted_value_difference_rmse": 3.46604377293616e-13,
+          "r2_not_a_coefficient_direction_or_interaction_fidelity_test": true
+        }
+      }
+    },
+    "decrease": {
+      "contrast": -22.03414363553526,
+      "cycles": 6,
+      "changed_rows": 24,
+      "diagnostic_comparison": {
+        "target": "finite same-row diagnostic comparison; not population inference",
+        "full_row_count": 2224,
+        "invalid_rows": 0,
+        "global_allocation_w1_cad": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "invalid_rows": 0,
+          "sharp_bounds_certified": true,
+          "method": "exact equal-weight W1 if complete; conservative midpoint-anchor triangle bounds otherwise"
+        },
+        "respondent_group_weighted_w1_cad": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "cells": 2,
+          "singleton_cells": 0,
+          "weighting": "fixed cell row count / total fixed rows",
+          "exact_if_all_actions_observed": true
+        },
+        "pooled_complete_profile_weighted_w1_cad": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "cells": 1465,
+          "singleton_cells": 922,
+          "weighting": "fixed cell row count / total fixed rows",
+          "exact_if_all_actions_observed": true
+        },
+        "group_by_profile_weighted_w1_cad": {
+          "lower": 18.147482014388487,
+          "upper": 18.147482014388487,
+          "cells": 1788,
+          "singleton_cells": 1418,
+          "weighting": "fixed cell row count / total fixed rows",
+          "exact_if_all_actions_observed": true
+        },
+        "pass_or_equivalence_threshold_applied": false,
+        "exact_reproduction_of_an_external_benchmark": false,
+        "additive_projection": {
+          "status": "complete_fixed_rows",
+          "columns": 19,
+          "full_column_rank": true,
+          "human_r2": 0.08753752736561338,
+          "actions_r2": 0.08753752736561338,
+          "max_absolute_coefficient_difference": 2.5579538487363607e-13,
+          "fitted_value_difference_rmse": 2.5048067960290674e-13,
+          "r2_not_a_coefficient_direction_or_interaction_fidelity_test": true
+        }
+      }
+    }
+  }
+}

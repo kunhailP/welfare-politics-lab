@@ -43,6 +43,9 @@ class KeyedReplayTests(unittest.TestCase):
         for arm in ['N', 'F', 'F-I']:
             np.testing.assert_allclose(a['arms'][arm]['signed_error_bounds'], [0, 0], atol=1e-8)
             self.assertEqual(a['arms'][arm], b['arms'][arm])
+            diagnostics = a['arms'][arm]['same_output_diagnostics']
+            self.assertEqual(diagnostics['global_allocation_w1_cad']['upper'], 0)
+            self.assertEqual(diagnostics['group_by_profile_weighted_w1_cad']['upper'], 0)
         self.assertIn('human_outcomes_sha256', a)
         self.assertIn('contrast_sha256', a)
 
@@ -89,6 +92,11 @@ class KeyedReplayTests(unittest.TestCase):
         self.assertEqual(len(receipt['failed_pairs']), 1)
         self.assertEqual(receipt['logged_attempts'], 25)
         self.assertEqual(self.score(attempts)['arms']['N']['invalid_rows'], 2)
+        diagnostic = self.score(attempts)['arms']['N']['same_output_diagnostics']
+        self.assertEqual(diagnostic['full_row_count'], 16)
+        self.assertEqual(diagnostic['invalid_rows'], 2)
+        self.assertEqual(diagnostic['group_by_profile_weighted_w1_cad']['cells'], 4)
+        self.assertEqual(diagnostic['additive_projection']['status'], 'not_computed_with_invalid_actions')
 
     def test_transport_exhaustion_requires_all_three_attempts(self):
         attempts = copy.deepcopy(self.attempts)

@@ -42,6 +42,16 @@ particular generator can support, under declared inputs and tasks. It is not a
 general replacement for human participants or an interacting society model.
 No desired sign of J_FN is an inclusion or publication criterion.
 
+Version6 implements the same-output group/profile mean and distribution checks
+in the public keyed evaluator and supplies a stronger permutation illustration.
+Unlike the earlier mean-preserving example below, it keeps whole lower-order
+outcome distributions and additive R2 unchanged; a24-row rearrangement changes
+the finite contrast55.16 to-22.03 CAD. A stronger conditional diagnostic detects
+it and is reported alongside the coarser checks. This fixes a comparison weakness,
+not the absence of empirical model evidence. See `DISTRIBUTION_AUDIT_KO.md`.
+The underlying higher-order association issue is established mathematics; its
+concrete use here is a validation control, not a new theorem or award prediction.
+
 ## New offline diagnostic and its limits
 
 `marginal_control.py` transfers integer allocations around four-row cycles:

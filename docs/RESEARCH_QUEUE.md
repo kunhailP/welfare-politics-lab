@@ -15,6 +15,10 @@
   explicit limits on conditional effects/distributions and optimization claims.
 - Source wording crosswalk and removal of unsupported recipient-income units.
 - Full-coefficient rank versus individual-contrast estimability diagnostic.
+- Same-output mean/distribution diagnostics in the public keyed path, with
+  fixed-denominator missing-action ranges and explicit conditional-cell sizes.
+- Permutation oracle preserving specified full lower-order distributions and
+  additive R2, alongside a stronger conditional check that detects it.
 
 ## Before any main generation
 
@@ -55,3 +59,7 @@ readiness decision.
 Round04 further judged the oracle useful but the scientific increment weak and
 unproved. Keep that judgement visible; additional controls cannot manufacture
 an empirical contribution.
+Round06 verifies that the distribution-change and missing-comparator weaknesses
+are addressed, while retaining the empirical-value and execution gates. Stop
+expanding controls merely to preserve another statistic. Next priority is the
+native isolated execution/common-task log path and a concrete empirical claim.

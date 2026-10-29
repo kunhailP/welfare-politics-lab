@@ -9,6 +9,7 @@ import json
 import numpy as np
 
 from .contrast_validity import contrast_bounds, error_change_bounds
+from .diagnostic_comparison import compare, layout
 
 
 def evaluate_arrays(x, human, model_arms, contrast, row_ids):
@@ -40,6 +41,14 @@ def evaluate_arrays(x, human, model_arms, contrast, row_ids):
         result['arms'][name] = {k: v for k, v in b.items() if k != 'contrast_weights'}
         result['arms'][name]['signed_error_bounds'] = [b['lower']-gamma_h, b['upper']-gamma_h]
         values = np.asarray(values, dtype=float)
+        # The generic array helper also serves noncanonical numerical fixtures.
+        # Real primary designs use canonical recipient basis + group interactions.
+        try:
+            layout(x)
+        except ValueError as exc:
+            result['arms'][name]['same_output_diagnostics'] = {'status': 'unsupported_diagnostic_layout', 'reason': str(exc)}
+        else:
+            result['arms'][name]['same_output_diagnostics'] = compare(x, human, values)
         known = ~np.isnan(values)
         low_mean = float(np.sum(values[known])/len(values))
         high_mean = float((np.sum(values[known]) + 4000*(~known).sum())/len(values))
