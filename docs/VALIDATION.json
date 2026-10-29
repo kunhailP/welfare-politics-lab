@@ -459,6 +459,14 @@
     "raw_data_independently_reviewed": false,
     "empirical_novelty_established": false
   },
-  "clean_clone_reproduction_v6": "pending",
+  "clean_clone_reproduction_v6": {
+    "status": "complete",
+    "tested_commit": "4dec747",
+    "tests_passed": 58,
+    "new_model_calls": 0,
+    "verified_artifacts": 40,
+    "primary_reference_generation_plan_and_diagnostic_reports_identical": true,
+    "dependencies": "existing tested virtualenv reused; no network installation claimed"
+  },
   "remote_repository_created": false
 }

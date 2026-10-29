@@ -19,7 +19,7 @@
   "offline_tests_passed": 58,
   "remote_repository_created": false,
   "data_redistribution_verified": false,
-  "clean_clone_offline_reproduction": "v5 complete; v6 pending",
+  "clean_clone_offline_reproduction": "v6 complete;58 tests; reference/plan/diagnostic reports identical; existing tested dependencies reused",
   "respondent_generation": "research_development_hold",
   "new_integer_controls": "oracle software controls only, not empirical model results",
   "new_permutation_control": "outcome-informed software validation only; no real model outputs",
